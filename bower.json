@@ -1,0 +1,14 @@
+{
+  "name": "ewing",
+  "description": "A collection of universal components re-usable across D Magazine web products",
+  "main": [
+    "sass/main.scss",
+    "scripts/dmag.globals.js",
+    "scripts/dmag.ads.js",
+    "scripts/dmag.dropdown.js",
+    "scripts/dmag.datatable.js"
+  ],
+  "dependencies": {
+    "susy": "2.2.11"
+  }
+}

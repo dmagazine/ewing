@@ -1,0 +1,94 @@
+/*------------------------------------*\
+    #IN THIS POST
+\*------------------------------------*/
+#in-this-post {
+
+    margin-top: gutter(6);
+
+     h4 {
+        color: $color__white;
+        background: $color__gray--dark;
+        padding: 0.6rem 0.8rem;
+    }
+
+    .content-items {
+        @extend %list-unstyled;
+        margin: 0;
+    }
+
+    li { 
+        padding: 0.6rem 0.8rem;
+        margin: 0;
+        border-bottom: 1px solid $color__white;
+        @include font-scale(textSans, 2);
+        @extend %clearfix;
+        background: $color__gray--light;
+
+        &:hover { 
+            // background: $color__red-dmag;
+            color: $color__red-dmag;
+            .category, .location { color: $color__red-dmag; }
+            .ticket { fill: $color__red-dmag; }
+        }
+    }
+
+    .info { 
+        width: 90%;
+        display: block;
+        float: left;
+        width: calc(100% - 25px);
+    }
+
+        .name { font-weight: 700; }
+
+        .category {
+            color: $color__black;
+            font-weight: 400;
+        }
+
+        .location { color: $color__gray--dark; }
+
+
+    .ticket {
+        width: 10%;
+        float: left;
+        width: 25px;
+    }
+
+    .ticket:hover { opacity: 0.5; }
+
+
+
+    @include breakpoint(large-only) {
+
+        .info > span {
+            float: left;
+            padding-right: 0.8rem;
+        }
+
+        .name {
+            width: 40%;
+        }
+
+        .category {
+            width: 30%;
+        }
+
+        .location {
+            width: 30%;
+        }
+
+    }
+
+
+    @include breakpoint(medium_small) {
+        .name { margin-bottom: 0.5rem; }
+
+        .name,
+        .category,
+        .location {
+            display: block;
+        }
+    }
+
+}

@@ -1,0 +1,34 @@
+// reset header and text padding
+h1, h2, h3, h4, h5 {
+	margin: 0;
+}
+// end resets
+
+.header {
+    @include font-scale(secondaryHeading, 3, $caps: true);
+}
+
+.category,
+.kicker {
+    @include font-scale(kicker, 1, $caps: true);
+    color: $color__red-dmag;
+    margin-bottom: 0.3em;
+    @extend %is-hover;
+}
+
+
+.byline,
+.kicker--secondary {
+    @include font-scale(kicker, 1, $caps: true);
+    color: $color__gray--dark;
+    @extend %is-hover;
+}
+
+.subhead {
+    @include font-scale(textSans, 4);
+}
+
+.subhead--big {
+	@include font-scale(secondaryHeading, 2);
+}
+

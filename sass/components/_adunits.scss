@@ -1,0 +1,53 @@
+@mixin striped-background {
+	background-image: url(#{$image-path}hash-dark.png);
+	background-repeat: repeat;
+}
+
+@mixin striped-background-light {
+	background-image: url(#{$image-path}hash-light.png);
+	background-repeat: repeat;
+}
+
+.adunit {
+	text-align: center;
+	@extend %clearfix;
+	clear: both;
+
+	.feed__featured & { margin-top: gutter(6); }
+}
+
+
+.adunit--horizontal {
+
+	.story__content & {
+		margin-top: 1em;
+	}
+
+	margin-left: $full-width-margin;
+	margin-right: $full-width-margin;
+	@include striped-background;
+
+	@include breakpoint(large-only) {
+		padding: 1.8em 0;
+	}
+	@include breakpoint(medium_small) {
+		padding: 1em 0;
+	}
+
+}
+
+.adunit--slideshow {
+	@include striped-background-light;
+	padding: gutter(6);
+	display: inline-block;
+}
+
+.sidebar .adunit--top {
+	&:before {
+		content: 'Presented By';
+		@include font-scale(textSans, 3, $caps: true);
+		text-align: center;
+		display: block;
+		margin-bottom: 0.5em;
+	}
+}

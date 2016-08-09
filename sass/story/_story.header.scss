@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    #STORY HEADER
+\*------------------------------------*/
+
+.story__header {
+    position: relative;
+    margin-bottom: gutter(8);
+}
+
+    .story__image {
+        @include aspect-ratio(3, 2);
+        overflow: hidden;
+    }
+
+    .story__image-caption {
+        @extend .image-caption;
+        margin-top: 0.7em;
+    }
+
+    .story__header__content {
+        .layout--with-sidebar & {
+            margin-top: gutter(8);
+        }
+    }
+
+    .story__title {
+        @include font-scale(header, 2);
+    }
+
+    .story__subhead {
+        @include font-scale(accent, 4);
+    }
+
+    .story__info {
+        color: $color__gray--dark;
+        border-top: 1px solid $color__gray--medium;
+        border-bottom: 1px solid $color__gray--medium;
+        padding: 1em 0;
+
+        @include font-scale(accent, 1, $caps: true);
+    }
+
+    .story__info__item {
+        border-left: 1px solid $color__gray--medium;
+        padding: 0 0.5em;
+        &:first-child{ 
+            border-left: none;
+            padding-left: 0;
+        }
+        @extend %is-hover;
+    }

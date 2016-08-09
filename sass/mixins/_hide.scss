@@ -1,0 +1,58 @@
+@mixin is-hidden {
+	position: absolute !important; 
+	overflow: hidden !important; 
+	clip: rect(0 0 0 0) !important; 
+	height: 1px !important;
+	width: 1px !important; 
+	margin: -1px;
+	padding: 0 !important; 
+	border: 0 !important; 
+}
+
+// there is a better way to write out these classes using
+// sass variables I think. (based on breakpoint $sizes)  
+// TKTK
+.is-hidden {
+	// only to be used if hazz to be invisible. 
+	// needs to be removed with js, not overwritten. 
+	// thats why its !important
+	// tktk isnt there a screen-reader friendly way to hide this?
+	// that uses visibility: hidden and width: 0 or somehting?
+	// display: none !important;
+	@include is-hidden;
+}
+
+.is-hidden--large-only {
+	@include breakpoint(large-only) {
+		// display: none !important;
+		@include is-hidden;
+	}
+}
+
+.is-hidden--large_medium {
+	@include breakpoint(large_medium) {
+		@include is-hidden;
+	}
+}
+
+.is-hidden--medium_small {
+	@include breakpoint(medium_small) {
+		// display: none !important;
+		@include is-hidden;
+	}
+}
+
+.is-hidden--small-only {
+	@include breakpoint(small-only) {
+		// display: none !important;
+		@include is-hidden;
+	}
+}
+
+// tktk make this prettyily fade-in.
+// also add opacity bkwards compatibility
+.is-invisible {
+	// visibility: hidden !important;
+	// opacity: 0 !important;
+	@include opacity(0);
+}

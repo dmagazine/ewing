@@ -1,0 +1,96 @@
+@mixin icon__stroke-width($width) {
+    path,
+    g path,
+    circle,
+    rect,
+    polyline,
+    polygon,
+    line { 
+        stroke-width: $width; 
+    }
+}
+
+@mixin icon-color-part__outline($color: '') {
+    &.icon--stroke { stroke: $color; }
+    &.icon--fill { fill: $color; }
+    &.icon--switch { stroke: $color; fill: none; }
+}
+
+@mixin icon-color-part($color: '') {
+    &.icon--stroke { stroke: $color; }
+    &.icon--fill { fill: $color; }
+    &.icon--switch { fill: $color; }
+}
+
+@mixin icon-color($color-main, $color-accent: $color-main) {
+    .icon__accent { @include icon-color-part($color-accent); }
+    .icon__main { @include icon-color-part($color-main); }
+}
+
+@mixin icon-color__outline($color) {
+    .icon__accent { @include icon-color-part__outline($color); }
+    .icon__main { @include icon-color-part__outline($color); }
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 32px;
+    height: 32px;
+    @include icon__stroke-width(2);
+}
+
+@mixin icon--small {
+    width: 16px;
+    height: 16px;
+    @include icon__stroke-width(7);
+}
+
+@mixin icon--medium {
+    width: 24px;
+    height: 24px;
+    @include icon__stroke-width(3);
+}
+
+@mixin icon--large {
+    width: 64px;
+    height: 64px;
+    @include icon__stroke-width(1);
+}
+
+.icon--small {
+    @include icon--small;
+}
+
+.icon--medium {
+    @include icon--medium;
+}
+
+.icon--large {
+    @include icon--large;
+}
+
+.icon--blue {
+    @include icon-color($color__blue-dmag, $color__white);
+}
+
+.icon--red {
+    @include icon-color($color__red-dmag, $color__white);
+}
+
+.icon--white {
+    @include icon-color($color__white, $color__black);
+}
+
+.icon--white-blue {
+    @include icon-color($color__white, $color__blue-dmag);
+}
+
+.icon--white-o {
+    @include icon-color__outline($color__white);
+}
+
+.icon--blue-o {
+    @include icon-color__outline($color__blue-dmag);
+}

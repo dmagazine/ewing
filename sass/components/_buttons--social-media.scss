@@ -1,0 +1,96 @@
+// using plugin: WP Social Sharing
+
+$height__social-button: 40px;
+
+//tktk this is a temporary fix.
+.page-wrapper .social-sharing { display: none; }
+
+.social-button {
+	position: relative;
+	height: $height__social-button;
+	margin-bottom: 2px; 
+	display: table;
+	width: 100%;
+
+	@include breakpoint(small-only) {
+		width: 50px;
+		float: left;
+	}
+
+}
+
+
+	.social-button-inner {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+
+
+	.button-comments {
+		background: $color__gray--darker;
+		display: block; // gets rid of bit of white space thats below the button
+	}
+
+
+	.social-button-link {
+		opacity: 0.7;
+		&:hover { opacity: 1; }
+	}
+
+
+//
+// START plugin styling // 
+//
+
+/*
+Using WP Social Sharing Plugin
+Specific plugin settings needed so that styling will work: 
+- Social Share Button & Order: Facebook, Twitter, Pinterest
+- Social Icon Position: Above Content
+- Remove all Text 
+- Do NOT load share button CSS
+*/
+
+.social-sharing {
+	@include breakpoint(large_medium) {
+		position: absolute;
+		top: 0;
+	}
+
+	width: 100%;
+	float: none;
+	display: inline-block;
+	text-align: center;
+
+	@include grid-column-scale-all(social, direction);
+
+}
+
+
+.social-sharing a {
+	@extend .social-button; 
+	@extend .social-button-link;
+}
+
+
+.button-facebook { background: $color__brand__facebook; }
+.button-twitter { background: $color__brand__twitter; }
+.button-pinterest { background: $color__brand__pinterest; }
+
+//
+// END plugin styling // 
+//
+
+
+.social-button-wrapper {
+	@extend .social-sharing;
+	@include breakpoint(small-only) {
+		position: absolute;
+	}
+}
+
+
+.social-sharing-overlay .social-button--plugin {
+	pointer-events: none;
+}

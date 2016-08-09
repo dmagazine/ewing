@@ -1,0 +1,224 @@
+/**
+ * Unstyle List
+ */
+%list-unstyled {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/**
+ * Included in title box, but separated so can give styling to content w/o using the full title-box
+ * @requires {function} gutter (susy)
+ */
+@mixin title-box-inc {
+    text-align: center;
+    padding: gutter(6);
+}
+
+/**
+ * White Box often used with featured content blocks to display title, desc, etc
+ *
+ * @param {number} $opacity
+ * @param {string} $size
+ *      large
+ * @param {bool} $indent - if true, box recedes up into the image
+ * @param {string} $breakpoint - breakpoint in which the box recedes and has a background color
+ *
+ * @requires {mixin} breakpoint
+ * @requires {mixin} span-breakpoint
+ * @requires {mixin} center-block
+ * @requires {mixin} title-box-inc
+ * @requires {function} gutter (susy)
+ *
+ */
+@mixin title-box($opacity: 1, $size: large, $indent: true, $breakpoint: large-only) {
+    @include center-block;
+    @include title-box-inc;
+
+    @include breakpoint($breakpoint) {
+        background-color: rgba(255,255,255, $opacity);
+        position: relative;
+        @if $indent == true {
+            margin-top: -#{gutter(2)};
+        }
+    }
+
+    @if $size == large {
+        @include span-breakpoint(main-full, 8, 6, null, $type: width);
+    }
+}
+
+/**
+ * Content with fixed ratio that is never wider or taller than the browser window
+ *
+ * @param {number} $x
+ * @param {number} $y
+ *
+ * @example 
+ *  @include viewport-ratio(3, 2);
+ *
+ */
+@mixin viewport-ratio($x, $y) {
+    width: 100vw;
+    height: $y * 100vw / $x;
+    max-width: $x / $y * 100vh;
+    max-height: 100vh;
+}
+
+
+/*
+ * Content with fixed ratio
+ * 
+ * @param {number} $x
+ * @param {number} $y
+ *
+ * @example 
+ *  @include aspect-ratio(3, 2);
+ *
+ */
+@mixin aspect-ratio($x, $y) {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($y / $x) * 100%;
+  }
+  > .ar-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/*
+ * Center block content
+ */
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+}
+
+/*
+ * Center absolute content
+ */
+@mixin center-absolute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*
+ * Position background image so that on small screens it maintains a specific aspect ratio
+ *
+ * @requires {mixin} breakpoint
+ * @requires {mixin} viewport-ratio
+ * @requires {mixin} center-block
+ *
+ */
+@mixin absolute-background-image {
+    background-size: cover; 
+
+    @include breakpoint(large_medium) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    @include breakpoint(small-only) {
+        position: relative;
+        @include viewport-ratio(3, 2);
+        @include center-block;
+    }
+
+}
+
+
+/*
+ * Wrapper for content that will be horizontally-scrolled
+ */
+@mixin scroller__items() {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+/*
+ * Horizontally-scrolled content
+ */
+@mixin scroller__item() {
+    float: none;
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+}
+
+
+/*
+ * Transitions - used to help keep them consistent
+ *
+ * @param {string} $prop - property that transition is being applied to
+ * @param {number} $transition-time - length of transition
+ * @example
+ *  @include transition(opacity, 0.3s);
+ *
+ */
+$transition-time: 0.3s;
+@mixin transition($prop, $transition-time: $transition-time) {
+    transition: $prop $transition-time ease;
+}
+
+
+/*
+ * Opacity with support for IE8
+ *
+ * @param {Number} $opacity
+ */
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+/*
+ * Clearfix
+ */
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+/*
+ * On hover, change opacity
+ * @param {number} $opacity
+ */
+$hover-opacity: 0.5;
+@mixin is-hover($opacity: $hover-opacity) {
+    @include transition(opacity);
+    &:hover { 
+        opacity: $opacity; 
+    }
+}
+
+//tktk why does this exist?
+%is-hover {
+    @at-root a#{&} { @include is-hover; }
+    a { @include is-hover }
+    @extend %is-hover;
+}
+
+%is-hover--blue {
+    color: $color__blue-dmag;
+    @include transition(color);
+}

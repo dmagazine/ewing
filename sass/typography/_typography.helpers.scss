@@ -1,0 +1,132 @@
+// Font scale helpers
+// =============================================================================
+// Based off of The Guardian's Guss Typography: 
+// https://github.com/guardian/guss-typography
+
+
+/**
+ * Grab all levels of a font in the font-scale
+ *
+ * @param {String} $name - Name of the font-scale matrix (eg: headline)
+ * @param {Map} $font-scale ($font-scale)
+ *
+ * @example
+ *  font-size: get-scale(header);
+ *
+ * @requires {variable} $font-scale
+ *
+ * @return {Map}
+ *
+ * @group typography
+ */
+@function get-scale($name, $font-scale: $font-scale) {
+    @return map-get($font-scale, $name);
+}
+
+/**
+ * Grab info for a particular level of a font-scale
+ *
+ * @param {String} $name - Name of the font-scale in the matrix (eg: headline)
+ * @param {Number} $level - Level in the matrix
+ * @param {Map} $font-scale ($font-scale)
+ *
+ * @example
+ *  font-size: get-scale-level(header, 1);
+ *
+ * @requires {variable} $font-scale
+ * @requires {function} get-scale
+ *
+ * @return {Map}
+ *
+ * @group typography
+ */
+@function get-scale-level($name, $level, $font-scale: $font-scale) {
+    @return map-get(get-scale($name, $font-scale), $level);
+}
+
+/**
+ * Get a font-size for a level in the font-scale matrix
+ *
+ * @param {String} $name - Name of the font-scale in the matrix (eg: headline)
+ * @param {Number} $level - Level in the matrix
+ * @param {Map} $font-scale - Configuration
+ *
+ * @example
+ *  font-size: get-font-size(header, 3);
+ *
+ * @requires {variable} $font-scale
+ * @requires {function} get-scale-level
+ *
+ * @return {Number}
+ *
+ * @group typography
+ */
+@function get-font-size($name, $level, $font-scale: $font-scale) {
+    @return map-get(get-scale-level($name, $level, $font-scale), font-size);
+}
+
+/**
+ * Get a line-height for a level in the font-scale matrix
+ *
+ * @param {String} $name - Name of the font-scale in the matrix (eg: headline)
+ * @param {Number} $level - Level in the matrix
+ * @param {Map} $font-scale - Configuration
+ *
+ * @example
+ *  font-size: get-line-height(header, 3);
+ *
+ * @requires {variable} $font-scale
+ * @requires {function} get-scale-level
+ *
+ * @return {Number}
+ *
+ * @group typography
+ */
+@function get-line-height($name, $level, $font-scale: $font-scale) {
+    @return map-get(get-scale-level($name, $level, $font-scale), line-height);
+}
+
+/**
+ * Get a letter-spacing for a level in the font-scale matrix
+ *
+ * @param {String} $name - Name of the font-scale in the matrix (eg: headline)
+ * @param {Number} $level - Level in the matrix
+ * @param {Map} $font-scale - Configuration
+ *
+ * @example
+ *  letter-spacing: get-letter-spacing(header, 3);
+ *
+ * @requires {variable} $font-scale
+ * @requires {function} get-scale-level
+ *
+ * @return {Number}
+ *
+ * @group typography
+ */
+@function get-letter-spacing($name, $level, $font-scale: $font-scale) {
+    @return map-get(get-scale-level($name, $level, $font-scale), letter-spacing);
+}
+
+@function get-letter-spacing-caps($name, $level, $font-scale: $font-scale) {
+    @return map-get(get-scale-level($name, $level, $font-scale), letter-spacing-caps);
+}
+
+/**
+ * Get a responsive-level for a level in the font-scale matrix
+ *
+ * @param {String} $name - Name of the font-scale in the matrix (eg: headline)
+ * @param {Number} $level - Level in the matrix
+ * @param {Map} $font-scale - Configuration
+ *
+ * @requires {variable} $font-scale
+ * @requires {function} get-scale-level
+ *
+ * @return {Number}
+ *
+ * @group typography
+ */
+@function get-responsive-level($name, $level, $font-scale: $font-scale) {
+    @return map-get(get-scale-level($name, $level, $font-scale), responsive-level);
+}
+
+

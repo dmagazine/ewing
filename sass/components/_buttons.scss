@@ -1,0 +1,164 @@
+//Button Mixins
+//-----------------------------------//
+
+// http://alistapart.com/article/dry-ing-out-your-sass-mixins
+
+$Placeholder-Selectors: (); //global variable to hold the names of dynamic selectors
+
+@mixin button--outline($color1, $color2, $color3:$color2, $extend:true) {
+    @include button--static($extend);
+
+    border: 1px solid;
+    border-color: $color1;
+    background: $color2;
+    color: $color1;
+
+    &:visited { color: $color1; }
+
+    &:hover,
+    &:active, 
+    &:focus {
+        background: $color1;
+        color: $color3;
+        border-color: $color1;
+    }
+}
+
+@mixin button($color1, $color2, $extend:true) {
+    @include button--static($extend);
+
+    border: none;
+    
+    background: $color1;
+    color: $color2;
+
+    &:visited { color: $color2; }
+
+    &:hover, 
+    &:active, 
+    &:focus {
+        background: darken($color1, 15%);
+        color: $color2;
+    }
+}
+
+
+
+$button-fixed-height: 40px;
+$button-fixed-height--small: 30px;
+
+$button-padding-v: 0.8rem;
+$button-padding-h: 1rem;
+$button-padding: $button-padding-v $button-padding-h;
+
+@mixin button-fixed-height {
+    height: $button-fixed-height;
+    line-height: $button-fixed-height;
+}
+
+
+@mixin button-font {
+	@include font(kicker);
+}
+
+@mixin button--static($extend: true) {
+    $button-selector: map-get($Placeholder-Selectors, 'button');
+    @if $extend == true {
+        @if $button-selector == null { //does key exist for selector ($button-selector)
+            $button-selector: unique-id(); //create unique id for key
+            $Placeholder-Selectors: map-merge($Placeholder-Selectors, 
+                ('button': $button-selector)) !global;
+            @at-root %#{$button-selector} { //create placeholder selector at directory root w unique id
+                @include button--static(false);
+            }
+        }
+        @extend %#{$button-selector};
+    }
+    @else {
+        border-radius: 0;
+        padding: $button-padding;
+        transition: all 0.1s;
+        display: inline-block;
+        @include button-font;
+        @include font-scale(kicker, 3, $no-font: true, $caps: true);
+        @include transition(all);
+
+        &:hover {
+            cursor: pointer;
+            transition: all 0.1s;
+            @include transition(all);
+        }
+    }
+}
+
+@mixin button--small {
+    @include font-scale(kicker, 2, $no-font: true, $caps: true);
+}
+
+
+
+//Button Classes
+//-----------------------------------//
+
+.button--outline--white-blue {
+    @include button--outline($color__white, $color__blue-dmag);
+}
+
+.button--outline--white-gray {
+    @include button--outline($color__white, $color__gray--darker);
+}
+
+.button--outline--red {
+    @include button--outline($color__red-dmag, transparent, $color__white);
+}
+
+.button--outline--blue {
+    @include button--outline($color__blue-dmag, transparent, $color__white);
+}
+
+
+.button--blue {
+    @include button($color__blue-dmag, $color__white);
+}
+
+.button--red {
+    @include button($color__red-dmag, $color__white);
+}
+
+.button--black {
+    @include button($color__black--rgba, $color__white);
+}
+
+.button--white {
+    @include button($color__white, $color__black);
+}
+
+
+.button--center {
+    display: center;
+    text-align: center;
+}
+
+.button--full {
+    width: 100%;
+    text-align: center;
+}
+
+.button--small {
+    @include button--small;
+}
+
+.button--thin-type {
+    @include font-scale(secondaryHeading, 2);
+}
+
+.button--thick-type {
+    @include button-font;
+}
+
+
+
+
+
+
+

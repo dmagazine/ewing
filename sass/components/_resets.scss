@@ -1,0 +1,50 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+body, html {
+	overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    @include dmag-typography-defaults;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+dl { 
+	list-style-type: none; 
+	margin: 0;
+}
+
+ul, dl{
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-padding-start: 0;
+	padding-left: 0;
+}
+
+dd{
+	-webkit-margin-start: 0;
+	margin-left: 0;
+}
+
+button {
+	border: 0;
+	box-shadow: 0;
+	background: none;
+}
+
+// Glyphicons font path
+$icon-font-path:        "../fonts/";
+$image-path: "../images/"; // tktk does this need to change in prod?
+
+

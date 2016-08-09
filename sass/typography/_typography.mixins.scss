@@ -1,0 +1,184 @@
+// Default type settings
+// =============================================================================
+// Based off of The Guardian's Guss Typography: 
+// https://github.com/guardian/guss-typography
+
+/**
+ * Default typography settings, to be included as soon as possible in the HTML
+ * Make type rendering look crisper
+ *
+ * @param {String} $font-family ($f-serif-text) - Default global font
+ *
+ * @requires {variable} $f-serif-text
+ *
+ * @group typography
+ */
+@mixin dmag-typography-defaults($font-family: $chronicle-ss) {
+    @at-root {
+        html {
+            font-family: $chronicle-ss;
+            // line-height: 1.5;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+}
+
+
+
+// Shorthands for font declarations
+// =============================================================================
+
+/**
+ * Font-size and line-height shorthand
+ *
+ * @param {Number} $size
+ * @param {Number} $line-height
+ *
+ * @example
+ *  @include font-size(18, 24);
+ *
+ * @group typography
+ */
+@mixin font-size($size, $line-height, $no-line-height) {
+    font-size: $size;
+    @if $no-line-height == false {
+        line-height: $line-height;
+    }
+}
+
+/**
+ * Letter-spacing and Uppercase text shorthand
+ * uc stands for UpperCase
+ *
+ * @param {Number} $letter-spacing
+ *
+ * @example
+ *  @include font-caps(2em);
+ *
+ * @group typography
+ */
+@mixin font-caps($letter-spacing-caps){
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-caps;
+}
+
+
+
+// Font scale
+// =============================================================================
+
+// Prefixes:
+// f- stands for Font: use to set a font-family only
+// fs- for Font Scale: documented in font-scale.png TKTK
+
+
+/**
+ * Header family and weight properties.
+ *
+ * @requires {variable} $chronicle-disp-cond
+ *
+ * @group typography
+ */
+
+
+@mixin font($name) {
+    @if $name == nav {
+        font-family: $gotham-narrow-black;
+        font-weight: 800; // black
+
+    } @else if $name == header {
+        font-family: $chronicle-disp-cond;
+        font-weight: 400; //roman
+
+    } @else if $name == headline {
+        font-family: $chronicle-disp-cond;
+        font-weight: 600; //semi-bold
+
+    } @else if $name == bodyCopy {
+        font-family: $chronicle-ss;
+        font-weight: 400; //book
+
+    } @else if $name == secondaryHeading {
+        font-family: $gotham-ss;
+        font-weight: 200; //x-light
+
+    } @else if $name == textSans {
+        font-family: $gotham-ss;
+        font-weight: 400; //book
+
+    } @else if $name == accent {
+        font-family: $gotham-ss;
+        font-weight: 700; //bold
+
+    } @else if $name == kicker {
+        font-family: $gotham-ss;
+        font-weight: 800; //black
+
+    } @else {}
+}
+
+/**
+ * Header typography settings.
+ * TKTK fix these docs
+ *
+ * @param {Number} $level
+ * @param {Boolean} $size-only
+ * @param {Boolean} $caps
+ *
+ * @example
+ *  // Output all properties, lowercase 
+ *  (font-size, line-height, family, weight)
+ *  @include fs-header(3);
+ *  
+ *  // Output all properties, uppercase 
+ *  (font-size, line-height, family, weight, letter-spacing, text-transform)
+ *  @include fs-header(3, $caps: true);
+ *  
+ *  // Output font-size and line-height only
+ *  @include fs-header(3, $size-only: true);
+ *
+ * @requires {function} get-font-size
+ * @requires {function} get-line-height
+ * @requires {function} get-letter-spacing
+ * @requires {mixin} font-size
+ * @requires {mixin} font-caps
+ * @requires {mixin} f-header
+ *
+ * @group typography
+ */
+
+@mixin fs-inc($name, $level, $no-font: false, $caps: false, $no-line-height: false) {
+    @include font-size(get-font-size($name, $level), get-line-height($name, $level), $no-line-height);
+
+    @if $no-font == false {
+        @include font($name);
+    }
+    
+    // if letter spacing on font, apply.
+    // otherwise set to 0. This will overwrite letter-spacing when applied to responsive sizes
+    // caps function after this one so that it will override this one.
+    // tktk better way to do this w/o so many overrides?
+    @if get-letter-spacing($name, $level) != null {
+        letter-spacing: get-letter-spacing($name, $level);
+    } @else {
+        letter-spacing: 0;
+    }
+
+    @if $caps == true {
+        @include font-caps(get-letter-spacing-caps($name, $level));
+    }
+
+}
+
+@mixin font-scale($name, $level, $no-font: false, $caps: false, $responsive: true, $no-line-height: false) {
+    @include fs-inc($name, $level, $no-font, $caps, $no-line-height);
+
+    @if (get-responsive-level($name, $level) != null) and ($responsive == true) {
+        @include breakpoint(small-only) {
+            @include fs-inc($name, get-responsive-level($name, $level), true, $caps);
+        }
+    }
+}
+
+

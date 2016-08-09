@@ -1,0 +1,39 @@
+// DMagazine Brand Colors
+$color__blue-dmag: #00ADEF;
+$color__blue-dmag--dark: darken($color__blue-dmag, 7%);
+$color__blue-dmag--rgba: rgba(0, 173, 239, 0.8);
+
+$color__red-dmag: #ff291c;
+
+
+
+// Grays
+$color__gray--darkest: #1a1a1a;
+$color__gray--darker: #333333;
+$color__gray--dark: #999999;
+$color__gray--medium-dark: #c6c6c6;
+$color__gray--medium: #e6e6e6;
+$color__gray--light: #f2f2f2;
+
+
+
+// Other Colors
+$color__black: #000000;
+$color__black--rgba: rgba(26, 26, 26, 0.8);
+
+$color__white: white;
+$color__white--rgba: rgba(255, 255, 255, 0.8);
+
+
+
+// Shadows
+$box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+
+
+// Brand Colors
+$color__brand__facebook: #3b5998;
+$color__brand__twitter: #55acee;
+$color__brand__pinterest: #bd081c;
+$color__brand__linkedin: #0077b5;
+$color__brand__instagram: #d047d1;

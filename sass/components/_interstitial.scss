@@ -1,0 +1,19 @@
+.jquery-modal {
+	@include font-scale(textSans, 4);
+}
+
+.modal {
+	background: none;
+	border-radius: 0;
+	padding: 0;
+	box-shadow: none;
+	width: auto;
+	color: white;
+
+	a.close-modal { 
+		top: 10px;
+		right: 0;
+		background: url(#{$image-path}icon-sprite.svg);
+	}
+}
+

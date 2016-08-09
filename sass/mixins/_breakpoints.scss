@@ -1,0 +1,49 @@
+// Device sizes, used in media queries
+$device__large: 1024px;
+$device__medium: 950px;
+$device__small: 580px;
+
+
+/**
+ * Breakpoints
+ *
+ * THERE ARE ALSO SEPERATELY MAINTAINED JS AND PHP BREAKPOINTS
+ * @see main.js
+ * @see class-contants.php
+ *
+ * @todo dry breakopints: https://css-tricks.com/keeping-breakpoints-dry/
+ * @todo use breakpoint library instead? these are a bit restrictive
+ *
+ * @param {string} $size 
+ * 
+ * @example 
+ *  @include breakpoint(large-only) { @content; }
+ *
+ * @group layout
+ *
+ */
+
+@mixin breakpoint($size) {
+    @if $size == large-only {
+        @media (min-width: $device__large) { @content; } // 1024px
+
+    } @else if $size == medium-only {
+        @media (max-width: $device__large) and (min-width: $device__small) { @content; }
+    
+    } @else if $size == small-only {
+        @media (max-width: $device__small) { @content; }
+
+    } @else if $size == large_medium {
+        @media (min-width: $device__small) { @content; }
+
+    } @else if $size == medium_small {
+        @media (max-width: $device__large) { @content; }
+
+    // sizes used for changing image dimensions
+    } @else if $size == medium-upper {
+        @media (max-width: $device__large) and (min-width: 730px) { @content; }
+
+    } @else if $size == medium-lower {
+        @media (max-width: 730px) and (min-width: $device__small) { @content; }
+    }
+}

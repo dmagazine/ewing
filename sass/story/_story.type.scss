@@ -1,0 +1,74 @@
+.story__content--is-slideshow-closed {
+    @include font-scale(bodyCopy, 1);
+
+    h2 { @include font-scale(headline, 2); }
+    h3 { @include font-scale(secondaryHeading, 2); }
+    h4 { @include font-scale(accent, 4); }
+    h5 { 
+        @include font-scale(textSans, 3, $caps: true);
+        color: $color__blue-dmag;
+    }
+    h6 { 
+        @include font-scale(textSans, 1, $caps: true);
+        color: $color__gray--dark;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 0;
+        margin-top: 2em;
+    }
+
+    > h2,
+    > h3, 
+    > h4, 
+    > h5, 
+    > h6
+    > p,
+    > img {
+        &:nth-child(2) { // first child is .social-sharing-overlay
+            margin-top: 0;
+        }
+    }
+
+    ul, ol, dl { margin-top: 1em; margin-bottom: 1.5em; padding-left: 1em; }
+
+    li { margin-top: 1em; }
+
+    blockquote:not(.pull-quote) { 
+        margin-left: 1em;
+        padding-left: 1em;
+        border-left: 4px solid $color__gray--medium;
+    }
+
+    p a[href]:not(.read-more) {
+        background-image: linear-gradient(to bottom,$color__blue-dmag 0,$color__blue-dmag 100%);
+        background-position: 0 90%;
+        background-repeat: repeat-x;
+        background-size: 1px 1px;
+        text-decoration: none;
+        text-shadow: 3px 0 #fff,2px 0 #fff,1px 0 #fff,-1px 0 #fff,-2px 0 #fff,-3px 0 #fff;
+        &:hover {
+            color: $color__blue-dmag;
+        }
+
+        .is-slideshow-open & {
+            text-shadow: 
+                3px 0 $color__gray--darker,
+                2px 0 $color__gray--darker,
+                1px 0 $color__gray--darker,
+                -1px 0 $color__gray--darker,
+                -2px 0 $color__gray--darker,
+                -3px 0 $color__gray--darker;
+        } 
+    }
+
+    // this class is added via the tinymce editor. 
+    // see the dmagazine plugin, class-wysywig-editor
+    .sans-bold {
+        @include font-scale(accent, 3, $caps: true);
+    }
+}

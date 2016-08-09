@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    #STORY WITH SIDEBAR
+\*------------------------------------*/
+
+.story-wrapper {
+    position: relative;
+    @include container__large;
+    padding-top: gutter(6);
+}
+
+body:not(.layout--full-width) .story-wrapper {
+    @include container__medium;
+    @include container__small;
+}
+
+.story__content--is-slideshow-closed {
+    margin-top: 1em;
+    position: relative;
+    min-height: $height__social-button * 4;
+
+    @extend %clearfix;
+
+    @include breakpoint(large-only) {
+        width: span(7 of 8);
+        @include push(1 of 8);
+        // margin-left: span-gutter(1, 8);
+        float: none;
+    }
+
+    @include breakpoint(medium-only) {
+        @include span(6 of 8);
+        @include push(1 of 8);
+        // margin-left: span-gutter(1, 8);
+        float: none;
+    }
+}
