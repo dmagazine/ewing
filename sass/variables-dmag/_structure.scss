@@ -1,0 +1,9 @@
+// Padding
+$padding__medium: 25px;
+$padding__small: 15px;
+
+/*
+Make elements full width of the screen
+when inside of .container (or other element w padded container mixin)
+*/
+$full-width-margin: calc( (-100vw + 100%) / 2);
