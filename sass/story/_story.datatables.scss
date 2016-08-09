@@ -4,7 +4,8 @@
 
 .dataTables_wrapper {
     overflow-x: scroll;
-    @include grid-column-scale-all(dmag-large);
+    width: 100%;
+    // @include grid-column-scale-all(dmag-large);
 }
 
 
