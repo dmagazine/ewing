@@ -32,3 +32,12 @@ h1, h2, h3, h4, h5 {
 	@include font-scale(secondaryHeading, 2);
 }
 
+.image-caption,
+.wp-caption-text {
+    @include font-scale(textSans, 1);
+    color: $color__gray--dark;
+}
+
+.image-caption__credit {
+    @include font-scale(accent, 1, $caps: true);
+}
