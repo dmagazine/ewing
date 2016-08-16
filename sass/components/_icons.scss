@@ -94,3 +94,7 @@
 .icon--blue-o {
     @include icon-color__outline($color__blue-dmag);
 }
+
+.icon--gray {
+    @include icon-color($color__gray--dark, $color__white);
+}
