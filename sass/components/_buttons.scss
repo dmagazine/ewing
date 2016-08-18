@@ -62,6 +62,7 @@ $button-padding: $button-padding-v $button-padding-h;
 }
 
 @mixin button--static($extend: true) {
+    @include no-link-style;
     $button-selector: map-get($Placeholder-Selectors, 'button');
     @if $extend == true {
         @if $button-selector == null { //does key exist for selector ($button-selector)
@@ -75,7 +76,6 @@ $button-padding: $button-padding-v $button-padding-h;
         @extend %#{$button-selector};
     }
     @else {
-        @include no-link-style;
         border-radius: 0;
         padding: $button-padding;
         transition: all 0.1s;
