@@ -103,36 +103,36 @@ $button-padding: $button-padding-v $button-padding-h;
 
 // chained to make them more specific and beat out other link styling
 
-.button--outline--white-blue {
+.button--outline--white-blue.button--outline--white-blue {
     @include button--outline($color__white, $color__blue-dmag);
 }
 
-.button--outline--white-gray {
+.button--outline--white-gray.button--outline--white-gray {
     @include button--outline($color__white, $color__gray--darker);
 }
 
-.button--outline--red {
+.button--outline--red.button--outline--red {
     @include button--outline($color__red-dmag, transparent, $color__white);
 }
 
-.button--outline--blue {
+.button--outline--blue.button--outline--blue {
     @include button--outline($color__blue-dmag, transparent, $color__white);
 }
 
 
-.button--blue {
+.button--blue.button--blue {
     @include button($color__blue-dmag, $color__white);
 }
 
-.button--red {
+.button--red.button--red {
     @include button($color__red-dmag, $color__white);
 }
 
-.button--black {
+.button--black.button--black {
     @include button($color__black--rgba, $color__white);
 }
 
-.button--white {
+.button--white.button--white {
     @include button($color__white, $color__black);
 }
 
