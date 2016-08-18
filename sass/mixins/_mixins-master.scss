@@ -222,3 +222,10 @@ $hover-opacity: 0.5;
     color: $color__blue-dmag;
     @include transition(color);
 }
+
+
+@mixin no-link-style {
+    background-image: none;
+    text-decoration: none;
+    text-shadow: none;
+}

@@ -75,7 +75,7 @@ $button-padding: $button-padding-v $button-padding-h;
         @extend %#{$button-selector};
     }
     @else {
-        @extend .story__content--no-link-style;
+        @include no-link-style;
         border-radius: 0;
         padding: $button-padding;
         transition: all 0.1s;
