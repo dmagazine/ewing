@@ -55,6 +55,11 @@
             color: $color__blue-dmag;
         }
 
+    a[href$=jpg], a[href$=jpeg], a[href$=jpe], a[href$=png], a[href$=gif] {
+        @include no-link-style;
+    }
+
+
         .is-slideshow-open & {
             text-shadow: 
                 3px 0 $color__gray--darker,
