@@ -44,7 +44,7 @@
         border-left: 4px solid $color__gray--medium;
     }
 
-    a[href]:not(.read-more) {
+    a[href] {
         background-image: linear-gradient(to bottom,$color__blue-dmag 0,$color__blue-dmag 100%);
         background-position: 0 90%;
         background-repeat: repeat-x;
@@ -75,7 +75,7 @@
 
 
 .story__content--no-link-style {
-    a[href]:not(.read-more) {
+    a[href] {
         background-image: none;
         text-decoration: none;
         text-shadow: none;
