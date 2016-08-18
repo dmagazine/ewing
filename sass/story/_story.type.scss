@@ -44,7 +44,7 @@
         border-left: 4px solid $color__gray--medium;
     }
 
-    a {
+    @at-root a {
         background-image: linear-gradient(to bottom,$color__blue-dmag 0,$color__blue-dmag 100%);
         background-position: 0 90%;
         background-repeat: repeat-x;
