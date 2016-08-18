@@ -72,3 +72,17 @@
         @include font-scale(accent, 3, $caps: true);
     }
 }
+
+
+.story__content--no-link-style {
+    p a[href]:not(.read-more) {
+        background-image: none;
+        text-decoration: none;
+        text-shadow: none;
+        &:hover {
+            color: inherit;
+        }
+
+    }
+
+}
