@@ -41,22 +41,28 @@
     @include icon__stroke-width(2);
 }
 
-@mixin icon--small {
+@mixin icon--small($no-stroke: false) {
     width: 16px;
     height: 16px;
-    @include icon__stroke-width(7);
+    @if $no-stroke == false {
+        @include icon__stroke-width(7);
+    }
 }
 
-@mixin icon--medium {
+@mixin icon--medium($no-stroke: false) {
     width: 24px;
     height: 24px;
-    @include icon__stroke-width(3);
+    @if $no-stroke == false {
+        @include icon__stroke-width(3);
+    }
 }
 
-@mixin icon--large {
+@mixin icon--large($no-stroke: false) {
     width: 64px;
     height: 64px;
-    @include icon__stroke-width(1);
+    @if $no-stroke == false {
+        @include icon__stroke-width(1);
+    }
 }
 
 .icon--small {
