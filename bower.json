@@ -13,7 +13,6 @@
     "susy": "2.2.11",
     "enquire": "^2.1.2",
     "datatables": "^1.10.12",
-    "scrolltofixed": "1.0.8",
-    "jquery.scrollTo": "^2.1.2"
+    "scrolltofixed": "1.0.8"
   }
 }
