@@ -1,6 +1,6 @@
 (function($) {
 
-	DMAG.dataTable = {
+	DMAG.scrollArrow = {
 		init: function() {
 			$('.js-scrollArrow').click(function() {
 				$('html, body').animate({
