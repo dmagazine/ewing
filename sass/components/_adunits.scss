@@ -23,6 +23,11 @@
 		margin-top: 1em;
 	}
 
+	.tl-blocks & {
+		margin-bottom: gutter(6);
+		background-color: $color__white;
+	}
+
 	margin-left: $full-width-margin;
 	margin-right: $full-width-margin;
 	@include striped-background;
