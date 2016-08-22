@@ -49,3 +49,25 @@
         }
         @extend %is-hover;
     }
+
+.story__header--full {
+    @include breakpoint(large_medium) {
+        width: 100%;
+        height: 100vh;
+    }
+
+    text-align: center;
+    color: white;
+
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.story__header--full-inner {
+    @include breakpoint(small-only) {
+        padding-top: gutter(4);
+        padding-bottom: gutter(2);
+    }
+}
+
