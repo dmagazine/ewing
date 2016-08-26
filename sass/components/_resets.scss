@@ -48,3 +48,10 @@ $icon-font-path:        "../fonts/";
 $image-path: "../images/"; // tktk does this need to change in prod?
 
 
+
+// undo resets for wp backend
+#tinymce {
+	a { 
+		text-decoration: underline;
+	}
+}
