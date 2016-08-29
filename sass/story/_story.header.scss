@@ -65,6 +65,10 @@
 }
 
 .story__header--full-inner {
+    @include breakpoint(large_medium) {
+        @include center-absolute;
+    }
+
     @include breakpoint(small-only) {
         padding-top: gutter(4);
         padding-bottom: gutter(2);
