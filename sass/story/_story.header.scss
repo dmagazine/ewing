@@ -52,8 +52,8 @@
 
 .story__header--full {
     @include breakpoint(large_medium) {
-        width: 100%;
         height: 100vh;
+        width: 100%;
     }
 
     text-align: center;
@@ -67,6 +67,7 @@
 .story__header--full-inner {
     @include breakpoint(large_medium) {
         @include center-absolute;
+        width: 100%;
     }
 
     @include breakpoint(small-only) {
