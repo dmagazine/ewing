@@ -3,7 +3,10 @@
 
     h2 { @include font-scale(headline, 2); }
     h3 { @include font-scale(secondaryHeading, 2); }
-    h4 { @include font-scale(accent, 4); }
+    h4 { 
+        @include font-scale(accent, 4);
+        text-decoration: underline;
+    }
     h5 { 
         @include font-scale(textSans, 3, $caps: true);
         color: $color__blue-dmag;
