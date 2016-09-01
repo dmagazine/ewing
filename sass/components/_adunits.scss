@@ -47,12 +47,12 @@
 	display: inline-block;
 }
 
-.sidebar .adunit--top {
-	&:before {
-		content: 'Presented By';
-		@include font-scale(textSans, 3, $caps: true);
-		text-align: center;
-		display: block;
-		margin-bottom: 0.5em;
-	}
-}
+// .sidebar .adunit--top {
+// 	&:before {
+// 		content: 'Presented By';
+// 		@include font-scale(textSans, 3, $caps: true);
+// 		text-align: center;
+// 		display: block;
+// 		margin-bottom: 0.5em;
+// 	}
+// }
