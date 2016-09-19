@@ -15,5 +15,6 @@
     "enquire": "^2.1.2",
     "datatables": "^1.10.12",
     "scrolltofixed": "1.0.8"
-  }
+  },
+  "ignore": []
 }
