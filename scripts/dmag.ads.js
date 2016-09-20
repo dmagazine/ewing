@@ -167,7 +167,7 @@
 				.addSize([0, 0], [])
 				.addSize([1024, 1], [
 					[300, 150],
-					[300, 250]
+					[300, 251]
 				])
 				.build();
 			},
@@ -218,7 +218,7 @@
 			MissEllie_vertical_top: {
 				dimensions: [
 					[300, 150],
-					[300, 250]
+					[300, 251]
 				],
 				targeting_sizes: "mapping_vertical_top",
 			},
