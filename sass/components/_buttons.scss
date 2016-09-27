@@ -119,6 +119,10 @@ $button-padding: $button-padding-v $button-padding-h;
     @include button--outline($color__blue-dmag, transparent, $color__white);
 }
 
+.button--outline--white.button--outline--white {
+    @include button--outline($color__white, transparent, $color__black);
+}
+
 
 .button--blue.button--blue {
     @include button($color__blue-dmag, $color__white);

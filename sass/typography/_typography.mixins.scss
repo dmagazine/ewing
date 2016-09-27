@@ -114,6 +114,10 @@
     } @else if $name == kicker {
         font-family: $gotham-ss;
         font-weight: 800; //black
+    
+    } @else if $name == extra {
+        font-family: $tungsten;
+        font-weight: 300; //light
 
     } @else {}
 }
