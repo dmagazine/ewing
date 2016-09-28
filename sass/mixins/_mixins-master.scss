@@ -229,3 +229,50 @@ $hover-opacity: 0.5;
     text-decoration: none;
     text-shadow: none;
 }
+
+
+/** 
+ * Padding at medium breakpoint
+ *
+ * @param {bool} $breakpoint
+ * @requires {variable} $padding__medium
+ * @requires {mixin} breakpoint
+ * @returns padding for containers at the medium breakpoint
+ */
+
+@mixin padding__medium($breakpoint: false) {
+    @if $breakpoint == true { 
+        @include breakpoint(medium-only) {
+            padding-left: $padding__medium;
+            padding-right: $padding__medium;
+        }
+    } @else {
+        padding-left: $padding__medium;
+        padding-right: $padding__medium;
+    }
+}
+
+
+
+
+/** 
+ * Padding at small breakpoint
+ *
+ * @param {bool} $breakpoint
+ * @requires {variable} $padding__small
+ * @requires {mixin} breakpoint
+ * @returns padding for containers at the small breakpoint
+ */
+
+@mixin padding__small($breakpoint: false) {
+    @if $breakpoint == true { 
+        @include breakpoint(small-only) { 
+            padding-left: $padding__small;
+            padding-right: $padding__small;
+        }
+    } @else {
+        padding-left: $padding__small;
+        padding-right: $padding__small;
+    }
+}
+

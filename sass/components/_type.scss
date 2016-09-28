@@ -8,6 +8,10 @@ h1, h2, h3, h4, h5 {
     @include font-scale(secondaryHeading, 3, $caps: true);
 }
 
+.headline {
+    @include font-scale(headline, 2);
+}
+
 .category,
 .kicker {
     @include font-scale(kicker, 1, $caps: true);
