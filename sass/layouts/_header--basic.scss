@@ -1,0 +1,26 @@
+$height__header--basic: 50px;
+
+.header--basic {
+	background: $color__gray--darkest;
+	color: $color__gray--dark;
+	height: $height__header--basic;
+	width: 100%;
+
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.header--basic__logo {
+	height: $height__header--basic;
+	float:left;
+}
+
+.header--basic__text {
+	@include font-scale(accent, 4, $caps: true);
+	line-height: $height__header--basic;
+	float:left;
+	padding-left: 1em;
+}
