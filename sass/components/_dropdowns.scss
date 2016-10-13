@@ -6,36 +6,7 @@
 /* Variables */
 
 $anim: 0.1s ease-in-out;
-
-// $triangleSize: 0.4rem;
-// $triangleRatio: 0.8;
-
 $borderRadius: 0.2rem;
-
-
-/* Normalize */
-/*
-color1: 
-- base color
-- title when not selected
-- outline: title background color on hover
-
-color2:
-- no outline: title background color
-- outline: title color
-
-color3:
-- dropdown title
-- list text color
-
-color4: 
--border color
-
-color5:
-- selected list color
-
-*/
-
 
 
 @mixin dropdown--color($colorPalette) {
@@ -103,22 +74,13 @@ color5:
 	color: $color_overall;
 
 	.dropdown__title {
-		// border: 1px solid $color1;
 		color: $color_title;
 		border-color: $color_title_border;
 		span:not(.selected) { color: $color_title_unselected; }
 
-		// @if $outline == false {
 		background: $color_title_background--no-outline;
-		// }
-
-		// @if $outline == true {
-		// 	&:hover{
-		// 		background-color: $color_title_background_hover--outline;
-		// 		color: $color_title_hover--outline;
-		// 	}
-		// }
 	}
+
 	.dropdown__content {
 		ul {
 			background: $color_list_background;
@@ -279,7 +241,6 @@ color5:
         &:last-child{ margin-right: 0; }
     }
 }
-
 
 .button--search {
     @include font-scale(secondaryHeading, 2, $no-line-height: true);
