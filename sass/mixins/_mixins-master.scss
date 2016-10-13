@@ -95,7 +95,7 @@
 }
 
 /*
- * Center block content
+ * Horizontally center display-block content
  */
 @mixin center-block {
     display: block;
@@ -105,7 +105,7 @@
 }
 
 /*
- * Center absolute content
+ * Horizontally and vertically center absolutely-positioned content
  */
 @mixin center-absolute {
     position: absolute;
@@ -166,7 +166,7 @@
  * @param {string} $prop - property that transition is being applied to
  * @param {number} $transition-time - length of transition
  * @example
- *  @include transition(opacity, 0.3s);
+ *  @include transition(opacity);
  *
  */
 $transition-time: 0.3s;
