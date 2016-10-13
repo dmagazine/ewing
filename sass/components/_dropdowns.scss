@@ -299,3 +299,11 @@ color5:
 	@extend .icon--white;
 }
 
+.dropdown--small {
+	// turn this part into a mixin and share w neighborhood styling? tktk
+	@include font-scale(textSans, 3, $no-line-height: true);
+	color: $color__gray--dark;
+
+	@include dropdown--color('white-black');
+}
+
