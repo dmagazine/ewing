@@ -21,6 +21,7 @@ $borderRadius: 0.2rem;
 	$color_list_background: '';
 	$color_item: '';
 	$color_item_background: '';
+	$color_item_background_selected: '';
 	$color_list_selected: '';
 	$color_dropdown_header_border: '';
 
@@ -36,6 +37,7 @@ $borderRadius: 0.2rem;
 		$color_list_background: $color__white;
 		$color_item: $color__gray--dark;
 		$color_item_background: $color__white;
+		$color_item_background_selected: $color__gray--light;
 		$color_list_selected: $color__black;
 		$color_dropdown_header_border: $color__gray--dark;
 	}
@@ -51,6 +53,7 @@ $borderRadius: 0.2rem;
 		$color_list_background: $color__white;
 		$color_item: $color__gray--dark;
 		$color_item_background: $color__white;
+		$color_item_background_selected: $color__gray--light;
 		$color_list_selected: $color__black;
 		$color_dropdown_header_border: $color__gray--dark;
 	}
@@ -67,6 +70,7 @@ $borderRadius: 0.2rem;
 		$color_list_background: $color__white;
 		$color_item: $color__gray--dark;
 		$color_item_background: $color__white;
+		$color_item_background_selected: $color__gray--light;
 		$color_list_selected: $color__black;
 		$color_dropdown_header_border: $color__gray--dark;
 	}
@@ -106,7 +110,7 @@ $borderRadius: 0.2rem;
 			color: $color_item;
 			background: $color_item_background;
 			&:hover {
-				background: $color__gray--light;
+				background: $color_item_background_selected;
 			}
 		}
 		.dropdown__header {
