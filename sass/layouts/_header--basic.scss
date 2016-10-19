@@ -5,6 +5,10 @@ $height__header--basic: 50px;
 	color: $color__gray--dark;
 	height: $height__header--basic;
 	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	// z-index
 
 	a {
 		display: block;
