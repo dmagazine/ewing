@@ -1,3 +1,8 @@
+$size__icon-small: 16px;
+$size__icon-medium: 24px;
+$size__icon: 32px;
+$size__icon-large: 64px;
+
 @mixin icon__stroke-width($width) {
     path,
     g path,
@@ -36,30 +41,30 @@
     display: inline-block;
     vertical-align: middle;
 
-    width: 32px;
-    height: 32px;
+    width: $size__icon;
+    height: $size__icon;
     @include icon__stroke-width(2);
 }
 
 @mixin icon--small($no-stroke: false) {
-    width: 16px;
-    height: 16px;
+    width: $size__icon-small;
+    height: $size__icon-small;
     @if $no-stroke == false {
         @include icon__stroke-width(7);
     }
 }
 
 @mixin icon--medium($no-stroke: false) {
-    width: 24px;
-    height: 24px;
+    width: $size__icon-medium;
+    height: $size__icon-medium;
     @if $no-stroke == false {
         @include icon__stroke-width(3);
     }
 }
 
 @mixin icon--large($no-stroke: false) {
-    width: 64px;
-    height: 64px;
+    width: $size__icon-large;
+    height: $size__icon-large;
     @if $no-stroke == false {
         @include icon__stroke-width(1);
     }
