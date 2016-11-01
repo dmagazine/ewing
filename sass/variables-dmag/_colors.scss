@@ -1,7 +1,7 @@
 // DMagazine Brand Colors
 $color__blue-dmag: #00ADEF;
-$color__blue-dmag--light: lighten ($color__blue-dmag, 7%);
-$color__blue-dmag--dark: darken($color__blue-dmag, 7%);
+$color__blue-dmag--light: lighten (#{$color__blue-dmag}, 7%);
+$color__blue-dmag--dark: darken(#{$color__blue-dmag}, 7%);
 $color__blue-dmag--rgba: rgba(0, 173, 239, 0.8);
 
 $color__red-dmag: #ff291c;
