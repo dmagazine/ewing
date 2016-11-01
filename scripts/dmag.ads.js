@@ -122,6 +122,13 @@
 			this.create_ads();
 			// this.display_ads();
 		},
+
+		refresh: function() {
+			var self = this;
+			self.$adCollection = $('.adunit:not(.adunit-loaded)');
+			this.create_ads();
+		},
+
 		ad_targeting_sizes: {
 			mapping_horizontal: function() {
 				return window.googletag.sizeMapping()
@@ -150,6 +157,23 @@
 				.addSize([0, 1], [
 					[300, 250]
 				]).build();
+			},
+			mapping_horizontal_desktop: function() {
+				return window.googletag.sizeMapping()
+				.addSize([0, 0], [])
+				.addSize([1024, 1], [
+					[970, 250],
+					[728, 90]
+				])
+				.build();
+			},
+			mapping_horizontal_mobile: function() {
+				return window.googletag.sizeMapping()
+				.addSize([0, 0], [
+					[300, 250]
+				])
+				.addSize([1024, 1], [])
+				.build();
 			},
 			// mapping for vertical ads that are hidden
 			// on mobile / tablet views (anything below 1024px wide)
