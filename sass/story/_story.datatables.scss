@@ -1,6 +1,8 @@
 /*------------------------------------*\
     #DATATABLES
 \*------------------------------------*/
+$color__datatable-header-background: $color__black;
+$color__datatable-header: $color__white;
 
 .dataTables_wrapper {
     overflow-x: scroll;
@@ -12,7 +14,7 @@
 .datatable {
     @include font-scale(textSans, 1);
 
-    thead { background: $color__black; color: $color__white; }
+    thead { background: $color__datatable-header-background; color: $color__datatable-header; }
 
     .sorting_1 { 
         background: $color__blue-dmag--light;
