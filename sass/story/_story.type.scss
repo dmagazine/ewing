@@ -1,3 +1,15 @@
+@mixin link-style {
+    background-image: linear-gradient(to bottom,$color__blue-dmag 0,$color__blue-dmag 100%);
+    background-position: 0 90%;
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    text-decoration: none;
+    text-shadow: 3px 0 #fff,2px 0 #fff,1px 0 #fff,-1px 0 #fff,-2px 0 #fff,-3px 0 #fff;
+    &:hover {
+        color: $color__blue-dmag;
+    }
+}
+
 .story__content--is-slideshow-closed {
     @include font-scale(bodyCopy, 1);
 
@@ -48,15 +60,7 @@
     }
 
     a {
-        background-image: linear-gradient(to bottom,$color__blue-dmag 0,$color__blue-dmag 100%);
-        background-position: 0 90%;
-        background-repeat: repeat-x;
-        background-size: 1px 1px;
-        text-decoration: none;
-        text-shadow: 3px 0 #fff,2px 0 #fff,1px 0 #fff,-1px 0 #fff,-2px 0 #fff,-3px 0 #fff;
-        &:hover {
-            color: $color__blue-dmag;
-        }
+        @include link-style;
 
         .is-slideshow-open & {
             text-shadow: 
