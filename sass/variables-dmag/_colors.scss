@@ -21,6 +21,9 @@ $color__gray--light: #f2f2f2;
 // Other Colors
 $color__black: #000000;
 $color__black--rgba: rgba(26, 26, 26, 0.8);
+@function color__black--rgba($opacity) {
+	@return rgba(26, 26, 26, $opacity);
+}
 
 $color__white: white;
 $color__white--rgba: rgba(255, 255, 255, 0.8);
