@@ -1,4 +1,5 @@
 $height__header--basic: 50px;
+$color__header--basic: $color__gray--darkest;
 
 .header--basic {
 	background: $color__gray--darkest;
@@ -27,4 +28,14 @@ $height__header--basic: 50px;
 	line-height: $height__header--basic;
 	float:left;
 	padding-left: 1em;
+	padding-right: 0.5em;
 }
+
+.header--basic__icon {
+	height: $height__header--basic;
+	@include icon-color__outline($color__gray--dark);
+
+	.header--basic a:hover & {
+		@include icon-color($color__gray--dark, $color__header--basic);
+	}
+} 
