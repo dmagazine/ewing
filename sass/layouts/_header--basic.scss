@@ -39,3 +39,9 @@ $color__header--basic: $color__gray--darkest;
 		@include icon-color($color__gray--dark, $color__header--basic);
 	}
 } 
+
+.header--basic-pushdown {
+	@include breakpoint(large_medium) {
+		padding-top: $height__header--basic;
+	}
+}
