@@ -1,0 +1,6 @@
+.footer--basic {
+	background: $color__black;
+	color: $color__white;
+	@include font-scale(textSans, 2);
+	padding: 2em 0;
+}
