@@ -16,7 +16,6 @@
 	.feed__featured & { margin-top: gutter(6); }
 }
 
-
 .adunit--horizontal {
 
 	.story__content & {
@@ -46,13 +45,3 @@
 	padding: gutter(6);
 	display: inline-block;
 }
-
-// .sidebar .adunit--top {
-// 	&:before {
-// 		content: 'Presented By';
-// 		@include font-scale(textSans, 3, $caps: true);
-// 		text-align: center;
-// 		display: block;
-// 		margin-bottom: 0.5em;
-// 	}
-// }

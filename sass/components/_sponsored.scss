@@ -1,17 +1,7 @@
 .card--sponsored {
-	@include striped-background;
+	background: $color__sponsored;
 	.card__title {
 		@include font-scale(secondaryHeading, 4);
-	}
-}
-
-.card--sponsor-content,
-.story--sponsor-content {
-	.category {
-		background: $color__red-dmag;
-		color: white;
-		display: inline-block;
-		padding: 0.5em 0.7em;
 	}
 }
 
@@ -22,5 +12,5 @@
 }
 
 .w-stories__item--sponsored {
-	@include striped-background;
+	background: $color__sponsored;
 }
