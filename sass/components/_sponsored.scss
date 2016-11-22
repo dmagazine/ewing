@@ -3,6 +3,10 @@
 	.card__title {
 		@include font-scale(secondaryHeading, 4);
 	}
+
+	.card__content {
+		padding-right: gutter(8);
+	}
 }
 
 .story--sponsored {
