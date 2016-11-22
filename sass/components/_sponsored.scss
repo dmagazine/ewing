@@ -4,6 +4,7 @@
 		@include font-scale(secondaryHeading, 4);
 	}
 
+	&.card--vertical .card__content { padding-left: gutter(8); }
 	.card__content {
 		padding-right: gutter(8);
 	}
