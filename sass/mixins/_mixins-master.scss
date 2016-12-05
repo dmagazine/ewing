@@ -15,6 +15,20 @@
     padding: gutter(6);
 }
 
+/** 
+ * Background and indent of title box, broken out into a mixin so can be included with or without a breakpoint in the tile-box mixin
+ * @param {number} $opacity
+ * @param {bool} $indent - if true, box recedes up into the image
+ * @requires {function} gutter (susy)
+ */
+@mixin title-box-breakpoint-inc($opacity: 1, $indent: true) {
+    background-color: rgba(255,255,255, $opacity);
+    position: relative;
+    @if $indent == true {
+        margin-top: -#{gutter(2)};
+    }
+}
+
 /**
  * White Box often used with featured content blocks to display title, desc, etc
  *
@@ -28,6 +42,7 @@
  * @requires {mixin} span-breakpoint
  * @requires {mixin} center-block
  * @requires {mixin} title-box-inc
+ * @requires {mixin} title-box-breakpoint-inc
  * @requires {function} gutter (susy)
  *
  */
@@ -35,13 +50,18 @@
     @include center-block;
     @include title-box-inc;
 
-    @include breakpoint($breakpoint) {
-        background-color: rgba(255,255,255, $opacity);
-        position: relative;
-        @if $indent == true {
-            margin-top: -#{gutter(2)};
+    @if $breakpoint {
+        @include breakpoint($breakpoint) {
+            @include title-box-breakpoint-inc($opacity, $indent);
+        }
+    } @else {
+        @include title-box-breakpoint-inc($opacity, $indent);
+        @include breakpoint(small-only) {
+            margin-left: gutter(4);
+            margin-right: gutter(4);
         }
     }
+
 
     @if $size == large {
         @include span-breakpoint(main-full, 8, 6, null, $type: width);
