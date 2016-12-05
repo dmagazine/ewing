@@ -394,14 +394,21 @@
 		*/
 		inject_ads: function() {
 			$('.layout--full-width .story__content p:nth-child(10n)').each(function() {
-				// https://github.com/justjohn/twig.js
-				// Use js twig template? will this slow things down? TKTK
 				if ( $(this).nextAll().length > 3 && $(this).text().length > 30 ) {
 				// if the last injected ad has 3 or fewer paragraphs after it, don't show
 					$(this).after('<div class="adunit adunit--horizontal" data-adunit="MissEllie_horizontal" data-mapping="mapping_horizontal"></div>');
-				}
+				};
+			});
+			enquire.register(DMAG.breakpoint_small_only, function() {
+				$('.story__content p:nth-child(7n)').each(function() {
+					if ( $(this).nextAll().length > 3 && $(this).text().length > 30 ) {
+					// if the last injected ad has 3 or fewer paragraphs after it, don't show
+						$(this).after('<div class="adunit adunit--horizontal" data-adunit="MissEllie_horizontal" data-mapping="mapping_horizontal"></div>');
+					};
+				});
 			});
 		},
+
 		/*
 		sticky scrolling behavior for header and sidebars
 		- sidebar ads are sticky until they hit the top of a widget
