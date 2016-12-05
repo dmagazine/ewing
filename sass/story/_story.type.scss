@@ -5,6 +5,7 @@
     background-size: 1px 1px;
     text-decoration: none;
     text-shadow: 3px 0 #fff,2px 0 #fff,1px 0 #fff,-1px 0 #fff,-2px 0 #fff,-3px 0 #fff;
+    text-decoration: none !important; // this will override any inline underlines that editors apply to links
     &:hover {
         color: $color__blue-dmag;
     }
