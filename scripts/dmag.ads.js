@@ -400,7 +400,7 @@
 				};
 			});
 			enquire.register(DMAG.breakpoint_small_only, function() {
-				$('.story__content p:nth-child(7n)').each(function() {
+				$('.layout--with-sidebar .story__content p:nth-child(7n)').each(function() {
 					if ( $(this).nextAll().length > 3 && $(this).text().length > 30 ) {
 					// if the last injected ad has 3 or fewer paragraphs after it, don't show
 						$(this).after('<div class="adunit adunit--horizontal" data-adunit="MissEllie_horizontal" data-mapping="mapping_horizontal"></div>');
