@@ -1,0 +1,27 @@
+.page-wrapper {
+	margin-bottom: gutter(3);
+	margin-top: gutter(3);
+}
+
+.page__content {
+	@extend .story__content--is-slideshow-closed;
+
+	// pages are not editorial content, so get rid of chronicle
+	h1 { @include font-scale(accent, 6); }
+	h2 { @include font-scale(accent, 5); }
+	p { @include font-scale(textSans, 4); }
+}
+
+
+
+.template-form {
+	background: $color__gray--medium;
+}
+
+.template-form__wrapper {
+	background: $color__white;
+}
+
+.template-form__form {
+	padding: gutter(8) gutter(5);
+}
