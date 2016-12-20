@@ -160,12 +160,13 @@
 			},
 			mapping_horizontal_desktop: function() {
 				return window.googletag.sizeMapping()
-				.addSize([0, 0], [])
-				.addSize([1024, 1], [
+				.addSize([0, 0], [
+				]).addSize([1024, 1], [
 					[970, 250],
 					[728, 90]
-				])
-				.build();
+				]).addSize([740, 1], [
+					[728, 90]
+				]).build();
 			},
 			mapping_horizontal_mobile: function() {
 				return window.googletag.sizeMapping()
