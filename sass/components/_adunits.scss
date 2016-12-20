@@ -45,3 +45,17 @@
 	padding: gutter(6);
 	display: inline-block;
 }
+
+
+// if the window is resized, these style will hide rendered ads
+.adunit--desktop {
+	@include breakpoint(small-only) {
+		display: none;
+	}
+}
+
+.adunit--mobile {
+	@include breakpoint(large_medium) {
+		display: none;
+	}
+}
