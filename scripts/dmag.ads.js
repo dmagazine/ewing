@@ -418,10 +418,8 @@
 		*/
 		sticky_ads: function() {
 			if ($('.js-stickyStop').length > 0) {
-				var $nav = $('.nav');
-				var $nav_height = $nav.outerHeight();
 				var $padding = 10;
-				var $marginTop = $nav_height + $padding;
+				var $marginTop = DMAG.$nav_height + $padding;
 				var $sidebarAd = $('.layout--with-sidebar .js-sticky:not(.scroll-to-fixed-fixed)');
 
 				$sidebarAd.each(function(){

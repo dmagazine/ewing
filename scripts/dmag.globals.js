@@ -1,6 +1,7 @@
 (function($) {
 
 	DMAG.$nav = $('.nav');
+	DMAG.$nav_height = DMAG.$nav.outerHeight();
 	DMAG.$body = $('body');
 	DMAG.$html = $('html');
 	DMAG.$dropdownSearch = {};
