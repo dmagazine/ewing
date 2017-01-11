@@ -13,15 +13,22 @@
 	- class-constants.php
 	*/
 	DMAG.dScreen = {
-		large: '1024px',
-		small: '580px'
+		large: 1024,
+		small: 580
 	};
 
-	DMAG.breakpoint_large_only = "screen and (min-width:" + DMAG.dScreen.large + ")";
-	DMAG.breakpoint_large_medium = "screen and (min-width:" + DMAG.dScreen.small + ")";
-	DMAG.breakpoint_medium_small = "screen and (max-width:" + DMAG.dScreen.large + ")";
-	DMAG.breakpoint_medium_only = "screen and (max-width:" + DMAG.dScreen.large + ") and (min-width:" + DMAG.dScreen.small + ")";
-	DMAG.breakpoint_small_only = "screen and (max-width:" + DMAG.dScreen.small + ")";
+	DMAG.breakpoint_large_only = "screen and (min-width:" + DMAG.dScreen.large + "px)";
+	DMAG.breakpoint_large_medium = "screen and (min-width:" + DMAG.dScreen.small + "px)";
+	DMAG.breakpoint_medium_small = "screen and (max-width:" + DMAG.dScreen.large + "px)";
+	DMAG.breakpoint_medium_only = "screen and (max-width:" + DMAG.dScreen.large + "px) and (min-width:" + DMAG.dScreen.small + "px)";
+	DMAG.breakpoint_small_only = "screen and (max-width:" + DMAG.dScreen.small + "px)";
+
+	DMAG.isSmallScreen = function() {
+		return DMAG.dScreen.small >= window.innerWidth;
+	}
+	DMAG.isMediumScreen = function() {
+		return DMAG.dScreen.large >= window.innerWidth;
+	}
 
 	window.$loadingOverlay = $('.is-loading-overlay');
 	window.loadingOverlayShow = function() {
