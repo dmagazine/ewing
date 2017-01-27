@@ -1,15 +1,7 @@
-@mixin link-style {
-    background-image: linear-gradient(to bottom,$color__blue-dmag 0,$color__blue-dmag 100%);
-    background-position: 0 93%;
-    background-repeat: repeat-x;
-    background-size: 2px 2px;
-    text-decoration: none;
-    text-shadow: 3px 0 #fff,2px 0 #fff,1px 0 #fff,-1px 0 #fff,-2px 0 #fff,-3px 0 #fff;
-    text-decoration: none !important; // this will override any inline underlines that editors apply to links
-    &:hover {
-        color: $color__blue-dmag;
-    }
+.story__content {
+    a  { @include link-style; }
 }
+
 
 .story__content--is-slideshow-closed {
     @include font-scale(bodyCopy, 1);
@@ -60,19 +52,6 @@
         border-left: 4px solid $color__gray--medium;
     }
 
-    a {
-        @include link-style;
-
-        .is-slideshow-open & {
-            text-shadow: 
-                3px 0 $color__gray--darker,
-                2px 0 $color__gray--darker,
-                1px 0 $color__gray--darker,
-                -1px 0 $color__gray--darker,
-                -2px 0 $color__gray--darker,
-                -3px 0 $color__gray--darker;
-        } 
-    }
 
     a[href$=jpg], a[href$=jpeg], a[href$=jpe], a[href$=png], a[href$=gif] {
         @include no-link-style;

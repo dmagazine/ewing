@@ -243,11 +243,18 @@ $hover-opacity: 0.5;
     @include transition(color);
 }
 
+@mixin link-style {
+    color: $color__blue-dmag;
+    @include transition(color);
+    &:hover {
+        color: $color__blue-dmag--dark;
+        @include transition(color);
+    }
+}
 
 @mixin no-link-style {
-    background-image: none;
-    text-decoration: none;
-    text-shadow: none;
+    color: inherit;
+    &:hover { color: inherit; }
 }
 
 
