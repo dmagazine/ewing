@@ -1,8 +1,8 @@
 @mixin link-style {
     background-image: linear-gradient(to bottom,$color__blue-dmag 0,$color__blue-dmag 100%);
-    background-position: 0 90%;
+    background-position: 0 93%;
     background-repeat: repeat-x;
-    background-size: 1px 1px;
+    background-size: 2px 2px;
     text-decoration: none;
     text-shadow: 3px 0 #fff,2px 0 #fff,1px 0 #fff,-1px 0 #fff,-2px 0 #fff,-3px 0 #fff;
     text-decoration: none !important; // this will override any inline underlines that editors apply to links
