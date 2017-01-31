@@ -244,35 +244,51 @@ $hover-opacity: 0.5;
 }
 
 @mixin link-style {
-    background-image: linear-gradient($color__white, $color__white),linear-gradient($color__white, $color__white),linear-gradient($color__blue-dmag, $color__blue-dmag);
-    background-size: .05em 1px,.05em 1px,1px 1px;
-    background-repeat: no-repeat,no-repeat,repeat-x;
-    text-shadow: 
-        0.03em 0 $color__white, 
-        -0.03em 0 $color__white,
-        0 0.03em $color__white,
-        0 -0.03em $color__white,
-        0.06em 0 $color__white,
-        -0.06em 0 $color__white,
-        0.09em 0 $color__white,
-        -0.09em 0 $color__white,
-        0.12em 0 $color__white,
-        -0.12em 0 $color__white,
-        0.15em 0 $color__white,
-        -0.15em 0 $color__white;
-    background-position: 0 95%,100% 95%,0 95%;
-    @include transition(color);
-    &:hover {
-        color: $color__blue-dmag;
-        @include transition(color);
-    }
+	background-image: linear-gradient($color__white, $color__white),linear-gradient($color__white, $color__white),linear-gradient($color__blue-dmag, $color__blue-dmag);
+	background-size: .05em 1px,.05em 1px,1px 1px;
+	background-repeat: no-repeat,no-repeat,repeat-x;
+	text-shadow: 
+		0.03em 0 $color__white, 
+		-0.03em 0 $color__white,
+		0 0.03em $color__white,
+		0 -0.03em $color__white,
+		0.06em 0 $color__white,
+		-0.06em 0 $color__white,
+		0.09em 0 $color__white,
+		-0.09em 0 $color__white,
+		0.12em 0 $color__white,
+		-0.12em 0 $color__white,
+		0.15em 0 $color__white,
+		-0.15em 0 $color__white;
+	background-position: 0 95%,100% 95%,0 95%;
+	@include transition(color);
+	&:hover {
+		color: $color__blue-dmag;
+		@include transition(color);
+	}
+}
+
+@mixin link-style--dark {
+	text-shadow: 
+		3px 0 $color__gray--darker,
+		2px 0 $color__gray--darker,
+		1px 0 $color__gray--darker,
+		-1px 0 $color__gray--darker,
+		-2px 0 $color__gray--darker,
+		-3px 0 $color__gray--darker;
+
+	background-image: linear-gradient($color__white, $color__white),linear-gradient($color__white, $color__white),linear-gradient($color__white, $color__white);
+	&:hover { 
+		color: white;
+		@include is-hover;
+	}
 }
 
 @mixin no-link-style {
-    background-image: none;
-    text-decoration: none;
-    text-shadow: none;
-    &:hover { color: inherit; }
+	background-image: none;
+	text-decoration: none;
+	text-shadow: none;
+	&:hover { color: inherit; }
 }
 
 
