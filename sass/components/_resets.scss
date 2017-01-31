@@ -1,8 +1,8 @@
 html {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 *, *:before, *:after {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 
@@ -11,8 +11,10 @@ body, html {
 }
 
 body {
-    margin: 0;
-    @include dmag-typography-defaults;
+	margin: 0;
+	@include dmag-typography-defaults;
+}
+
 ::selection {
 	background: $color__gray--dark;
 	@include no-link-style;
@@ -20,8 +22,8 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 dl { 

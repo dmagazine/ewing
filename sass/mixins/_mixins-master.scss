@@ -2,8 +2,8 @@
  * Unstyle List
  */
 %list-unstyled {
-    list-style-type: none;
-    padding-left: 0;
+	list-style-type: none;
+	padding-left: 0;
 }
 
 /**
@@ -11,8 +11,8 @@
  * @requires {function} gutter (susy)
  */
 @mixin title-box-inc {
-    text-align: center;
-    padding: gutter(6);
+	text-align: center;
+	padding: gutter(6);
 }
 
 /** 
@@ -22,11 +22,11 @@
  * @requires {function} gutter (susy)
  */
 @mixin title-box-breakpoint-inc($opacity: 1, $indent: true) {
-    background-color: rgba(255,255,255, $opacity);
-    position: relative;
-    @if $indent == true {
-        margin-top: -#{gutter(2)};
-    }
+	background-color: rgba(255,255,255, $opacity);
+	position: relative;
+	@if $indent == true {
+		margin-top: -#{gutter(2)};
+	}
 }
 
 /**
@@ -47,25 +47,25 @@
  *
  */
 @mixin title-box($opacity: 1, $size: large, $indent: true, $breakpoint: large-only) {
-    @include center-block;
-    @include title-box-inc;
+	@include center-block;
+	@include title-box-inc;
 
-    @if $breakpoint {
-        @include breakpoint($breakpoint) {
-            @include title-box-breakpoint-inc($opacity, $indent);
-        }
-    } @else {
-        @include title-box-breakpoint-inc($opacity, $indent);
-        @include breakpoint(small-only) {
-            margin-left: gutter(4);
-            margin-right: gutter(4);
-        }
-    }
+	@if $breakpoint {
+		@include breakpoint($breakpoint) {
+			@include title-box-breakpoint-inc($opacity, $indent);
+		}
+	} @else {
+		@include title-box-breakpoint-inc($opacity, $indent);
+		@include breakpoint(small-only) {
+			margin-left: gutter(4);
+			margin-right: gutter(4);
+		}
+	}
 
 
-    @if $size == large {
-        @include span-breakpoint(main-full, 8, 6, null, $type: width);
-    }
+	@if $size == large {
+		@include span-breakpoint(main-full, 8, 6, null, $type: width);
+	}
 }
 
 /**
@@ -79,10 +79,10 @@
  *
  */
 @mixin viewport-ratio($x, $y) {
-    width: 100vw;
-    height: $y * 100vw / $x;
-    max-width: $x / $y * 100vh;
-    max-height: 100vh;
+	width: 100vw;
+	height: $y * 100vw / $x;
+	max-width: $x / $y * 100vh;
+	max-height: 100vh;
 }
 
 
@@ -100,17 +100,17 @@
   position: relative;
   overflow: hidden;
   &:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: ($y / $x) * 100%;
+	display: block;
+	content: "";
+	width: 100%;
+	padding-top: ($y / $x) * 100%;
   }
   > .ar-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
   }
 }
 
@@ -118,20 +118,20 @@
  * Horizontally center display-block content
  */
 @mixin center-block {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
 }
 
 /*
  * Horizontally and vertically center absolutely-positioned content
  */
 @mixin center-absolute {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
 /*
@@ -143,18 +143,18 @@
  *
  */
 @mixin absolute-background-image {
-    background-size: cover; 
+	background-size: cover; 
 
-    @include breakpoint(large_medium) {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-    @include breakpoint(small-only) {
-        position: relative;
-        @include viewport-ratio(3, 2);
-        @include center-block;
-    }
+	@include breakpoint(large_medium) {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	@include breakpoint(small-only) {
+		position: relative;
+		@include viewport-ratio(3, 2);
+		@include center-block;
+	}
 
 }
 
@@ -163,20 +163,20 @@
  * Wrapper for content that will be horizontally-scrolled
  */
 @mixin scroller__items() {
-    width: 100%;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    white-space: nowrap;
+	width: 100%;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	white-space: nowrap;
 }
 
 /*
  * Horizontally-scrolled content
  */
 @mixin scroller__item() {
-    float: none;
-    display: inline-block;
-    white-space: normal;
-    vertical-align: top;
+	float: none;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: top;
 }
 
 
@@ -191,7 +191,7 @@
  */
 $transition-time: 0.3s;
 @mixin transition($prop, $transition-time: $transition-time) {
-    transition: $prop $transition-time ease;
+	transition: $prop $transition-time ease;
 }
 
 
@@ -212,9 +212,9 @@ $transition-time: 0.3s;
  */
 %clearfix {
   &:after {
-    content: "";
-    display: table;
-    clear: both;
+	content: "";
+	display: table;
+	clear: both;
   }
 }
 
@@ -225,22 +225,22 @@ $transition-time: 0.3s;
  */
 $hover-opacity: 0.5;
 @mixin is-hover($opacity: $hover-opacity) {
-    @include transition(opacity);
-    &:hover { 
-        opacity: $opacity; 
-    }
+	@include transition(opacity);
+	&:hover { 
+		opacity: $opacity; 
+	}
 }
 
 //tktk why does this exist?
 %is-hover {
-    @at-root a#{&} { @include is-hover; }
-    a { @include is-hover }
-    @extend %is-hover;
+	@at-root a#{&} { @include is-hover; }
+	a { @include is-hover }
+	@extend %is-hover;
 }
 
 %is-hover--blue {
-    color: $color__blue-dmag;
-    @include transition(color);
+	color: $color__blue-dmag;
+	@include transition(color);
 }
 
 @mixin link-style {
@@ -302,15 +302,15 @@ $hover-opacity: 0.5;
  */
 
 @mixin padding__medium($breakpoint: false) {
-    @if $breakpoint == true { 
-        @include breakpoint(medium-only) {
-            padding-left: $padding__medium;
-            padding-right: $padding__medium;
-        }
-    } @else {
-        padding-left: $padding__medium;
-        padding-right: $padding__medium;
-    }
+	@if $breakpoint == true { 
+		@include breakpoint(medium-only) {
+			padding-left: $padding__medium;
+			padding-right: $padding__medium;
+		}
+	} @else {
+		padding-left: $padding__medium;
+		padding-right: $padding__medium;
+	}
 }
 
 
@@ -326,15 +326,15 @@ $hover-opacity: 0.5;
  */
 
 @mixin padding__small($breakpoint: false) {
-    @if $breakpoint == true { 
-        @include breakpoint(small-only) { 
-            padding-left: $padding__small;
-            padding-right: $padding__small;
-        }
-    } @else {
-        padding-left: $padding__small;
-        padding-right: $padding__small;
-    }
+	@if $breakpoint == true { 
+		@include breakpoint(small-only) { 
+			padding-left: $padding__small;
+			padding-right: $padding__small;
+		}
+	} @else {
+		padding-left: $padding__small;
+		padding-right: $padding__small;
+	}
 }
 
 
@@ -348,14 +348,14 @@ $hover-opacity: 0.5;
  * @see https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
  */
 @mixin word-wrap() {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -ms-word-break: break-all;
-    word-break: break-word;
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-word;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
 }
 
 
@@ -363,22 +363,22 @@ $hover-opacity: 0.5;
 
 
 @mixin line-ornaments($color, $width, $topMargin) {
-    &:before,
-    &:after {
-        content: "";
-        position: absolute;
-        height: 1px;
-        background: $color;
-        width: $width;
-        margin-top: $topMargin;
-    }
-    &:before {
-        right: 100%;
-        margin-right: 15px;
-    }
-    &:after {
-        left: 100%;
-        margin-left: 15px;
-    }
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		height: 1px;
+		background: $color;
+		width: $width;
+		margin-top: $topMargin;
+	}
+	&:before {
+		right: 100%;
+		margin-right: 15px;
+	}
+	&:after {
+		left: 100%;
+		margin-left: 15px;
+	}
 }
 
