@@ -1,0 +1,71 @@
+/**
+ * TOC
+ *
+ * DIRECTORY-SEARCH-w
+ * ARCHIVE-SEARCH-w
+ *
+ */
+
+
+/*------------------------------------*\
+    #DIRECTORY-SEARCH-w
+    #ARCHIVE-SEARCH-w
+\*------------------------------------*/
+
+.w-search {
+    background-color: $color__gray--dark;
+    color: $color__white;
+}
+
+    .w-search__error-message {
+        @include font-scale(textSans, 2);
+        color: $color__red-dmag;
+    }
+
+
+@include breakpoint(large_medium) {
+
+    // tktk icky inheritance
+    .w-directory-search__header {
+        text-align: center; 
+
+        .dropdown,
+        .widget__title {
+            display: inline-block;
+            vertical-align: middle
+        }
+
+        .widget__title { margin-right: 0.6em; }
+
+        .dropdown {
+            text-align: left;
+            width: span(2.5 of 12);
+        }
+    }
+
+}
+
+.w-directory-search__filters {
+    @extend %clearfix;
+    margin: 0.8em 0;
+    color: $color__white;
+    text-align: center;
+}
+
+.w-directory-search__filter-title {
+    @include font-scale(textSans, 3);
+    display: inline-block;
+}
+
+.w-directory-search__filter {
+    @extend %list-unstyled;
+    @extend %is-hover;
+    display: inline-block;
+
+    color: $color__white;
+    @include font-scale(accent, 3, $caps: true);
+    border-right: 1px solid;
+    padding: 0 0.5em;
+
+    &:last-child { border-right: 0; }
+}
