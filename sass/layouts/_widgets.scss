@@ -1,10 +1,109 @@
 /**
  * TOC
  *
+ * WIDGET
  * DIRECTORY-SEARCH-w
  * ARCHIVE-SEARCH-w
  *
  */
+
+
+.widget {
+    // width: 100%;
+    @extend %clearfix;
+}
+
+.widget--full-width {
+    margin-left: $full-width-margin;
+    margin-right: $full-width-margin;
+
+    // styling for widgets within the feed, not at top of page
+    &:not(.widget--top) {
+        margin-top: gutter(6);
+    }
+}
+
+
+
+.widget--sidebar {
+    margin-bottom: gutter(2);
+
+    .page--story & {
+        @extend .is-hidden--medium_small;
+    }
+}
+
+.widget--basic-large {
+    padding-top: gutter(4);
+    padding-bottom: gutter(4);
+}
+
+.widget--basic {
+    padding-top: gutter(6);
+    padding-bottom: gutter(6);
+}
+
+.widget--basic-small {
+    padding-top: gutter(8);
+    padding-bottom: gutter(8);
+}
+
+// the top widget needs reduced padding on the top and bottom
+// so that more content can fit above the fold
+// but, top padding needs to be enough to that its underneath the site kicker
+// 'making dallas even better'
+.widget--top {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    @include breakpoint(large-only) {
+        padding-top: 2.5em;
+        padding-bottom: 2em;
+    }
+}
+
+.widget__header {
+    margin-bottom: gutter(10);
+    @extend %clearfix;
+    @include breakpoint(medium_small) {
+        text-align: center;
+    }
+}
+
+    .widget__title {
+        @extend .header;
+    }
+
+    .widget__title--with-link {
+        @include breakpoint(large-only) {
+            @include span(8 of 12);
+        }
+
+        @include breakpoint(medium_small) {
+            text-align: center;
+        }
+    }
+
+    .widget__link {
+        @include breakpoint(large-only) {
+            @include span(4 of 12 last);
+            text-align: right;
+        }
+        @include font-scale(accent, 4);
+        @include breakpoint(medium-only) {
+            margin-top: 0.8em;
+            display: block;
+        }
+        @include breakpoint(small-only) {
+            display: none; // don't need this because there is also a link button
+        }
+
+        &:hover .widget__link__icon { @extend .icon--blue-o; }
+    }
+
+    .widget__link__icon {
+        @include transition(all);
+        @extend .icon--blue;
+    }
 
 
 /*------------------------------------*\
