@@ -58,7 +58,7 @@ $button-padding: $button-padding-v $button-padding-h;
 
 
 @mixin button-font {
-	@include font(kicker);
+    @include font(kicker);
 }
 
 @mixin button--static($extend: true) {
@@ -96,6 +96,14 @@ $button-padding: $button-padding-v $button-padding-h;
     @include font-scale(kicker, 2, $no-font: true, $caps: true);
 }
 
+@mixin button--smaller {
+    @include font-scale(kicker, 1, $no-font: true, $caps: true);
+}
+
+@mixin button--full {
+    width: 100%;
+    text-align: center;
+}
 
 
 //Button Classes
@@ -147,12 +155,15 @@ $button-padding: $button-padding-v $button-padding-h;
 }
 
 .button--full {
-    width: 100%;
-    text-align: center;
+    @include button--full;
 }
 
 .button--small {
     @include button--small;
+}
+
+.button--smaller {
+    @include button--smaller;
 }
 
 .button--thin-type {
