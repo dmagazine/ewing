@@ -168,3 +168,37 @@
 
     &:last-child { border-right: 0; }
 }
+
+/*------------------------------------*\
+    #STORIES-w
+\*------------------------------------*/
+// using Related Posts for WP plugin
+.w-stories {
+    margin-top: gutter(6);
+}
+
+.w-stories-inner {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: gutter(8);
+    padding-bottom: gutter(8);
+}
+
+
+.w-stories__item {
+    &:last-child{ margin-right: 0; }
+    img { max-width: 100%; } // tktk
+}
+
+    .w-stories__image-wrapper {
+        @include aspect-ratio(3, 2);
+        overflow: hidden;
+    }
+
+    .w-stories__content {
+        margin-top: 1em;
+    }
+
+    .w-stories__title {
+        @include font-scale(accent, 5);
+    }
