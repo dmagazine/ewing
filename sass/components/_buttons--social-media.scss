@@ -1,0 +1,200 @@
+// using plugin: WP Social Sharing
+$height__social-button: 40px;
+
+//tktk this is a temporary fix.
+.page-wrapper .social-sharing { display: none; }
+
+.social-button {
+	position: relative;
+	height: $height__social-button;
+	margin-bottom: 2px; 
+	display: table;
+	width: 100%;
+	padding: 0 15px;
+
+	@include no-link-style;
+
+	@include breakpoint(small-only) {
+		padding: 0 8px;
+		width: 50px;
+		float: left;
+	}
+
+	svg {
+		float:left;
+	}
+
+}
+
+
+	.social-button-inner {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+
+
+	.button-comments {
+		color: $color__white;
+		display: block; // gets rid of bit of white space thats below the button
+		@include font-scale(kicker, 1);
+
+		a { 
+			display: table;
+			vertical-align: middle;
+			text-align: center;
+			height: $height__social-button;
+			width: 100%;
+			@include no-link-style;
+		}
+
+		.disqus-comment-count, 
+		svg {
+			display: table-cell;
+			vertical-align: middle;
+			height: $height__social-button;
+		}
+
+		.icon {
+			@extend .icon--white;
+		}
+	}
+
+
+	.social-button-link {
+		opacity: 0.7;
+		&:hover { opacity: 1; }
+	}
+
+
+//
+// START plugin styling // 
+//
+
+/*
+Using WP Social Sharing Plugin
+Specific plugin settings needed so that styling will work: 
+- Social Share Button & Order: Facebook, Twitter, Pinterest
+- Social Icon Position: Above Content
+- Remove all Text 
+- Do NOT load share button CSS
+*/
+
+%social-sharing-style {
+	position: absolute;
+	top: 0;
+
+	width: 100%;
+	float: none;
+	display: inline-block;
+	text-align: center;
+
+	@include grid-column-scale-all(social, direction);
+
+}
+
+.social-sharing {
+	@extend %social-sharing-style;
+}
+
+
+.social-sharing .button-facebook,
+.social-sharing .button-twitter,
+.social-sharing .button-pinterest {
+	@extend .social-button; 
+	@extend .social-button-link;
+}
+
+.button-comments { background: $color__gray--darker; }
+.button-facebook { background: $color__brand__facebook; }
+.button-twitter { background: $color__brand__twitter; }
+.button-pinterest { background: $color__brand__pinterest; }
+
+
+//
+// END plugin styling // 
+//
+
+.story__content { // only for buttons in story content, not buttons in simple nav
+	.social-button-wrapper {
+		@extend %social-sharing-style;
+	}
+}
+
+@include breakpoint(small-only) {
+	.social-button-wrapper ~ .social-sharing {
+		position: relative;
+	}
+	.layout--feed .social-button-wrapper.social-button-wrapper {
+		position: relative; // have social buttons visible on frontburner feed page
+	}
+}
+
+
+.social-sharing-overlay .social-button--plugin {
+	pointer-events: none;
+}
+
+
+// social buttons that are inside of simple nav. 
+// used on longform and timeline layouts
+// social buttons need to be refactored and custom-built so we dont have to use styling like this.
+.nav--simple {
+
+	.nav--simple__social {
+		@extend %clearfix;
+	}
+
+	@include breakpoint(small-only) {
+		.nav--simple__social {
+			position: relative;
+			display: inline-block;
+		}
+
+		.social-sharing {
+			left: 0;
+			width: 100%;
+		}
+	}
+
+	.social-sharing {
+		width: auto;
+		position: absolute;
+		@include breakpoint(large_medium) {
+			top: 0;
+			right: 0;
+		}
+	}
+
+	@include breakpoint(large_medium) {
+		.nav--simple__social {
+			right: 0;
+			top: 0;
+			position: absolute;
+			width: auto;
+		}
+	}
+
+	.nav--simple__social > .social-sharing { margin-right: 40px; }
+
+	.social-sharing-overlay {
+		float:left;
+	}
+
+	.button-comments, 
+	.button-facebook,
+	.button-twitter,
+	.button-pinterest {
+		width: 40px;
+		background: none;
+	}
+
+	.social-sharing-overlay .social-button--plugin { float: left; }
+	.social-button {
+		float: left;
+		width: 40px;
+		// vertical-align: middle;
+	}
+
+
+}
