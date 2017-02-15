@@ -89,7 +89,7 @@ Specific plugin settings needed so that styling will work:
 	display: inline-block;
 	text-align: center;
 
-	@include grid-column-scale-all(social, direction);
+	// @include grid-column-scale-all(social, direction);
 
 }
 
