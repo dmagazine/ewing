@@ -52,11 +52,6 @@
         border-left: 4px solid $color__gray--medium;
     }
 
-
-    a[href$=jpg], a[href$=jpeg], a[href$=jpe], a[href$=png], a[href$=gif] {
-        @include no-link-style;
-    }
-
     // this class is added via the tinymce editor. 
     // see the dmagazine plugin, class-wysywig-editor
     .sans-bold {
