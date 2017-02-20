@@ -13,6 +13,7 @@ $height__social-button: 40px;
 	padding: 0 15px;
 
 	@include no-link-style;
+	&.social-button a { @include no-link-style; }
 
 	@include breakpoint(small-only) {
 		padding: 0 8px;
@@ -45,7 +46,6 @@ $height__social-button: 40px;
 			text-align: center;
 			height: $height__social-button;
 			width: 100%;
-			@include no-link-style;
 		}
 
 		.disqus-comment-count, 
