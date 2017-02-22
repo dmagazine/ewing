@@ -367,6 +367,7 @@ $hover-opacity: 0.5;
 	&:after {
 		content: "";
 		position: absolute;
+		top: 0;
 		height: 1px;
 		background: $color;
 		width: $width;
