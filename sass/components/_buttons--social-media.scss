@@ -2,8 +2,6 @@
 $height__social-button: 40px;
 
 //tktk this is a temporary fix.
-.page-wrapper .social-sharing { display: none; }
-
 .social-button {
 	position: relative;
 	height: $height__social-button;
@@ -61,11 +59,6 @@ $height__social-button: 40px;
 	}
 
 
-	.social-button-link {
-		opacity: 0.7;
-		&:hover { opacity: 1; }
-	}
-
 
 //
 // START plugin styling // 
@@ -88,13 +81,11 @@ Specific plugin settings needed so that styling will work:
 	float: none;
 	display: inline-block;
 	text-align: center;
-
-	// @include grid-column-scale-all(social, direction);
-
 }
 
 .social-sharing {
 	@extend %social-sharing-style;
+	// z-index: 10000;
 }
 
 
@@ -102,38 +93,46 @@ Specific plugin settings needed so that styling will work:
 .social-sharing .button-twitter,
 .social-sharing .button-pinterest {
 	@extend .social-button; 
-	@extend .social-button-link;
+}
+
+.button-facebook,
+.button-twitter,
+.button-pinterest {
+	background: rgba(255, 255, 255, 0.2);
+	&:hover {
+		background: none;
+	}
 }
 
 .button-comments { background: $color__gray--darker; }
-.button-facebook { background: $color__brand__facebook; }
-.button-twitter { background: $color__brand__twitter; }
-.button-pinterest { background: $color__brand__pinterest; }
+.social-button--plugin.button-facebook { background: $color__brand__facebook; }
+.social-button--plugin.button-twitter { background: $color__brand__twitter; }
+.social-button--plugin.button-pinterest { background: $color__brand__pinterest; }
 
+.social-button-wrapper-inner { position: relative; }
 
 //
 // END plugin styling // 
 //
 
-.story__content { // only for buttons in story content, not buttons in simple nav
-	.social-button-wrapper {
-		@extend %social-sharing-style;
-	}
+.social-sharing-overlay {
+	@extend %clearfix;
 }
 
 @include breakpoint(small-only) {
-	.social-button-wrapper ~ .social-sharing {
+	.social-button-wrapper {
 		position: relative;
 	}
-	.layout--longstyle .social-button-wrapper.social-button-wrapper {
-		position: relative; // have social buttons visible on frontburner feed page
+
+	.social-button-wrapper-inner,
+	.button-comments,
+	.button-facebook,
+	.button-twitter,
+	.button-pinterest { 
+		float: left; 
 	}
 }
 
-
-.social-sharing-overlay .social-button--plugin {
-	pointer-events: none;
-}
 
 
 // social buttons that are inside of simple nav. 
@@ -141,45 +140,26 @@ Specific plugin settings needed so that styling will work:
 // social buttons need to be refactored and custom-built so we dont have to use styling like this.
 .nav--simple {
 
-	.nav--simple__social {
-		@extend %clearfix;
+	@include breakpoint(large_medium) {
+		.social-button-wrapper {
+			position: absolute;
+			top: 0; 
+			right: 0;
+		}
 	}
 
 	@include breakpoint(small-only) {
-		.nav--simple__social {
-			position: relative;
+		.social-button-wrapper {
 			display: inline-block;
-		}
-
-		.social-sharing {
-			left: 0;
-			width: 100%;
+			margin-top: 1em;
 		}
 	}
 
-	.social-sharing {
-		width: auto;
-		position: absolute;
-		@include breakpoint(large_medium) {
-			top: 0;
-			right: 0;
-		}
-	}
+	.nav--simple__social { @extend %clearfix; }
 
-	@include breakpoint(large_medium) {
-		.nav--simple__social {
-			right: 0;
-			top: 0;
-			position: absolute;
-			width: auto;
-		}
-	}
+	.social-button-wrapper-inner { float: left; }
 
-	.nav--simple__social > .social-sharing { margin-right: 40px; }
-
-	.social-sharing-overlay {
-		float:left;
-	}
+	.social-sharing { left: 0; }
 
 	.button-comments, 
 	.button-facebook,
@@ -189,12 +169,10 @@ Specific plugin settings needed so that styling will work:
 		background: none;
 	}
 
-	.social-sharing-overlay .social-button--plugin { float: left; }
+	.social-button--plugin { float: left; }
 	.social-button {
 		float: left;
 		width: 40px;
-		// vertical-align: middle;
 	}
-
 
 }
