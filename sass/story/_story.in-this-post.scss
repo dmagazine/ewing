@@ -1,96 +1,88 @@
 /*------------------------------------*\
     #IN THIS POST
 \*------------------------------------*/
-#in-this-post {
+.in-this-post {
     clear: both;
     margin-top: gutter(6);
+}
 
-     h4 {
-        color: $color__white;
-        background: $color__black;
-        padding: 0.6rem 0.8rem;
-        @include font-scale(accent, 4);
+.in-this-post__title {
+    color: $color__white;
+    background: $color__black;
+    padding: 0.6rem 0.8rem;
+    @include font-scale(accent, 4);
+}
 
-    }
+.in-this-post__items {
+    @extend %list-unstyled;
+    margin: 0;
+    border: 1px solid $color__black;
+    border-bottom: none;
+}
 
-    .content-items {
-        @extend %list-unstyled;
-        margin: 0;
-        border: 1px solid $color__black;
-        border-bottom: none;
-    }
-
-    li { 
-        padding: 0.6rem 0.8rem;
+    .in-this-post__item {
+        position: relative;
         margin: 0;
         border-bottom: 1px solid $color__black;
-        @include font-scale(textSans, 2);
+
         @extend %clearfix;
+    }
+
+    .in-this-post__link { 
+        @include font-scale(textSans, 2);
+        padding: 0.6rem 0.8rem;
+        display: block;
+        float: left;
+        width: calc(100% - 35px);
 
         &:hover { 
             color: $color__red-dmag;
-            .category, .location { color: $color__red-dmag; }
-            .ticket { fill: $color__red-dmag; }
+            .in-this-post__category, .in-this-post__location { color: $color__red-dmag; }
         }
     }
 
-    .info { 
-        width: 90%;
+    .in-this-post__kicker {
         display: block;
+        @include font-scale(kicker, 1, $caps: true, $no-line-height: true);
+        padding-top: 5px;
+        line-height: 1;
+        color: $color__red-dmag;
+    }
+
+    .in-this-post__name { font-weight: 700; font-size: 13 }
+
+    .in-this-post__category {
+        color: $color__black;
+        font-weight: 400;
+    }
+
+    .in-this-post__location { color: $color__gray--dark; }
+
+    .in-this-post__ticket {
+        padding: 0.8rem 0.6rem;
+        padding-left: 0;
         float: left;
-        width: calc(100% - 25px);
-    }
-
-        .name { font-weight: 700; }
-
-        .category {
-            color: $color__black;
-            font-weight: 400;
-        }
-
-        .location { color: $color__gray--dark; }
-
-
-    .ticket {
-        width: 10%;
-        float: left;
-        width: 25px;
-    }
-
-    .ticket:hover { opacity: 0.5; }
-
-
-
-    @include breakpoint(large-only) {
-
-        .info > span {
-            float: left;
-            padding-right: 0.8rem;
-        }
-
-        .name {
-            width: 40%;
-        }
-
-        .category {
-            width: 30%;
-        }
-
-        .location {
-            width: 30%;
-        }
-
+        width: 35px;
+        text-align: center;
+        fill: $color__gray--darker;
+        &:hover { fill: $color__red-dmag; }
     }
 
 
-    @include breakpoint(medium_small) {
-        .name { margin-bottom: 0.5rem; }
 
-        .name,
-        .category,
-        .location {
-            display: block;
-        }
+
+@include breakpoint(large-only) {
+    .in-this-post__block { 
+        float: left; 
+        width: 30%;
+        padding-right: 0.7em;
     }
+    .in-this-post___block:first-child { width: 40%; }
+}
+
+
+@include breakpoint(medium_small) {
+    .in-this-post__name { margin-bottom: 0.5rem; }
+    .in-this-post__block { display: block; width: 100%; }
 
 }
