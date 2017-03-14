@@ -247,6 +247,15 @@
 				],
 				targeting_sizes: "mapping_vertical_top",
 			},
+			MissEllie_vertical_bottom: {
+				dimensions: [
+					[300, 600],
+					[300, 250],
+					[728, 90],
+					[300, 250]
+				],
+				targeting_sizes: "mapping_vertical",
+			},
 			MissEllie_interstitial: {
 				dimensions: [
 					[1, 1]
