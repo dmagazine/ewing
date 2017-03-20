@@ -1,4 +1,20 @@
 // make this the ONLY z-index option?
+// NOTE: in the process of moving this to variables
+
+
+/**
+ * z-index
+ */
+$z-modal: 2000;
+$z-slideshow-top: 1003;
+$z-slideshow: 1002;
+$z-nav-top: 1001;
+$z-nav: 1000;
+$z-ground-top: 100;
+$z-ground: 50;
+$z-below: -1;
+
+
 
 .header--basic {
 	z-index: 10004;
