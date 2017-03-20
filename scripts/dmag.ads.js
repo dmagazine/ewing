@@ -141,17 +141,17 @@
 					[300, 250] 
 				]).build();
 			},
-			mapping_horizontal_top: function() {
-				return window.googletag.sizeMapping()
-				.addSize([980, 1], [
-					[970, 250],
-					[728, 90]
-				]).addSize([740, 1], [
-					[728, 90]
-				]).addSize([0, 1], [
-					[320, 50]
-				]).build();
-			},
+			// mapping_horizontal_top: function() {
+			// 	return window.googletag.sizeMapping()
+			// 	.addSize([980, 1], [
+			// 		[970, 250],
+			// 		[728, 90]
+			// 	]).addSize([740, 1], [
+			// 		[728, 90]
+			// 	]).addSize([0, 1], [
+			// 		[320, 50]
+			// 	]).build();
+			// },
 			mapping_horizontal_slideshow: function() {
 				return window.googletag.sizeMapping()
 				.addSize([0, 1], [
@@ -168,10 +168,22 @@
 					[728, 90]
 				]).build();
 			},
+			// hide on desktop
+			// on mobile show the 300x250 adunit
 			mapping_horizontal_mobile: function() {
 				return window.googletag.sizeMapping()
 				.addSize([0, 0], [
 					[300, 250]
+				])
+				.addSize([1024, 1], [])
+				.build();
+			},
+			// hide on desktop
+			// on mobile show the 320x50 adunit
+			mapping_horizontal_mobile_top: function() {
+				return window.googletag.sizeMapping()
+				.addSize([0, 0], [
+					[320, 50]
 				])
 				.addSize([1024, 1], [])
 				.build();
