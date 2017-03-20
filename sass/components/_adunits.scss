@@ -54,8 +54,19 @@
 	}
 }
 
-.adunit--mobile {
+.adunit--mobile,
+.adunit--mobile_top {
 	@include breakpoint(large_medium) {
 		display: none;
 	}
+}
+
+.adunit--mobile_top {
+	background-color: $color__white;
+	text-align: center;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	border-top: 1px solid $color__black;
+	z-index: $z-ground-top;
 }
