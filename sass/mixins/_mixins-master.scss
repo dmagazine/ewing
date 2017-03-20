@@ -34,7 +34,8 @@
  *
  * @param {number} $opacity
  * @param {string} $size
- *      large
+ *      span - use span-breakpoint
+ *      width - use max-width
  * @param {bool} $indent - if true, box recedes up into the image
  * @param {string} $breakpoint - breakpoint in which the box recedes and has a background color
  *
@@ -46,7 +47,7 @@
  * @requires {function} gutter (susy)
  *
  */
-@mixin title-box($opacity: 1, $size: large, $indent: true, $breakpoint: large-only) {
+@mixin title-box($opacity: 1, $size: span, $indent: true, $breakpoint: large-only) {
 	@include center-block;
 	@include title-box-inc;
 
@@ -63,8 +64,14 @@
 	}
 
 
-	@if $size == large {
+	@if $size == span {
 		@include span-breakpoint(main-full, 8, 6, null, $type: width);
+	}
+
+	@if $size == width {
+		@include breakpoint(large-only) {
+			max-width: 80%;
+		}
 	}
 }
 
