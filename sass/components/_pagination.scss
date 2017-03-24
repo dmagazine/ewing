@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    #PAGINATION
+\*------------------------------------*/
+.pagination,
+.pagination__numbers,
+.pagination__number,
+.pagination__item {
+    display: inline-block;
+}
+
+
+.pagination {
+    border: 1px solid $color__gray--medium;
+    border-right: 0;
+    @include font-scale(secondaryHeading, 1);
+    color: $color__gray--darker;
+    margin-top: 1em;
+}
+
+.pagination__numbers {
+    margin: 0;
+    @extend %list-unstyled;
+}
+
+.pagination__number .is-active {
+    color: $color__red-dmag;
+}
+
+.pagination__item {
+    @include transition(background);
+    &:hover {
+        background: $color__gray--light;
+    }
+    padding: 1em;
+    border-right: 1px solid $color__gray--medium;
+
+}
