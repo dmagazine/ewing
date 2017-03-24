@@ -87,14 +87,28 @@
 			url2 = url2.split(/[\s,./\-]+/).join('-');
 
 
+			//Directory Targeting
+			var keyword = '';
+			var category = '';
+			if (algoliasearchHelper) {
+				var URLString = window.location.search.slice(1);
+				var URLParams = algoliasearchHelper.url.getStateFromQueryString(URLString);
+				console.log(URLParams);
+
+				keyword = URLParams['query'];
+				category = URLParams['disjunctiveFacetsRefinements']['categories'];
+			}
+
 			return {
 				inURL: targetPaths,
 				URLIs: targetPaths[0],
 				Query: params,
-				url2: url2
+				url2: url2,
+				Keyword: keyword,
+				Category: category,
 			};
-
 		},
+
 
 		// generate random number based ID
 		get_ID: function(adSlot, count) {
