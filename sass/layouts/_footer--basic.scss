@@ -5,4 +5,5 @@
 	@include font-scale(textSans, 2);
 	padding: 2em 0;
 	a { text-decoration: underline; }
+	z-index: $z-nav;
 }
