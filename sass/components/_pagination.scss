@@ -12,9 +12,9 @@
 .pagination {
     border: 1px solid $color__gray--medium;
     border-right: 0;
-    @include font-scale(secondaryHeading, 1);
     color: $color__gray--darker;
     margin-top: 1em;
+    font-size: 0;
 }
 
 .pagination__numbers {
@@ -27,6 +27,7 @@
 }
 
 .pagination__item {
+    @include font-scale(secondaryHeading, 1);
     @include transition(background);
     &:hover {
         background: $color__gray--light;

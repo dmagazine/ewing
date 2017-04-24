@@ -1,6 +1,6 @@
 {
   "name": "ewing",
-  "version": "1.5.4",
+  "version": "1.5.6",
   "description": "A collection of universal components re-usable across D Magazine web products",
   "main": [
     "sass/main.scss",
