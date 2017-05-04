@@ -27,8 +27,12 @@
 		background-color: $color__white;
 	}
 
-	margin-left: $full-width-margin;
-	margin-right: $full-width-margin;
+	// dont want these styles on the map view for directories
+	body:not(.is-map-view) & {
+		margin-left: $full-width-margin;
+		margin-right: $full-width-margin;
+	}
+
 	@include striped-background;
 
 	@include breakpoint(large-only) {
@@ -41,11 +45,20 @@
 }
 
 .adunit--slideshow {
-	@include striped-background-light;
-	padding: gutter(6);
-	display: inline-block;
+	&:not(.adunit--directory) {
+		@include striped-background-light;
+		padding: gutter(6);
+		display: inline-block;
+	}
 }
 
+.adunit--directory { 
+	width: 100%;
+	&.adunit--vertical {
+		@include striped-background;
+		padding: 1em 0;
+	}
+}
 
 // if the window is resized, these style will hide rendered ads
 .adunit--desktop {

@@ -81,31 +81,48 @@
 				params = RegExp.$1.split('&');
 
 
-			// url targeting from bobby2 (above from jquery.dfp.js)
-			var pathname = location.pathname.split('/');
-			var url2 = pathname[pathname.length - 2];
-			url2 = url2.split(/[\s,./\-]+/).join('-');
-
-
 			//Directory Targeting
 			var keyword = '';
-			var category = '';
+			var filters = [];
+			var filtersCount = [];
+			var allFiltersCount = 0;
+			var isSingleQuery = false;
+
 			if (algoliasearchHelper) {
 				var URLString = window.location.search.slice(1);
 				var URLParams = algoliasearchHelper.url.getStateFromQueryString(URLString);
-				console.log(URLParams);
 
-				keyword = URLParams['query'];
-				category = URLParams['disjunctiveFacetsRefinements']['categories'];
+				keyword = (typeof URLParams['query'] !== 'undefined') ? URLParams['query'] : '';
+
+				for (var key in URLParams['disjunctiveFacetsRefinements']) {
+					if (URLParams['disjunctiveFacetsRefinements'].hasOwnProperty(key)) {
+						filterItems = URLParams['disjunctiveFacetsRefinements'][key];
+						filters.push(filterItems);
+						allFiltersCount = allFiltersCount + filterItems.length;
+					}
+				}
+
+				// keyword and filters are the only elements counted in this key (not location)
+				// if there is only 1 filter and no keywords, return true
+				// if there is a keyword and no filters, return true
+				isSingleQuery = (allFiltersCount === 1 && keyword === '') || (keyword !== '' && allFiltersCount === 0) ? true : false;
+
+				filters = [].concat.apply([], filters);
+
+
+				locationKeywords = (window.dirSearchPage.locationKeywords.length > 0) ? window.dirSearchPage.locationKeywords : [];
+
 			}
+
 
 			return {
 				inURL: targetPaths,
 				URLIs: targetPaths[0],
 				Query: params,
-				url2: url2,
-				Keyword: keyword,
-				Category: category,
+				keyword: keyword,
+				filters: filters,
+				locationKeywords: locationKeywords,
+				isSingleQuery: isSingleQuery
 			};
 		},
 
@@ -143,6 +160,7 @@
 			this.create_ads();
 		},
 
+
 		ad_targeting_sizes: {
 			mapping_horizontal: function() {
 				return window.googletag.sizeMapping()
@@ -152,20 +170,21 @@
 				]).addSize([740, 1], [
 					[728, 90]
 				]).addSize([0, 1], [
-					[300, 250] 
+					[300, 250],
+					[320, 50] 
 				]).build();
 			},
-			// mapping_horizontal_top: function() {
-			// 	return window.googletag.sizeMapping()
-			// 	.addSize([980, 1], [
-			// 		[970, 250],
-			// 		[728, 90]
-			// 	]).addSize([740, 1], [
-			// 		[728, 90]
-			// 	]).addSize([0, 1], [
-			// 		[320, 50]
-			// 	]).build();
-			// },
+			mapping_horizontal_top: function() {
+				return window.googletag.sizeMapping()
+				.addSize([980, 1], [
+					[970, 250],
+					[728, 90]
+				]).addSize([740, 1], [
+					[728, 90]
+				]).addSize([0, 1], [
+					[320, 50]
+				]).build();
+			},
 			mapping_horizontal_slideshow: function() {
 				return window.googletag.sizeMapping()
 				.addSize([0, 1], [
@@ -253,16 +272,16 @@
 				dimensions: [
 					[970, 250],
 					[728, 90], 
+					[300, 250],
 					[320, 50]
 				],
-				targeting_sizes: "mapping_horizontal",
+				targeting_sizes: "mapping_horizontal_top",
 			},
 			MissEllie_vertical: {
 				dimensions: [
 					[300, 600],
 					[300, 250],
-					[728, 90],
-					[300, 250]
+					[728, 90]
 				],
 				targeting_sizes: "mapping_vertical",
 			},
@@ -277,8 +296,7 @@
 				dimensions: [
 					[300, 600],
 					[300, 250],
-					[728, 90],
-					[300, 250]
+					[728, 90]
 				],
 				targeting_sizes: "mapping_vertical",
 			},
@@ -319,7 +337,6 @@
 						inURL: urlTargeting.inURL,
 						URLIs: urlTargeting.URLIs,
 						Query: urlTargeting.Query,
-						url2: urlTargeting.url2
 					});
 				}
 
