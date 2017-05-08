@@ -52,7 +52,12 @@
 				patt = new RegExp('\/([^\/]*)', 'ig'),
 				pathsMatches = paths.match(patt),
 				targetPaths = ['/'],
-				longestpath = '';
+				longestpath = '',
+				keyword = '',
+				filters = [],
+				sections = [],
+				allFiltersCount = 0,
+				isSingleQuery = false;
 
 			if (pathsMatches && paths !== '/') {
 				var target = '',
@@ -76,18 +81,8 @@
 
 			targetPaths = targetPaths.reverse();
 
-			// Get the query params for targeting against
-			var url = window.location.toString().replace(/\=/ig, ':').match(/\?(.+)$/),
-				params = RegExp.$1.split('&');
-
 
 			//Directory Targeting
-			var keyword = '';
-			var filters = [];
-			var filtersCount = [];
-			var allFiltersCount = 0;
-			var isSingleQuery = false;
-
 			if (algoliasearchHelper) {
 				var URLString = window.location.search.slice(1);
 				var URLParams = algoliasearchHelper.url.getStateFromQueryString(URLString);
@@ -96,9 +91,14 @@
 
 				for (var key in URLParams['disjunctiveFacetsRefinements']) {
 					if (URLParams['disjunctiveFacetsRefinements'].hasOwnProperty(key)) {
-						filterItems = URLParams['disjunctiveFacetsRefinements'][key];
-						filters.push(filterItems);
-						allFiltersCount = allFiltersCount + filterItems.length;
+						if (key === 'section') {
+							sectionItems =  URLParams['disjunctiveFacetsRefinements']['section'];
+							sections = sectionItems;
+						} else {
+							filterItems = URLParams['disjunctiveFacetsRefinements'][key];
+							filters.push(filterItems);
+							allFiltersCount = allFiltersCount + filterItems.length;
+						}
 					}
 				}
 
@@ -109,21 +109,19 @@
 
 				filters = [].concat.apply([], filters);
 
-
 				locationKeywords = (window.dirSearchPage.locationKeywords.length > 0) ? window.dirSearchPage.locationKeywords : [];
 
 			}
 
-
 			return {
 				inURL: targetPaths,
-				URLIs: targetPaths[0],
-				Query: params,
 				keyword: keyword,
-				filters: filters,
 				locationKeywords: locationKeywords,
+				filters: filters,
+				sections: sections,
 				isSingleQuery: isSingleQuery
 			};
+
 		},
 
 
@@ -335,8 +333,11 @@
 					var urlTargeting = DMAG.dfpAds.get_url_targeting();
 					$.extend(true, DMAG.dfpAds.config.dfp_options.set_url_targeting, {
 						inURL: urlTargeting.inURL,
-						URLIs: urlTargeting.URLIs,
-						Query: urlTargeting.Query,
+						keyword: urlTargeting.keyword,
+						locationKeywords: urlTargeting.locationKeywords,
+						filters: urlTargeting.filters,
+						sections: urlTargeting.sections,
+						isSingleQuery: urlTargeting.isSingleQuery
 					});
 				}
 
