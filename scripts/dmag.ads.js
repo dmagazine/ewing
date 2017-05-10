@@ -55,7 +55,7 @@
 				longestpath = '',
 				keyword = '',
 				filters = [],
-				sections = [],
+				dirtype = [],
 				allFiltersCount = 0,
 				isSingleQuery = false;
 
@@ -93,7 +93,7 @@
 					if (URLParams['disjunctiveFacetsRefinements'].hasOwnProperty(key)) {
 						if (key === 'section') {
 							sectionItems =  URLParams['disjunctiveFacetsRefinements']['section'];
-							sections = sectionItems;
+							dirtype = sectionItems;
 						} else {
 							filterItems = URLParams['disjunctiveFacetsRefinements'][key];
 							filters.push(filterItems);
@@ -118,7 +118,7 @@
 				keyword: keyword,
 				locationKeywords: locationKeywords,
 				filters: filters,
-				sections: sections,
+				dirtype: dirtype,
 				isSingleQuery: isSingleQuery
 			};
 
@@ -336,7 +336,7 @@
 						keyword: urlTargeting.keyword,
 						locationKeywords: urlTargeting.locationKeywords,
 						filters: urlTargeting.filters,
-						sections: urlTargeting.sections,
+						dirtype: urlTargeting.dirtype,
 						isSingleQuery: urlTargeting.isSingleQuery
 					});
 				}
