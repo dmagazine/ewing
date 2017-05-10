@@ -480,8 +480,6 @@
 					var $ad_height = $this.height();
 					var $ad_parent = $this.parents('.js-stickyParent');
 					$limit = $ad_parent.next('.js-stickyStop').offset().top - $ad_height - $padding;
-					// $limit = $ad_parent.next('.js-stickyStop');
-					// console.log($limit);
 
 					if ( $ad_height < $ad_parent.height() ){
 						$this.scrollToFixed({
