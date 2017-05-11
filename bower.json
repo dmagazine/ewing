@@ -8,7 +8,8 @@
     "scripts/dmag.ads.js",
     "scripts/dmag.dropdown.js",
     "scripts/dmag.datatable.js",
-    "scripts/dmag.scrollArrow.js"
+    "scripts/dmag.scrollArrow.js",
+    "scripts/dmag.slider.js",
   ],
   "dependencies": {
     "susy": "2.2.11",
