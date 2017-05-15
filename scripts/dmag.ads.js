@@ -57,7 +57,7 @@
 				filters = [],
 				dirtype = [],
 				allFiltersCount = 0,
-				isSingleQuery = false;
+				isSingleQuery = '';
 
 			if (pathsMatches && paths !== '/') {
 				var target = '',
@@ -105,7 +105,7 @@
 				// keyword and filters are the only elements counted in this key (not location)
 				// if there is only 1 filter and no keywords, return true
 				// if there is a keyword and no filters, return true
-				isSingleQuery = (allFiltersCount === 1 && keyword === '') || (keyword !== '' && allFiltersCount === 0) ? true : false;
+				isSingleQuery = (allFiltersCount === 1 && keyword === '') || (keyword !== '' && allFiltersCount === 0) ? 'true' : 'false';
 
 				filters = [].concat.apply([], filters);
 
