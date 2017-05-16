@@ -53,7 +53,15 @@
 }
 
 .adunit--directory { 
-	width: 100%;
+	@include breakpoint(large-only) {
+		width: 100%;
+	}
+
+	@include breakpoint(medium_small) {
+		margin-left: $full-width-margin;
+		margin-right: $full-width-margin;
+	}
+
 	&.adunit--vertical {
 		@include striped-background;
 		padding: 1em 0;
