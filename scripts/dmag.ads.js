@@ -57,7 +57,9 @@
 				filters = [],
 				dirtype = [],
 				allFiltersCount = 0,
+				isSearchLanding = '';
 				isSingleQuery = '';
+
 
 			if (pathsMatches && paths !== '/') {
 				var target = '',
@@ -106,6 +108,7 @@
 				// if there is only 1 filter and no keywords, return true
 				// if there is a keyword and no filters, return true
 				isSingleQuery = (allFiltersCount === 1 && keyword === '') || (keyword !== '' && allFiltersCount === 0) ? 'true' : 'false';
+				isSearchLanding = (allFiltersCount === 0 && keyword === '') ? 'true' : 'false';
 
 				filters = [].concat.apply([], filters);
 
@@ -119,7 +122,8 @@
 				locationKeywords: locationKeywords,
 				filters: filters,
 				dirtype: dirtype,
-				isSingleQuery: isSingleQuery
+				isSingleQuery: isSingleQuery,
+				isSearchLanding: isSearchLanding
 			};
 
 		},
@@ -337,7 +341,8 @@
 						locationKeywords: urlTargeting.locationKeywords,
 						filters: urlTargeting.filters,
 						dirtype: urlTargeting.dirtype,
-						isSingleQuery: urlTargeting.isSingleQuery
+						isSingleQuery: urlTargeting.isSingleQuery,
+						isSearchLanding: urlTargeting.isSearchLanding
 					});
 				}
 
