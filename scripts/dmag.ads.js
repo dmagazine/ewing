@@ -85,7 +85,7 @@
 
 
 			//Directory Targeting
-			if (algoliasearchHelper) {
+			if (typeof algoliasearchHelper !== 'undefined') {
 				var URLString = window.location.search.slice(1);
 				var URLParams = algoliasearchHelper.url.getStateFromQueryString(URLString);
 
