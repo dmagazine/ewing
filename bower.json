@@ -1,6 +1,6 @@
 {
   "name": "ewing",
-  "version": "1.5.19",
+  "version": "1.5.20",
   "description": "A collection of universal components re-usable across D Magazine web products",
   "main": [
     "sass/main.scss",
@@ -8,8 +8,7 @@
     "scripts/dmag.ads.js",
     "scripts/dmag.dropdown.js",
     "scripts/dmag.datatable.js",
-    "scripts/dmag.scrollArrow.js",
-    "scripts/dmag.slider.js"
+    "scripts/dmag.scrollArrow.js"
   ],
   "dependencies": {
     "susy": "2.2.11",
