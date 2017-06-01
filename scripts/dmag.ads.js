@@ -57,8 +57,9 @@
 				filters = [],
 				dirtype = [],
 				allFiltersCount = 0,
-				isSearchLanding = '';
-				isSingleQuery = '';
+				isSearchLanding = '',
+				isSingleQuery = '',
+				locationKeywords = [];
 
 
 			if (pathsMatches && paths !== '/') {
