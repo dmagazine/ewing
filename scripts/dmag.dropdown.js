@@ -16,6 +16,16 @@
 			self.eventHandler();
 			self.preSelected();
 		},
+		activeInToc: function(activeSection) {
+			var self = this;
+			var $dropdownItem = self.$dropdowns.find('a[data-scrollto="' + activeSection + '"]');
+			self.$dropdowns.find('li a').removeClass('is-active');
+			
+			if ($dropdownItem.length) {
+				$dropdownItem.addClass('is-active');
+				self.$dropdowns.find('.dropdown__title span').text($dropdownItem.text());
+			}
+		},
 		preSelected: function() {
 			var self = this;
 			var $selected = self.$dropdowns.find('.dropdown__content ul li.selected');

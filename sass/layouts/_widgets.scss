@@ -9,8 +9,8 @@
 
 
 .widget {
-    // width: 100%;
     @extend %clearfix;
+    clear: both;
 }
 
 .widget--full-width {
@@ -71,6 +71,12 @@
 
     .widget__title {
         @extend .header;
+    }
+
+    .widget__title--simple {
+        @include font-scale(accent, 5, $caps: true);
+        border-bottom: 1px solid black;
+        padding-bottom: 0.5em;
     }
 
     .widget__title--with-link {
@@ -180,6 +186,11 @@
 .w-stories-inner {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    padding-top: gutter(8);
+    padding-bottom: gutter(8);
+}
+
+.w-stories-inner--simple {
     padding-top: gutter(8);
     padding-bottom: gutter(8);
 }
