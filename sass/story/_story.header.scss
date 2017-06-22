@@ -68,6 +68,7 @@
     }
     @include story-header;
     @include background-overlay-dark;
+    position: relative;
 }
 
 .story__header--medium {
@@ -77,6 +78,7 @@
     }
     @include story-header;
     @include background-overlay-dark;
+    position: relative;
 }
 
 .story__header--full-inner,
