@@ -67,6 +67,7 @@
         width: 100%;
     }
     @include story-header;
+    @include background-overlay-dark;
 }
 
 .story__header--medium {
@@ -75,7 +76,7 @@
         width: 100%;
     }
     @include story-header;
-
+    @include background-overlay-dark;
 }
 
 .story__header--full-inner,
