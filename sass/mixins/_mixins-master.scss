@@ -396,3 +396,16 @@ $hover-opacity: 0.5;
 	}
 }
 
+
+@mixin background-overlay-dark() {
+	&:before {
+		background-color: rgba(0, 0, 0, 0.2); //make sure text is legible by adding gray filter over image
+		content: '';
+		display: block;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+	}
+}
+
