@@ -8,6 +8,9 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
+
+    @include background-overlay-dark;
+    position: relative;
 }
 
 
@@ -67,8 +70,6 @@
         width: 100%;
     }
     @include story-header;
-    @include background-overlay-dark;
-    position: relative;
 }
 
 .story__header--medium {
@@ -77,8 +78,6 @@
         width: 100%;
     }
     @include story-header;
-    @include background-overlay-dark;
-    position: relative;
 }
 
 .story__header--full-inner,
@@ -89,6 +88,8 @@
     }
 
     @include breakpoint(small-only) {
+        position: relative;
+        z-index: $z-ground;
         padding-top: gutter(4);
         padding-bottom: gutter(2);
     }
