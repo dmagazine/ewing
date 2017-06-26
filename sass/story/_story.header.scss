@@ -6,8 +6,11 @@
     color: white;
 
     background-size: cover;
-    background-attachment: fixed;
     background-position: center center;
+
+    @include breakpoint(large_medium) {
+        background-attachment: fixed;
+    }
 
     @include background-overlay-dark;
     position: relative;
