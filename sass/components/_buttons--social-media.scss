@@ -1,178 +1,121 @@
-// using plugin: WP Social Sharing
 $height__social-button: 40px;
 
-//tktk this is a temporary fix.
-.social-button {
-	position: relative;
-	height: $height__social-button;
-	margin-bottom: 2px; 
-	display: table;
+.social-button .icon { @extend .icon--small; }
+.button--sms .icon { width: auto; @include font-scale(accent, 1, $caps: true, $no-line-height: true); }
+
+
+// vertical layout on larger screens. different color backgrounds. white icons. Used on story pages and directory listings
+.social-buttons--style1,
+.social-buttons--style4 {
+
 	width: 100%;
-	padding: 0 15px;
+	overflow: hidden; //clearfix;
 
-	@include no-link-style;
-	&.social-button a { @include no-link-style; }
+	.button--facebook { background: $color__brand__facebook; }
+	.button--twitter { background: $color__brand__twitter; }
+	.button--pinterest { background: $color__brand__pinterest; }
+	.button--sms { background: $color__sms; }
+	.button--comments { 
+		background: $color__gray--darker;
+		color: $color__white;
+	}
 
-	@include breakpoint(small-only) {
-		padding: 0 8px;
-		width: 50px;
+	a, .icon { @include no-link-style; }
+
+	.social-button {
+		height: $height__social-button;
+		position: relative;
+		display: table;
+		opacity: 0.8;
+		&:hover { opacity: 1; }
 		float: left;
 	}
-
-	svg {
-		float:left;
-	}
-
-}
-
 
 	.social-button-inner {
 		display: table-cell;
 		vertical-align: middle;
 		text-align: center;
+		width: 100%;
 	}
 
-
-	.button-comments {
+	.icon {
+		@extend .icon--white;
 		color: $color__white;
-		display: block; // gets rid of bit of white space thats below the button
-		@include font-scale(kicker, 1);
-
-		a { 
-			display: table;
-			vertical-align: middle;
-			text-align: center;
-			height: $height__social-button;
-			width: 100%;
-		}
-
-		.disqus-comment-count, 
-		svg {
-			display: table-cell;
-			vertical-align: middle;
-			height: $height__social-button;
-		}
-
-		.icon {
-			@extend .icon--white;
-		}
+		display: block;
+		margin: 0 auto;
 	}
 
-
-
-//
-// START plugin styling // 
-//
-
-/*
-Using WP Social Sharing Plugin
-Specific plugin settings needed so that styling will work: 
-- Social Share Button & Order: Facebook, Twitter, Pinterest
-- Social Icon Position: Above Content
-- Remove all Text 
-- Do NOT load share button CSS
-*/
-
-%social-sharing-style {
-	position: absolute;
-	top: 0;
-
-	width: 100%;
-	float: none;
-	display: inline-block;
-	text-align: center;
-}
-
-.social-sharing {
-	@extend %social-sharing-style;
-	// z-index: 10000;
 }
 
 
-.social-sharing .button-facebook,
-.social-sharing .button-twitter,
-.social-sharing .button-pinterest {
-	@extend .social-button; 
-}
-
-.button-facebook,
-.button-twitter,
-.button-pinterest {
-	background: rgba(255, 255, 255, 0.2);
-	&:hover {
-		background: none;
+.social-buttons--style1 {
+	.social-button {
+		width: 100%;
+		float: none;
+		@include breakpoint(small-only) { width: 60px; }
 	}
 }
 
-.button-comments { background: $color__gray--darker; }
-.social-button--plugin.button-facebook { background: $color__brand__facebook; }
-.social-button--plugin.button-twitter { background: $color__brand__twitter; }
-.social-button--plugin.button-pinterest { background: $color__brand__pinterest; }
-
-.social-button-wrapper-inner { position: relative; }
-
-//
-// END plugin styling // 
-//
-
-.social-sharing-overlay {
-	@extend %clearfix;
-}
-
-@include breakpoint(small-only) {
-	.social-button-wrapper {
-		position: relative;
-	}
-
-	.social-button-wrapper-inner,
-	.button-comments,
-	.button-facebook,
-	.button-twitter,
-	.button-pinterest { 
-		float: left; 
-	}
+.social-buttons--style4 {
+	.social-button { width: 50px; }
 }
 
 
 
-// social buttons that are inside of simple nav. 
-// used on longform and timeline layouts
-// social buttons need to be refactored and custom-built so we dont have to use styling like this.
-.nav--simple {
 
+// horizontal layout. white icons. Used in simple nav like on the timeline and guide templates
+.social-buttons--style2 {
 	@include breakpoint(large_medium) {
-		.social-button-wrapper {
-			position: absolute;
-			top: 0; 
-			right: 0;
-		}
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding-right: 2rem;
 	}
 
 	@include breakpoint(small-only) {
-		.social-button-wrapper {
-			display: inline-block;
-			margin-top: 1em;
-		}
+		display: inline-block;
+		position: relative;
+		margin-top: 1rem;
 	}
 
-	.nav--simple__social { @extend %clearfix; }
-
-	.social-button-wrapper-inner { float: left; }
-
-	.social-sharing { left: 0; }
-
-	.button-comments, 
-	.button-facebook,
-	.button-twitter,
-	.button-pinterest {
-		width: 40px;
-		background: none;
-	}
-
-	.social-button--plugin { float: left; }
 	.social-button {
 		float: left;
-		width: 40px;
+		padding: 1rem;
+		@include is-hover();
 	}
 
+	.icon { 
+		@extend .icon--white;
+		color: $color__white;
+	}
 }
+
+
+
+
+
+// horizontal layout. gray icons. borders. Used on neighborhood guides
+.social-buttons--style3 {
+	@extend %clearfix;
+	border-top: 1px solid $color__gray--medium;
+	border-bottom: 1px solid $color__gray--medium;
+	padding: 0.5rem 0;
+
+	.social-buttons-inner {
+		display: flex;
+		justify-content: space-around;
+		flex-direction: horizontal;
+	}
+
+	.social-button {
+		flex-grow: 1;
+		text-align: center;
+		@include is-hover();
+	}
+
+	.icon { 
+		@extend .icon--gray;
+		color: $color__gray--medium;
+	}
+}
+
