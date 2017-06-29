@@ -1,7 +1,7 @@
 $height__social-button: 40px;
 
 .social-button .icon { @extend .icon--small; }
-.button--sms .icon { width: auto; @include font-scale(accent, 1, $caps: true, $no-line-height: true); }
+.button--sms .icon { width: auto; height: auto; @include font-scale(accent, 1, $caps: true, $no-line-height: true); }
 
 
 // vertical layout on larger screens. different color backgrounds. white icons. Used on story pages and directory listings
@@ -115,7 +115,7 @@ $height__social-button: 40px;
 
 	.icon { 
 		@extend .icon--gray;
-		color: $color__gray--medium;
+		color: $color__gray--dark;
 	}
 }
 
