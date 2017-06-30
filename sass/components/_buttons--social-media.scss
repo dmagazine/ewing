@@ -27,35 +27,43 @@ $height__social-button: 40px;
 
 	.social-button {
 		height: $height__social-button;
+		line-height: $height__social-button;
 		position: relative;
-		display: table;
 		opacity: 0.8;
 		&:hover { opacity: 1; }
 		float: left;
 	}
 
 	.social-button-inner {
-		display: table-cell;
-		vertical-align: middle;
 		text-align: center;
 		width: 100%;
 	}
 
-	.icon {
+	.icon.icon {
 		@extend .icon--white;
 		color: $color__white;
 		display: block;
 		margin: 0 auto;
+		height: $height__social-button;
 	}
 
 }
 
 
 .social-buttons--style1 {
+	.social-buttons-inner {
+		@include breakpoint(small-only) { 
+			display: flex;
+			justify-content: space-around;
+			flex-direction: horizontal;
+		}
+	}
 	.social-button {
 		width: 100%;
-		float: none;
-		@include breakpoint(small-only) { width: 60px; float: left; }
+		@include breakpoint(small-only) {
+			width: auto;
+			flex-grow: 1;
+		}
 	}
 }
 
