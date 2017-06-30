@@ -10,6 +10,9 @@ $height__social-button: 40px;
 
 	width: 100%;
 	overflow: hidden; //clearfix;
+	position: relative;
+	z-index: $z-ground;
+	color: $color__white;
 
 	.button--facebook { background: $color__brand__facebook; }
 	.button--twitter { background: $color__brand__twitter; }
@@ -52,7 +55,7 @@ $height__social-button: 40px;
 	.social-button {
 		width: 100%;
 		float: none;
-		@include breakpoint(small-only) { width: 60px; }
+		@include breakpoint(small-only) { width: 60px; float: left; }
 	}
 }
 
