@@ -42,9 +42,14 @@ $height__social-button: 40px;
 	.icon.icon {
 		@extend .icon--white;
 		color: $color__white;
-		display: block;
+		display: inline-block;
 		margin: 0 auto;
 		height: $height__social-button;
+	}
+
+	.disqus-comment-count {
+		@include font-scale(kicker, 1);
+		padding-left: 3px;
 	}
 
 }
