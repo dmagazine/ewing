@@ -27,11 +27,8 @@
 		background-color: $color__white;
 	}
 
-	// dont want these styles on the map view for directories
-	body:not(.is-map-view) & {
-		margin-left: $full-width-margin;
-		margin-right: $full-width-margin;
-	}
+	margin-left: $full-width-margin;
+	margin-right: $full-width-margin;
 
 	@include striped-background;
 
@@ -55,6 +52,8 @@
 .adunit--directory { 
 	@include breakpoint(large-only) {
 		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	@include breakpoint(medium_small) {
