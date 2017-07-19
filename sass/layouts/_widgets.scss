@@ -232,7 +232,7 @@
 .scroller__item {
     @if mixin-exists(span-breakpoint) {
         @include span-breakpoint(main-full, 3, $column-number-small: 4);
-    @else {
+    } @else {
         @include span(2.8 of 12);
     }
     

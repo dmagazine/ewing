@@ -73,22 +73,22 @@
 
 @mixin container__medium($pad: true) {
     @include breakpoint(medium-only) {
-        @include with-layout($susy_medium) {
-            @include container;
-            @if $pad == true {
-                @include padding__medium;
-            }
+        @if  mixin-exists(span-breakpoint) {
+            @include with-layout($susy_medium) { @include container; }
+        }
+        @if $pad == true {
+            @include padding__medium;
         }
     }
 }
 
 @mixin container__small($pad: true) {
     @include breakpoint(small-only) {
-        @include with-layout($susy_small) {
-            @include container;
-            @if $pad == true {
-                @include padding__small;
-            }
+        @if mixin-exists(span-breakpoint) {
+            @include with-layout($susy_small) { @include container; }
+        }
+        @if $pad == true {
+            @include padding__small;
         }
     }
 }
