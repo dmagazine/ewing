@@ -1,0 +1,94 @@
+/** 
+ * Padding at medium breakpoint
+ *
+ * @param {bool} $breakpoint
+ * @requires {variable} $padding__medium
+ * @requires {mixin} breakpoint
+ * @returns padding for containers at the medium breakpoint
+ */
+
+@mixin padding__medium($breakpoint: false) {
+	@if $breakpoint == true { 
+		@include breakpoint(medium-only) {
+			padding-left: $padding__medium;
+			padding-right: $padding__medium;
+		}
+	} @else {
+		padding-left: $padding__medium;
+		padding-right: $padding__medium;
+	}
+}
+
+
+
+
+/** 
+ * Padding at small breakpoint
+ *
+ * @param {bool} $breakpoint
+ * @requires {variable} $padding__small
+ * @requires {mixin} breakpoint
+ * @returns padding for containers at the small breakpoint
+ */
+
+@mixin padding__small($breakpoint: false) {
+	@if $breakpoint == true { 
+		@include breakpoint(small-only) { 
+			padding-left: $padding__small;
+			padding-right: $padding__small;
+		}
+	} @else {
+		padding-left: $padding__small;
+		padding-right: $padding__small;
+	}
+}
+
+
+
+
+
+/**
+ * Susy Container Extension
+ * Include padding options and breakpoints with susy's container mixins
+ *
+ * @param {bool} $pad [true] - determines whether or not container has padding
+ *
+ * @requires {mixin} container
+ * @requires {mixin} with-layout
+ *
+ * @requires {mixin} breakpoint
+ * @requires {mixin} padding__medium
+ * @requires {mixin} padding__small
+ * @requires {variable} $susy_medium
+ * @requires {variable} $susy_small
+ * 
+ * @group layout-susy
+ *
+*/
+@mixin container__large {
+    @include breakpoint(large-only) {
+        @include container;
+    }
+}
+
+@mixin container__medium($pad: true) {
+    @include breakpoint(medium-only) {
+        @include with-layout($susy_medium) {
+            @include container;
+            @if $pad == true {
+                @include padding__medium;
+            }
+        }
+    }
+}
+
+@mixin container__small($pad: true) {
+    @include breakpoint(small-only) {
+        @include with-layout($susy_small) {
+            @include container;
+            @if $pad == true {
+                @include padding__small;
+            }
+        }
+    }
+}

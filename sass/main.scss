@@ -7,10 +7,12 @@
 
 @import "mixins/breakpoints";
 @import "mixins/mixins-master";
+@import "mixins/grid";
 @import "mixins/hide";
 
 @import "modules/zindex";
 
+@import "components/container";
 @import "components/resets";
 @import "components/type";
 @import "components/buttons";

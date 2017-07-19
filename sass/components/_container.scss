@@ -1,0 +1,14 @@
+.container {
+    @include container__large;
+    @include container__medium;
+    @include container__small;
+}
+
+.container--full {
+    @include breakpoint(large-only) {
+        @include container;
+        position: relative;
+    }
+    @include container__medium($pad: false);
+    @include container__small($pad: false);
+}

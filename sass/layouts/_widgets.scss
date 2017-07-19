@@ -4,6 +4,7 @@
  * WIDGET
  * DIRECTORY-SEARCH-w
  * ARCHIVE-SEARCH-w
+ * SCROLLER
  *
  */
 
@@ -213,3 +214,36 @@
     .w-stories__title {
         @include font-scale(accent, 5);
     }
+
+
+/*------------------------------------*\
+    #SCROLLER
+\*------------------------------------*/
+
+.scroller__items {
+    @extend %clearfix;
+
+    @include breakpoint(medium_small) {
+        @include scroller__items();
+        padding-left: gutter(4);
+    }
+}
+
+.scroller__item {
+    @if mixin-exists(span-breakpoint) {
+        @include span-breakpoint(main-full, 3, $column-number-small: 4);
+    @else {
+        @include span(2.8 of 12);
+    }
+    
+    @include breakpoint(medium_small) {
+        @include scroller__item();
+    }
+}
+
+.scroller__item--large {
+    @include breakpoint(large-only) {
+        text-align: left;
+        @include span(6 of 12);
+    }
+}
