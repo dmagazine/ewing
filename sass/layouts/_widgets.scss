@@ -278,22 +278,11 @@
 \*------------------------------------*/
 
 .scroller__items {
-    @extend %clearfix;
-    @include scroller__items();
-
-    @include breakpoint(medium_small) {
-        padding-left: gutter(4);
-    }
+    @include scroller__cards();
 }
 
 .scroller__item {
-    @if mixin-exists(span-breakpoint) {
-        @include span-breakpoint(main-full, 3, $column-number-small: 4);
-    } @else {
-        @include span(2.8 of 12);
-    }
-    
-    @include scroller__item();
+   @include scroller__card;
 }
 
 .scroller__item--large {
