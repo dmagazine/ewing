@@ -112,6 +112,37 @@
 
 
 /*------------------------------------*\
+    #HERO
+\*------------------------------------*/
+
+.hero {
+    text-align: center;
+    color: $color__white;
+    width: 100%;
+    background-size: cover;
+    background-color: $color__gray--dark;
+    background-image: linear-gradient( 45deg, $color__blue-dmag, darken($color__blue-dmag, 30%) );
+}
+
+.hero__title {
+    @include font-scale(accent, 7);
+    @include breakpoint(small-only) {
+        display: block;
+    }
+}
+
+.hero__description {
+    @include font-scale(accent, 5);
+    max-width: 700px;
+    display: inline-block;
+    a { 
+        text-decoration: underline;
+        @include is-hover(0.8);
+    }
+    .hero__title + & { margin-top: gutter(10); }
+}
+
+/*------------------------------------*\
     #DIRECTORY-SEARCH-w
     #ARCHIVE-SEARCH-w
 \*------------------------------------*/
@@ -135,17 +166,18 @@
 }
 
 
-.w-directory-search__title {
-    @include font-scale(accent, 7);
-    padding-top: gutter(6);
-}
 
-.w-directory-search__text {
-    @include font-scale(textSans, 4);
-    max-width: 600px;
-    @include center-block;
-    padding-top: 1rem;
-}
+// .w-directory-search__title {
+//     @include font-scale(accent, 7);
+//     padding-top: gutter(6);
+// }
+
+// .w-directory-search__text {
+//     @include font-scale(textSans, 4);
+//     max-width: 600px;
+//     @include center-block;
+//     padding-top: 1rem;
+// }
 
 .w-directory-search__buttons {
     @extend %clearfix;
