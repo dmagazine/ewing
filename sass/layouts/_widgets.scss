@@ -24,8 +24,6 @@
     }
 }
 
-
-
 .widget--sidebar {
     margin-bottom: gutter(2);
 
@@ -127,6 +125,38 @@
         @include font-scale(textSans, 2);
         color: $color__red-dmag;
     }
+
+
+.w-directory-search__logo {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: auto;
+}
+
+
+.w-directory-search__title {
+    @include font-scale(accent, 7);
+    padding-top: gutter(6);
+}
+
+.w-directory-search__text {
+    @include font-scale(textSans, 4);
+    max-width: 600px;
+    @include center-block;
+    padding-top: 1rem;
+}
+
+.w-directory-search__buttons {
+    @extend %clearfix;
+    padding-top: 1.5rem;
+    .button--search { text-overflow: ellipsis; }
+    @include breakpoint(small-only) {
+        .button--search { 
+            margin-bottom: 1rem;
+        }
+    }
+}
 
 
 @include breakpoint(large_medium) {
