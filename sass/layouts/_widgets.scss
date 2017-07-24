@@ -279,9 +279,9 @@
 
 .scroller__items {
     @extend %clearfix;
+    @include scroller__items();
 
     @include breakpoint(medium_small) {
-        @include scroller__items();
         padding-left: gutter(4);
     }
 }
@@ -293,9 +293,7 @@
         @include span(2.8 of 12);
     }
     
-    @include breakpoint(medium_small) {
-        @include scroller__item();
-    }
+    @include scroller__item();
 }
 
 .scroller__item--large {
