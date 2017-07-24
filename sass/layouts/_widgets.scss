@@ -124,6 +124,11 @@
     background-image: linear-gradient( 45deg, $color__blue-dmag, darken($color__blue-dmag, 30%) );
 }
 
+.hero__inner {
+    padding: gutter(4) 0;
+    background: color__black--rgba(0.1);
+}
+
 .hero__title {
     @include font-scale(accent, 7);
     @include breakpoint(small-only) {
