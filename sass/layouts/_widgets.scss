@@ -174,19 +174,6 @@
 }
 
 
-
-// .w-directory-search__title {
-//     @include font-scale(accent, 7);
-//     padding-top: gutter(6);
-// }
-
-// .w-directory-search__text {
-//     @include font-scale(textSans, 4);
-//     max-width: 600px;
-//     @include center-block;
-//     padding-top: 1rem;
-// }
-
 .w-directory-search__buttons {
     @extend %clearfix;
     padding-top: 1.5rem;

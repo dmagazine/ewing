@@ -8,15 +8,15 @@
  */
 
 @mixin padding__medium($breakpoint: false) {
-	@if $breakpoint == true { 
-		@include breakpoint(medium-only) {
-			padding-left: $padding__medium;
-			padding-right: $padding__medium;
-		}
-	} @else {
-		padding-left: $padding__medium;
-		padding-right: $padding__medium;
-	}
+    @if $breakpoint == true { 
+        @include breakpoint(medium-only) {
+            padding-left: $padding__medium;
+            padding-right: $padding__medium;
+        }
+    } @else {
+        padding-left: $padding__medium;
+        padding-right: $padding__medium;
+    }
 }
 
 
@@ -32,15 +32,15 @@
  */
 
 @mixin padding__small($breakpoint: false) {
-	@if $breakpoint == true { 
-		@include breakpoint(small-only) { 
-			padding-left: $padding__small;
-			padding-right: $padding__small;
-		}
-	} @else {
-		padding-left: $padding__small;
-		padding-right: $padding__small;
-	}
+    @if $breakpoint == true { 
+        @include breakpoint(small-only) { 
+            padding-left: $padding__small;
+            padding-right: $padding__small;
+        }
+    } @else {
+        padding-left: $padding__small;
+        padding-right: $padding__small;
+    }
 }
 
 
@@ -66,8 +66,11 @@
  *
 */
 @mixin container__large {
+    @extend %clearfix;
     @include breakpoint(large-only) {
-        @include container;
+        max-width: $device__large;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
