@@ -124,8 +124,7 @@
     background-image: linear-gradient( 45deg, $color__blue-dmag, darken($color__blue-dmag, 30%) );
 }
 
-.hero__inner {
-    padding: gutter(4) 0;
+.hero__underlay {
     background: color__black--rgba(0.1);
 }
 
