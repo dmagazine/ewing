@@ -135,6 +135,14 @@
     }
 }
 
+.hero__subtitle {
+    @include font-scale(accent, 5, $caps: true);
+    position: relative;
+    display: inline-block;
+    margin-top: 0.2em;
+    @include line-ornaments($color__white, 70px, 10px);
+}
+
 .hero__description {
     @include font-scale(accent, 5);
     max-width: 700px;
@@ -143,7 +151,6 @@
         text-decoration: underline;
         @include is-hover(0.8);
     }
-    .hero__title + & { margin-top: gutter(10); }
 }
 
 .hero__button {
@@ -285,9 +292,9 @@
    @include scroller__card;
 }
 
-.scroller__item--large {
-    @include breakpoint(large-only) {
-        text-align: left;
-        @include span(6 of 12);
-    }
-}
+// .scroller__item--large {
+//     @include breakpoint(large-only) {
+//         text-align: left;
+//         @include span(6 of 12);
+//     }
+// }
