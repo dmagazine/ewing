@@ -275,6 +275,8 @@ $borderRadius: 0.2rem;
     color: $color__gray--darker;
 }
 
+.button--search__inner { width: 100%; height: 100%; }
+
 .dropdown--search {
     @extend .button--search;
     @include dropdown--color('white-black');
