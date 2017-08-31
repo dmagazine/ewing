@@ -80,6 +80,9 @@
         height: 80vh;
         width: 100%;
     }
+    overflow: hidden;
+    position: relative;
+
     @include story-header;
 }
 
@@ -102,5 +105,17 @@
     @include breakpoint(large_medium) {
         max-width: 800px;
     }
+}
+
+.story__header__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    max-width: 1000000000000000px; //overwrite max-width: 100%;
 }
 
