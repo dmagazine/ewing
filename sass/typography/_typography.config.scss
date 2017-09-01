@@ -5,70 +5,171 @@ $gotham-narrow-black: 'Gotham Narrow A', 'Gotham Narrow B', 'Helvetica', sans-se
 $chronicle-ss: 'Chronicle SSm A', 'Chronicle SSm B', 'Palatino', serif;
 $chronicle-disp-cond: 'Chronicle Cond A', 'Chronicle Cond B', 'Palatino', serif;
 
-
 // extra fonts, only accessable via 'extra fonts' on typography.com. 
 // linked to individual posts
 $tungsten: 'Tungsten A', 'Tungsten B', 'Helvetica', sans-serif;
 $obsidian: 'Obsidian A', 'Obsidian B', 'Helvetica', sans-serif;
 
 
-$font-scale: (
+$font: (
     nav: (
-        1: (font-size: 18px, line-height: 1, letter-spacing-caps: 0.02em),
-        2: (font-size: 24px, line-height: 1.2, letter-spacing-caps: 0.03em)
+        family: $gotham-narrow-black,
+        weight: 800,
     ),
     header: (
-        1: (font-size: 48px, line-height: 1.125),
-        2: (font-size: 60px, line-height: 1.2, responsive-level: 1),
-        3: (font-size: 72px, line-height: 1, responsive-level: 1),
-        4: (font-size: 95px, line-height: 1, responsive-level: 2),
+        family: $chronicle-disp-cond,
+        weight: 400,
     ),
     headline: (
-        1: (font-size: 27px, line-height: 1.3),
-        2: (font-size: 36px, line-height: 1.1, responsive-level: 1),
-        3: (font-size: 42px, line-height: 1, responsive-level: 2),
-        4: (font-size: 52px, line-height: 1.1, responsive-level: 2),
-        5: (font-size: 95px, line-height: 1, responsive-level: 2),
+        family: $chronicle-disp-cond,
+        weight: 600,
     ),
     bodyCopy: (
-        1: (font-size: 18px, line-height: 1.5, letter-spacing-caps: 0.01em),
+        family: $chronicle-ss,
+        weight: 400,
     ),
     secondaryHeading: (
-        1: (font-size: 13px, line-height: 1.3, letter-spacing: 0.025em, letter-spacing-caps: 0.05em),
-        2: (font-size: 18px, line-height: 1.3, letter-spacing: 0.05em, letter-spacing-caps: 0.075em),
-        3: (font-size: 24px, line-height: 1.125, letter-spacing: -0.02em, letter-spacing-caps: 0.0625em),
-        4: (font-size: 28px, line-height: 1.3, letter-spacing: -0.02em, letter-spacing-caps: 0.075em, responsive-level: 2),
-        4.5: (font-size: 36px, line-height: 1.3, letter-spacing: -0.02em, letter-spacing-caps: 0.075em, responsive-level: 4),
-        5: (font-size: 48px, line-height: 1.1, letter-spacing: -0.03em, letter-spacing-caps: 0.05em, responsive-level: 4),
+        family: $gotham-ss,
+        weight: 200,
     ),
     textSans: (
-        1: (font-size: 10px, line-height: 1.2, letter-spacing: 0.025em, letter-spacing-caps: 0.05em),
-        2: (font-size: 12px, line-height: 1.4, letter-spacing-caps: 0.03em),
-        3: (font-size: 14px, line-height: 1.5, letter-spacing-caps: 0.05em),
-        4: (font-size: 15px, line-height: 1.4, letter-spacing-caps: 0.05em),
-        5: (font-size: 20px, line-height: 1.2),
+        family: $gotham-ss,
+        weight: 400,
     ),
     accent: (
-        1: (font-size: 10px, line-height: 1.4, letter-spacing: 0.025em, letter-spacing-caps: 0.05em),
-        2: (font-size: 12px, line-height: 1.1, letter-spacing: 0.03em, letter-spacing-caps: 0.06em),
-        3: (font-size: 14px, line-height: 1.14, letter-spacing-caps: 0.05em),
-        4: (font-size: 15px, line-height: 1.4, letter-spacing-caps: 0.0625em),
-        5: (font-size: 18px, line-height: 1.1, letter-spacing-caps: 0.08em, responsive-level: 3),
-        5.25: (font-size: 21px, line-height: 1.1, letter-spacing-caps: 0.08em, responsive-level: 5),
-        5.5: (font-size: 25px, line-height: 1.1, letter-spacing-caps: 0.08em, responsive-level: 5),
-        6: (font-size: 42px, line-height: 1.2, letter-spacing: -0.03em, letter-spacing-caps: -0.01em),
-        7: (font-size: 68px, line-height: 1.1, letter-spacing: -0.06em, responsive-level: 6),
+        family: $gotham-ss,
+        weight: 700,
     ),
     kicker: (
-        1: (font-size: 10px, line-height: 1.2, letter-spacing: 0.15em, letter-spacing-caps: 0.0625em),
-        2: (font-size: 12px, line-height: 1.2, letter-spacing: 0.1em, letter-spacing-caps: 0.125em),
-        3: (font-size: 14px, line-height: 1.2, letter-spacing: 0.1em, letter-spacing-caps: 0.09375em),
-        4: (font-size: 15px, line-height: 1.2, letter-spacing: 0.1em, letter-spacing-caps: 0.125em),
+        family: $gotham-ss,
+        weight: 800,
+    ),
+    extra: (
+        family: $tungsten,
+        weight: 300,
+    )
+);
+
+
+$font-scale: (
+    nav: (
+        1: (font-size: 18px, line-height: (1, 1), letter-spacing: (null, 0.02em)),
+        2: (font-size: 24px, line-height: (1.2, 1.2), letter-spacing: (null, 0.03em)),
+    ),
+    header: (
+        1: (font-size: 48px, line-height: (1.125, 1.125)),
+        2: (font-size: 60px, line-height: (1.2, 1.2), responsive-level: 1),
+        3: (font-size: 72px, line-height: (1, 1), responsive-level: 1),
+        4: (font-size: 95px, line-height: (1, 1), responsive-level: 2),
+    ),
+    headline: (
+        1: (font-size: 27px, line-height: (1.3, 1.3)),
+        2: (font-size: 36px, line-height: (1.1, 1.1), responsive-level: 1),
+        3: (font-size: 42px, line-height: (1, 1), responsive-level: 2),
+        4: (font-size: 52px, line-height: (1.1, 1.1), responsive-level: 2),
+        5: (font-size: 95px, line-height: (1, 1), responsive-level: 2),
+    ),
+    bodyCopy: (
+        1: (font-size: 18px, line-height: (1.5, 1.5), letter-spacing: (null, 0.01em)),
+    ),
+    secondaryHeading: (
+        1: (font-size: 13px, line-height: (1.3, 1.3), letter-spacing: (0.025em, 0.05em)),
+        2: (font-size: 18px, line-height: (1.3, 1.3), letter-spacing: (0.05em, 0.075em)),
+        3: (font-size: 24px, line-height: (1.125, 1.125), letter-spacing: (-0.02em, 0.0625em)),
+        4: (font-size: 28px, line-height: (1.3, 1.3), letter-spacing: (-0.02em, 0.075em), responsive-level: 2),
+        4.5: (font-size: 36px, line-height: (1.3, 1.3), letter-spacing: (-0.02em, 0.075em), responsive-level: 4),
+        5: (font-size: 48px, line-height: (1.1, 1.1), letter-spacing: (-0.03em, 0.05em), responsive-level: 4),
+    ),
+    textSans: (
+        1: (font-size: 10px, line-height: (1.2, 1.2), letter-spacing: (0.025em, 0.05em)),
+        2: (font-size: 12px, line-height: (1.4, 1.4), letter-spacing: (null, 0.03em)),
+        3: (font-size: 14px, line-height: (1.5, 1.5), letter-spacing: (null, 0.05em)),
+        4: (font-size: 15px, line-height: (1.4, 1.4), letter-spacing: (null, 0.05em)),
+        5: (font-size: 20px, line-height: (1.2, 1.2)),
+    ),
+    accent: (
+        1: (font-size: 10px, line-height: (1.4, 1.4), letter-spacing: (0.025em, 0.05em)),
+        2: (font-size: 12px, line-height: (1.1, 1.1), letter-spacing: (0.03em, 0.06em)),
+        3: (font-size: 14px, line-height: (1.14, 1.14), letter-spacing: (null, 0.05em)),
+        4: (font-size: 15px, line-height: (1.4, 1.4), letter-spacing: (null, 0.0625em)),
+        5: (font-size: 18px, line-height: (1.1, 1.1), letter-spacing: (null, 0.08em), responsive-level: 3),
+        5.25: (font-size: 21px, line-height: (1.1, 1.1), letter-spacing: (null, 0.08em), responsive-level: 5),
+        5.5: (font-size: 25px, line-height: (1.1, 1.1), letter-spacing: (null, 0.08em), responsive-level: 5),
+        6: (font-size: 42px, line-height: (1.2, 1.2), letter-spacing: (-0.03em, -0.01em)),
+        7: (font-size: 68px, line-height: (1.1, 1.1), letter-spacing: (-0.06em, null), responsive-level: 6),
+    ),
+    kicker: (
+        1: (font-size: 10px, line-height: (1.2, 1.2), letter-spacing: (0.15em, 0.0625em)),
+        2: (font-size: 12px, line-height: (1.2, 1.2), letter-spacing: (0.1em, 0.125em)),
+        3: (font-size: 14px, line-height: (1.2, 1.2), letter-spacing: (0.1em, 0.09375em)),
+        4: (font-size: 15px, line-height: (1.2, 1.2), letter-spacing: (0.1em, 0.125em)),
         5: (font-size: 22px, line-height: 1.2),
     ),
     extra: (
-        1: (font-size: 100px, line-height: 1.1)
+        1: (font-size: 100px, line-height: (1.1, 1.1))
     )
 ) !default;
+
+
+
+
+// $font-scale: (
+//     nav: (
+//         1: (font-size: 18px, line-height: 1, letter-spacing-caps: 0.02em),
+//         2: (font-size: 24px, line-height: 1.2, letter-spacing-caps: 0.03em)
+//     ),
+//     header: (
+//         1: (font-size: 48px, line-height: 1.125),
+//         2: (font-size: 60px, line-height: 1.2, responsive-level: 1),
+//         3: (font-size: 72px, line-height: 1, responsive-level: 1),
+//         4: (font-size: 95px, line-height: 1, responsive-level: 2),
+//     ),
+//     headline: (
+//         1: (font-size: 27px, line-height: 1.3),
+//         2: (font-size: 36px, line-height: 1.1, responsive-level: 1),
+//         3: (font-size: 42px, line-height: 1, responsive-level: 2),
+//         4: (font-size: 52px, line-height: 1.1, responsive-level: 2),
+//         5: (font-size: 95px, line-height: 1, responsive-level: 2),
+//     ),
+//     bodyCopy: (
+//         1: (font-size: 18px, line-height: 1.5, letter-spacing-caps: 0.01em),
+//     ),
+//     secondaryHeading: (
+//         1: (font-size: 13px, line-height: 1.3, letter-spacing: 0.025em, letter-spacing-caps: 0.05em),
+//         2: (font-size: 18px, line-height: 1.3, letter-spacing: 0.05em, letter-spacing-caps: 0.075em),
+//         3: (font-size: 24px, line-height: 1.125, letter-spacing: -0.02em, letter-spacing-caps: 0.0625em),
+//         4: (font-size: 28px, line-height: 1.3, letter-spacing: -0.02em, letter-spacing-caps: 0.075em, responsive-level: 2),
+//         4.5: (font-size: 36px, line-height: 1.3, letter-spacing: -0.02em, letter-spacing-caps: 0.075em, responsive-level: 4),
+//         5: (font-size: 48px, line-height: 1.1, letter-spacing: -0.03em, letter-spacing-caps: 0.05em, responsive-level: 4),
+//     ),
+//     textSans: (
+//         1: (font-size: 10px, line-height: 1.2, letter-spacing: 0.025em, letter-spacing-caps: 0.05em),
+//         2: (font-size: 12px, line-height: 1.4, letter-spacing-caps: 0.03em),
+//         3: (font-size: 14px, line-height: 1.5, letter-spacing-caps: 0.05em),
+//         4: (font-size: 15px, line-height: 1.4, letter-spacing-caps: 0.05em),
+//         5: (font-size: 20px, line-height: 1.2),
+//     ),
+//     accent: (
+//         1: (font-size: 10px, line-height: 1.4, letter-spacing: 0.025em, letter-spacing-caps: 0.05em),
+//         2: (font-size: 12px, line-height: 1.1, letter-spacing: 0.03em, letter-spacing-caps: 0.06em),
+//         3: (font-size: 14px, line-height: 1.14, letter-spacing-caps: 0.05em),
+//         4: (font-size: 15px, line-height: 1.4, letter-spacing-caps: 0.0625em),
+//         5: (font-size: 18px, line-height: 1.1, letter-spacing-caps: 0.08em, responsive-level: 3),
+//         5.25: (font-size: 21px, line-height: 1.1, letter-spacing-caps: 0.08em, responsive-level: 5),
+//         5.5: (font-size: 25px, line-height: 1.1, letter-spacing-caps: 0.08em, responsive-level: 5),
+//         6: (font-size: 42px, line-height: 1.2, letter-spacing: -0.03em, letter-spacing-caps: -0.01em),
+//         7: (font-size: 68px, line-height: 1.1, letter-spacing: -0.06em, responsive-level: 6),
+//     ),
+//     kicker: (
+//         1: (font-size: 10px, line-height: 1.2, letter-spacing: 0.15em, letter-spacing-caps: 0.0625em),
+//         2: (font-size: 12px, line-height: 1.2, letter-spacing: 0.1em, letter-spacing-caps: 0.125em),
+//         3: (font-size: 14px, line-height: 1.2, letter-spacing: 0.1em, letter-spacing-caps: 0.09375em),
+//         4: (font-size: 15px, line-height: 1.2, letter-spacing: 0.1em, letter-spacing-caps: 0.125em),
+//         5: (font-size: 22px, line-height: 1.2),
+//     ),
+//     extra: (
+//         1: (font-size: 100px, line-height: 1.1)
+//     )
+// ) !default;
 
 
