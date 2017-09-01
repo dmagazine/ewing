@@ -1,13 +1,16 @@
-.story__content {
+.story__content,
+.gu-block__content {
+
     a  { @include link-style; }
 
-    h2,
+    h2 { margin-top: 2em; margin-bottom: 0; }
+
     h3,
     h4,
     h5,
     h6 {
         margin-bottom: 0;
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
 
     > h2,
@@ -17,11 +20,23 @@
     > h6
     > p,
     > img,
-    > figure {
+    > figure,
+    > figure img,
+    > figure video {
         &:first-child { // first child is .social-sharing-overlay
             margin-top: 0;
         }
     }
+
+    // if a header is preceded by another header, have minimal spacing
+    @for $index from 2 through 6 {
+        h#{$index} {
+            @for $index2 from 3 through 6 {
+                + h#{$index2} { margin-top: 0.5rem; }
+            }
+        }
+    }
+
 }
 
 
