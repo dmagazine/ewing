@@ -47,6 +47,10 @@
     padding-bottom: gutter(8);
 }
 
+.widget--remove-spacing + .widget.widget {
+    margin-top: 0;
+}
+
 // the top widget needs reduced padding on the top and bottom
 // so that more content can fit above the fold
 // but, top padding needs to be enough to that its underneath the site kicker
