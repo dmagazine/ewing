@@ -205,6 +205,12 @@
 		@include span-breakpoint(main-full, 3, $column-number-small: 4);
 	} @else {
 		@include span(2.8 of 12);
+		@include breakpoint(medium-only) {
+			width: span(3.5 of 12);
+		}
+		@include breakpoint(small-only) {
+			width: span(5 of 12);
+		}
 	}
 
 	@if $breakpoint == true { 
