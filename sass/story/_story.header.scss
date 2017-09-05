@@ -86,6 +86,12 @@
     @include story-header;
 }
 
+.story__header--with-video {
+    @include breakpoint(large_medium) {
+        background-image: none !important;// important to override inline background image
+    }
+}
+
 .story__header--full-inner,
 .story__header--medium-inner {
     @include breakpoint(large_medium) {
@@ -117,5 +123,6 @@
     width: auto;
     height: auto;
     max-width: 1000000000000000px; //overwrite max-width: 100%;
+    @include breakpoint(small-only) { display: none; }
 }
 
