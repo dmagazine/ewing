@@ -204,7 +204,7 @@
 	@if mixin-exists(span-breakpoint) {
 		@include span-breakpoint(main-full, 3, $column-number-small: 4);
 	} @else {
-		@include span(2.8 of 12);
+		@include span(3 of 12);
 		@include breakpoint(medium-only) {
 			width: span(3.5 of 12);
 		}

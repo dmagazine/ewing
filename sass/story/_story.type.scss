@@ -17,13 +17,13 @@
     > h3, 
     > h4, 
     > h5, 
-    > h6
+    > h6,
     > p,
     > img,
     > figure,
     > figure img,
     > figure video {
-        &:first-child { // first child is .social-sharing-overlay
+       &:first-child {
             margin-top: 0;
         }
     }
