@@ -12,7 +12,7 @@ body, html {
 
 body {
 	margin: 0;
-	@include typography-defaults($chronicle-ss);
+	@include dmag-typography-defaults($chronicle-ss);
 }
 
 ::selection {
