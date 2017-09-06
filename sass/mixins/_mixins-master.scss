@@ -171,7 +171,6 @@
  */
 @mixin scroller__items() {
 	width: 100%;
-	font-size: 0; // get rid of inline-block space
 	overflow-y: hidden;
 	overflow-x: scroll;
 	white-space: nowrap;
