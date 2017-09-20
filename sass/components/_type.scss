@@ -1,6 +1,6 @@
 // reset header and text padding
 h1, h2, h3, h4, h5 {
-	margin: 0;
+    margin: 0;
 }
 // end resets
 
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .subhead--big {
-	@include font-scale(secondaryHeading, 2);
+    @include font-scale(secondaryHeading, 2);
 }
 
 .image-caption,
@@ -44,5 +44,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .image-caption__credit {
-    @include font-scale(accent, 1, $caps: true);
+    @include font-scale(textSans, 1);
+    font-style: italic;
+    display: block; // move to new line
 }
