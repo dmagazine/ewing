@@ -1,0 +1,12 @@
+.nav--simple {
+    width: 100%;
+    @include breakpoint(large_medium) {
+        position: absolute;
+    }
+}
+.nav--simple__logo {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    height: $height__nav--simple;
+}
