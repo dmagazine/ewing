@@ -1,3 +1,6 @@
+// simple nav
+$height__nav--simple: 50px;
+
 .nav--simple {
     width: 100%;
     @include breakpoint(large_medium) {
