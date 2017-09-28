@@ -86,6 +86,11 @@
     @include story-header;
 }
 
+
+.story__header--flex {
+    @include story-header;
+}
+
 .story__header--with-video {
     @include breakpoint(large_medium) {
         background-image: none !important;// important to override inline background image
@@ -111,6 +116,12 @@
     @include breakpoint(large_medium) {
         max-width: 800px;
     }
+}
+
+.story__header--flex-inner {
+    position: relative;
+    z-index: $z-ground;
+    padding: gutter(4) 0;
 }
 
 .story__header__video {
