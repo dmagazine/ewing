@@ -1,8 +1,4 @@
-.story__content,
-.gu-block__content {
-
-    a  { @include link-style; }
-
+@mixin vertical-alignment() {
     h2 { margin-top: 2em; margin-bottom: 0; }
 
     h3,
@@ -36,6 +32,14 @@
             }
         }
     }
+
+}
+
+.story__content,
+.gu-block__content {
+
+    a  { @include link-style; }
+    @include vertical-alignment();
 
 }
 
