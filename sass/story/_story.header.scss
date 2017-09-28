@@ -121,7 +121,12 @@
 .story__header--flex-inner {
     position: relative;
     z-index: $z-ground;
-    padding: gutter(4) 0;
+    @include breakpoint(large_medium) {
+        padding: calc(#{gutter(4)} + 50px) 0 gutter(4) 0;
+    }
+    @include breakpoint(small-only) {
+        padding-bottom: gutter(4);
+    }
 }
 
 .story__header__video {
