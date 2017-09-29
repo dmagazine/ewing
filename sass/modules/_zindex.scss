@@ -6,6 +6,7 @@
  * z-index
  */
 $z-modal: 2000;
+$z-modal-below: 10004;
 $z-slideshow-top: 1003;
 $z-slideshow: 1002;
 $z-nav-top: 1001;
@@ -16,9 +17,3 @@ $z-ground: 50;
 $z-base-top: 10;
 $z-base: 0;
 $z-below: -1;
-
-
-
-.header--basic {
-	z-index: 10004;
-}
