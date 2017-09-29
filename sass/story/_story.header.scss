@@ -87,10 +87,6 @@
 }
 
 
-.story__header--flex {
-    @include story-header;
-}
-
 .story__header--with-video {
     @include breakpoint(large_medium) {
         background-image: none !important;// important to override inline background image
@@ -118,16 +114,6 @@
     }
 }
 
-.story__header--flex-inner {
-    position: relative;
-    z-index: $z-ground;
-    @include breakpoint(large_medium) {
-        padding: calc(#{gutter(4)} + 50px) 0 gutter(4) 0;
-    }
-    @include breakpoint(small-only) {
-        padding-bottom: gutter(4);
-    }
-}
 
 .story__header__video {
     position: absolute;
