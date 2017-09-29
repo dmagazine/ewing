@@ -1,0 +1,25 @@
+.alignleft,
+.alignright,
+.aligncenter,
+.alignnone {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.alignleft {
+	margin-right: gutter(7);
+	clear: left;
+	float: left;
+}
+
+.alignright {
+	margin-left: gutter(7);
+	clear: right;
+	float: right;
+}
+
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
