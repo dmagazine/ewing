@@ -1,6 +1,8 @@
 /*------------------------------------*\
     #PAGINATION
 \*------------------------------------*/
+$pagination__spacing: 0.3em;
+
 .pagination,
 .pagination__numbers,
 .pagination__number,
@@ -28,14 +30,15 @@
 
 .pagination__number .is-active {
     color: $color__blue-dmag;
+    font-weight: bold;
     &:hover { opacity: 1; }
 }
 
 .pagination__item {
-    @include font-scale(accent, 3);
+    @include font-scale(textSans, 4);
     @include transition(opacity);
     &:hover {
         opacity: 0.5;
     }
-    padding: 0.5em 1em;
+    padding: $pagination__spacing 0.8em;
 }
