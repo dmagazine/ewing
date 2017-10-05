@@ -1,3 +1,4 @@
+$size__icon-mini: 12px;
 $size__icon-small: 16px;
 $size__icon-medium: 24px;
 $size__icon: 32px;
@@ -46,6 +47,14 @@ $size__icon-large: 64px;
     @include icon__stroke-width(2);
 }
 
+@mixin icon--mini($no-stroke: false) {
+    width: $size__icon-mini;
+    height: $size__icon-mini;
+    @if $no-stroke == false {
+        @include icon__stroke-width(7);
+    }
+}
+
 @mixin icon--small($no-stroke: false) {
     width: $size__icon-small;
     height: $size__icon-small;
@@ -68,6 +77,10 @@ $size__icon-large: 64px;
     @if $no-stroke == false {
         @include icon__stroke-width(1);
     }
+}
+
+.icon--mini {
+    @include icon--mini;
 }
 
 .icon--small {
