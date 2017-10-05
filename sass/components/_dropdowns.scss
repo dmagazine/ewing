@@ -91,6 +91,22 @@ $borderRadius: 0.2rem;
 		$color_dropdown_header_border: $color__gray--darker;
 	}
 
+	@if $colorPalette == 'white-gray' {
+		$color_overall: $color__white;
+		$color_title: $color__black;
+		$color_title_border: $color__gray--dark;
+		$color_title_unselected: $color__gray--dark;
+		$color_title_background--no-outline: $color__white;
+		$color_title_background_hover--outline: $color__white;
+		$color_title_hover--outline: $color__gray--dark;
+		$color_list_background: $color__white;
+		$color_item: $color__gray--dark;
+		$color_item_background: $color__white;
+		$color_item_background_selected: $color__gray--light;
+		$color_list_selected: $color__black;
+		$color_dropdown_header_border: $color__gray--dark;
+	}
+
 
 	color: $color_overall;
 
