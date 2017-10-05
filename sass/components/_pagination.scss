@@ -10,8 +10,6 @@
 
 
 .pagination {
-    border: 1px solid $color__blue-dmag;
-    border-right: 0;
     color: $color__black;
     margin-top: 1em;
     font-size: 0;
@@ -20,22 +18,24 @@
 .pagination__numbers {
     margin: 0;
     @extend %list-unstyled;
+    &:last-child .pagination__number:last-child { border-right: 0; }
+}
+
+.pagination__number,
+.pagination__prev {
+    border-right: 1px solid $color__gray--medium;
 }
 
 .pagination__number .is-active {
-    color: $color__white;
-    background-color: $color__blue-dmag;
-    &:hover { background-color: $color__blue-dmag; }
+    color: $color__blue-dmag;
+    &:hover { opacity: 1; }
 }
 
 .pagination__item {
-    // @include font-scale(secondaryHeading, 1);
     @include font-scale(accent, 3);
-    @include transition(background);
+    @include transition(opacity);
     &:hover {
-        background: $color__gray--light;
+        opacity: 0.5;
     }
-    padding: 1em;
-    border-right: 1px solid $color__blue-dmag;
-
+    padding: 0.5em 1em;
 }
