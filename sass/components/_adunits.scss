@@ -8,88 +8,91 @@
 	background-repeat: repeat;
 }
 
-.adunit {
-	text-align: center;
-	@extend %clearfix;
-	clear: both;
 
-	.feed__featured & { margin-top: gutter(6); }
-}
+.adunit-loaded {
+	&.adunit {
+		text-align: center;
+		@extend %clearfix;
+		clear: both;
 
-.adunit--horizontal {
-
-	.story__content & {
-		margin-top: 1em;
+		.feed__featured & { margin-top: gutter(6); }
 	}
 
-	.tl-blocks & {
-		margin-bottom: gutter(6);
-		background-color: $color__white;
-	}
+	&.adunit--horizontal {
 
-	margin-left: $full-width-margin;
-	margin-right: $full-width-margin;
+		.story__content & {
+			margin-top: 1em;
+		}
 
-	@include striped-background;
+		.tl-blocks & {
+			margin-bottom: gutter(6);
+			background-color: $color__white;
+		}
 
-	@include breakpoint(large-only) {
-		padding: 1.8em 0;
-	}
-	@include breakpoint(medium_small) {
-		padding: 1em 0;
-	}
-
-}
-
-.adunit--slideshow {
-	&:not(.adunit--directory) {
-		@include striped-background-light;
-		padding: gutter(6);
-		display: inline-block;
-	}
-}
-
-.adunit--directory { 
-	@include breakpoint(large-only) {
-		width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-	@include breakpoint(medium_small) {
 		margin-left: $full-width-margin;
 		margin-right: $full-width-margin;
-	}
 
-	&.adunit--vertical {
 		@include striped-background;
-		padding: 1em 0;
-	}
-}
 
-// if the window is resized, these style will hide rendered ads
-.adunit--desktop {
-	@include breakpoint(small-only) {
-		display: none;
-	}
-}
+		@include breakpoint(large-only) {
+			padding: 1.8em 0;
+		}
+		@include breakpoint(medium_small) {
+			padding: 1em 0;
+		}
 
-.adunit--mobile,
-.adunit--mobile_top {
-	@include breakpoint(large_medium) {
-		display: none;
 	}
-}
 
-.adunit--mobile_top {
-	background-color: $color__white;
-	text-align: center;
-	width: 100%;
-	position: fixed;
-	bottom: 0;
-	border-top: 1px solid $color__black;
-	z-index: $z-ground-top;
-	@include breakpoint(medium_small) {
-		padding: 0.5em 0;
+	&.adunit--slideshow {
+		&:not(.adunit--directory) {
+			@include striped-background-light;
+			padding: gutter(6);
+			display: inline-block;
+		}
+	}
+
+	&.adunit--directory { 
+		@include breakpoint(large-only) {
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		@include breakpoint(medium_small) {
+			margin-left: $full-width-margin;
+			margin-right: $full-width-margin;
+		}
+
+		&.adunit--vertical {
+			@include striped-background;
+			padding: 1em 0;
+		}
+	}
+
+	// if the window is resized, these style will hide rendered ads
+	&.adunit--desktop {
+		@include breakpoint(small-only) {
+			display: none;
+		}
+	}
+
+	&.adunit--mobile,
+	&.adunit--mobile_top {
+		@include breakpoint(large_medium) {
+			display: none;
+		}
+	}
+
+	&.adunit--mobile_top {
+		background-color: $color__white;
+		text-align: center;
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		border-top: 1px solid $color__black;
+		z-index: $z-ground-top;
+		@include breakpoint(medium_small) {
+			padding: 0.5em 0;
+		}
 	}
 }
