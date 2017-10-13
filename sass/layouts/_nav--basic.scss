@@ -41,7 +41,5 @@ $color__nav--basic: $color__gray--darkest;
 } 
 
 .nav--basic-pushdown {
-	@include breakpoint(large_medium) {
-		padding-top: $height__nav--basic;
-	}
+	padding-top: $height__nav--basic;
 }
