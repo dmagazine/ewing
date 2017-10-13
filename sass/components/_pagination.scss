@@ -28,7 +28,8 @@ $pagination__spacing: 0.3em;
     border-right: 1px solid $color__gray--medium;
 }
 
-.pagination__number .is-active {
+.pagination__number .is-active,
+.pagination__number.is-active {
     color: $color__blue-dmag;
     font-weight: bold;
     &:hover { opacity: 1; }
