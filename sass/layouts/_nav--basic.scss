@@ -9,7 +9,7 @@ $color__nav--basic: $color__gray--darkest;
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: $z-modal-below;
+	z-index: $z-nav;
 
 	a {
 		display: block;
