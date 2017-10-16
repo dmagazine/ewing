@@ -12,6 +12,7 @@
 	text-align: center;
 	@extend %clearfix;
 	clear: both;
+	-webkit-touch-callout: none; // this prevents the 'save image' popup from appearing on ios devices
 
 	.feed__featured & { margin-top: gutter(6); }
 
