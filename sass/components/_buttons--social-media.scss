@@ -90,9 +90,13 @@ $height__social-button: 40px;
 	}
 
 	@include breakpoint(small-only) {
-		display: inline-block;
+		display: block;
+		width: 100%;
 		position: relative;
 		margin-top: 1rem;
+		.social-buttons-inner {
+			display: inline-block;
+		}
 	}
 
 	.social-button {
@@ -104,35 +108,6 @@ $height__social-button: 40px;
 	.icon { 
 		@extend .icon--white;
 		color: $color__white;
-	}
-}
-
-
-
-
-
-// horizontal layout. gray icons. borders. Used on neighborhood guides
-.social-buttons--style3 {
-	@extend %clearfix;
-	border-top: 1px solid $color__gray--medium;
-	border-bottom: 1px solid $color__gray--medium;
-	padding: 0.5rem 0;
-
-	.social-buttons-inner {
-		display: flex;
-		justify-content: space-around;
-		flex-direction: horizontal;
-	}
-
-	.social-button {
-		flex-grow: 1;
-		text-align: center;
-		@include is-hover();
-	}
-
-	.icon { 
-		@extend .icon--gray;
-		color: $color__gray--dark;
 	}
 }
 
