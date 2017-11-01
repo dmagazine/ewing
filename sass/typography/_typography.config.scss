@@ -10,6 +10,11 @@ $chronicle-disp-cond: 'Chronicle Cond A', 'Chronicle Cond B', 'Palatino', serif;
 $tungsten: 'Tungsten A', 'Tungsten B', 'Helvetica', sans-serif;
 $obsidian: 'Obsidian A', 'Obsidian B', 'Helvetica', sans-serif;
 
+// d weddings fonts (only available for dweddings.com) - typekit
+$futura: 'futura-pt', 'Helvetica', sans-serif;
+$miller: 'Georgia', serif;
+
+
 // $fs-breakpoint: 580px; //$device__small
 
 // $font: (
@@ -172,6 +177,18 @@ $font-scale: (
     ),
     extra: (
         1: (font-size: 100px, line-height: 1.1)
+    ),
+    dwedHeader: (
+        1: (font-size: 12px, line-height: 1.2, responsive-level: 4),
+        2: (font-size: 15px, line-height: 1.2, responsive-level: 5),
+        3: (font-size: 18px, line-height: 1.2, responsive-level: 5),
+        4: (font-size: 26px, line-height: 1.2, responsive-level: 6),
+        5: (font-size: 38px, line-height: 1.2),
+        6: (font-size: 48px, line-height: 1.2, responsive-level: 7),
+        7: (font-size: 78px, line-height: 1.2),
+    ),
+    dwedText: (
+        1: (font-size: 15px, line-height: 1.2),
     )
 ) !default;
 

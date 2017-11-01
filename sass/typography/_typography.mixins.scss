@@ -119,6 +119,14 @@
         font-family: $tungsten;
         font-weight: 300; //light
 
+    } @else if $name == dwedHeader {
+        font-family: $futura;
+        font-weight: 400;
+
+    } @else if $name == dwedText {
+        font-family: $miller;
+        font-weight: 400;
+
     } @else {}
 }
 

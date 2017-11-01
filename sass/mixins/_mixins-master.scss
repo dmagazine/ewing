@@ -85,11 +85,13 @@
  *  @include viewport-ratio(3, 2);
  *
  */
-@mixin viewport-ratio($x, $y) {
+@mixin viewport-ratio($x, $y, $max: true) {
 	width: 100vw;
 	height: $y * 100vw / $x;
-	max-width: $x / $y * 100vh;
-	max-height: 100vh;
+	@if $max == true {
+		max-width: $x / $y * 100vh;
+		max-height: 100vh;
+	}
 }
 
 
