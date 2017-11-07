@@ -8,3 +8,14 @@
 	z-index: $z-nav;
 	position: relative;
 }
+
+.footer--basic__social {
+	float: right;
+}
+
+.footer--basic__social-link {
+	margin-left: 1em;
+	@include is-hover;
+}
+
+a.footer--basic__social-link { text-decoration: none; }
