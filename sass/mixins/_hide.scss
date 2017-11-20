@@ -47,3 +47,7 @@
 .is-invisible {
 	@include opacity(0);
 }
+
+.is-gone {
+	display: none;
+}
