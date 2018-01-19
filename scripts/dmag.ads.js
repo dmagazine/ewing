@@ -86,9 +86,9 @@
 
 
 			//Directory Targeting
-			if (typeof algoliasearchHelper !== 'undefined') {
+			if (typeof algoliasearchHelper !== 'undefined' && typeof DDIR !== 'undefined') {
 				var URLString = window.location.search.slice(1);
-				var URLParams = algoliasearchHelper.url.getStateFromQueryString(URLString);
+				var URLParams = DDIR.getStateFromQueryString(URLString);
 
 				keyword = (typeof URLParams['query'] !== 'undefined') ? URLParams['query'] : '';
 
