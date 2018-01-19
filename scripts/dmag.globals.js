@@ -1,6 +1,6 @@
 (function($) {
 
-	DMAG.$nav = $('.nav');
+	DMAG.$nav = $('.nav').length !== 0 ? $('.nav') : $('.js-nav');
 	DMAG.$nav_height = DMAG.$nav.outerHeight();
 	DMAG.$body = $('body');
 	DMAG.$html = $('html');

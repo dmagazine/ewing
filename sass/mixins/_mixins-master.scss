@@ -286,15 +286,15 @@ $hover-opacity: 0.5;
 	@include transition(color);
 }
 
-@mixin link-underline {
-	background-image: linear-gradient($color__white, $color__white),linear-gradient($color__white, $color__white),linear-gradient($color__blue-dmag, $color__blue-dmag);
+@mixin link-underline($color: $color__blue-dmag) {
+	background-image: linear-gradient($color__white, $color__white),linear-gradient($color__white, $color__white),linear-gradient($color, $color);
 	background-size: .05em 1px,.05em 1px,1px 1px;
 	background-repeat: no-repeat,no-repeat,repeat-x;
 	background-position: 0 95%,100% 95%,0 95%;
 }
 
-@mixin link-style {
-	@include link-underline;
+@mixin link-style($color: $color__blue-dmag, $color_hover: $color__blue-dmag) {
+	@include link-underline($color);
 	text-shadow: 
 		0.03em 0 $color__white, 
 		-0.03em 0 $color__white,
@@ -311,7 +311,7 @@ $hover-opacity: 0.5;
 	@include transition(color);
 
 	&:hover {
-		color: $color__blue-dmag;
+		color: $color_hover;
 		@include transition(color);
 	}
 }

@@ -43,20 +43,6 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
 }
 
 
-
-$button-fixed-height: 40px;
-$button-fixed-height--small: 30px;
-
-$button-padding-v: 0.8rem;
-$button-padding-h: 1rem;
-$button-padding: $button-padding-v $button-padding-h;
-
-@mixin button-fixed-height {
-    height: $button-fixed-height;
-    line-height: $button-fixed-height;
-}
-
-
 @mixin button-font {
     @include font(kicker);
 }
