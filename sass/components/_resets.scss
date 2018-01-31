@@ -45,11 +45,13 @@ button {
 	background: none;
 }
 
-
-
 // undo resets for wp backend
 #tinymce {
 	a { 
 		text-decoration: underline;
 	}
+}
+
+a.no-link-style.no-link-style {
+	@include no-link-style;
 }
