@@ -479,7 +479,7 @@
 			if ($('.js-stickyStop').length > 0) {
 				var $padding = 10;
 				var $marginTop = DMAG.$nav_height + $padding;
-				var $sidebarAd = $('.layout--with-sidebar .js-sticky:not(.scroll-to-fixed-fixed)');
+				var $sidebarAd = $('.js-sticky:not(.scroll-to-fixed-fixed)');
 
 				$sidebarAd.each(function(){
 					$this = $(this);
@@ -497,15 +497,15 @@
 							limit: $limit,
 							// removes left and top position added by plugin while sticky, 
 							// once sidebar is back to absolute position
-							removeOffsets: true,
+							// removeOffsets: true,
 							// becasue ad is below another element in the sidebar (sidebar widget), 
 							// have to account for that element's height
-							preAbsolute: function() {
-								$this.css('marginTop', $this.siblings('.js-stickySibling').height() + 'px');
-							},
-							postAbsolute: function() {
-								$this.css('marginTop', 0);
-							}
+							// preAbsolute: function() {
+							// 	$this.css('marginTop', $this.siblings('.js-stickySibling').height() + 'px');
+							// },
+							// postAbsolute: function() {
+							// 	$this.css('marginTop', 0);
+							// }
 						}); //scrolltofixed
 					} //endif
 
