@@ -293,21 +293,21 @@ $hover-opacity: 0.5;
 	background-position: 0 95%,100% 95%,0 95%;
 }
 
-@mixin link-style($color: $color__blue-dmag, $color_hover: $color__blue-dmag) {
+@mixin link-style($color: $color__blue-dmag, $color_hover: $color__blue-dmag, $color_background: $color__white) {
 	@include link-underline($color);
 	text-shadow: 
-		0.03em 0 $color__white, 
-		-0.03em 0 $color__white,
-		0 0.03em $color__white,
-		0 -0.03em $color__white,
-		0.06em 0 $color__white,
-		-0.06em 0 $color__white,
-		0.09em 0 $color__white,
-		-0.09em 0 $color__white,
-		0.12em 0 $color__white,
-		-0.12em 0 $color__white,
-		0.15em 0 $color__white,
-		-0.15em 0 $color__white;
+		0.03em 0 $color_background, 
+		-0.03em 0 $color_background,
+		0 0.03em $color_background,
+		0 -0.03em $color_background,
+		0.06em 0 $color_background,
+		-0.06em 0 $color_background,
+		0.09em 0 $color_background,
+		-0.09em 0 $color_background,
+		0.12em 0 $color_background,
+		-0.12em 0 $color_background,
+		0.15em 0 $color_background,
+		-0.15em 0 $color_background;
 	@include transition(color);
 
 	&:hover {
