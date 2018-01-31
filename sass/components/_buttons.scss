@@ -160,20 +160,6 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
     @include button-font;
 }
 
-@mixin button--dwed {
-    @include font-scale(dwedHeader, 3);
-    text-transform: none;
-}
-
-.button--pink-dwed {
-    @include button($color__pink-dwed, $color__gray-dwed--dark);
-    @include button--dwed;
-}
-
-.button--white-dwed {
-    @include button($color__white, $color__gray-dwed--dark);
-    @include button--dwed;
-}
 
 
 
