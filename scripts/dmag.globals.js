@@ -72,4 +72,19 @@
 		return image;
 	};
 
+	DMAG.getURLParams = function() {
+		URLParams = window.location.search.slice(1);
+		URLParams = URLParams.split('&');
+
+		params = {};
+
+		for(i = 0; i < URLParams.length; i++) {
+			URLParam = URLParams[i];
+			URLParam = URLParam.split('=');
+			params[URLParam[0]] = decodeURIComponent(URLParam[1]);
+		}
+
+		return params;
+	};
+
 })(jQuery);
