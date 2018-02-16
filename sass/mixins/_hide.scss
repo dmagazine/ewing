@@ -47,6 +47,7 @@
 .is-invisible {
 	opacity: 0 !important;
 	@include transition(opacity);
+	pointer-events: none;
 }
 
 .is-gone {
