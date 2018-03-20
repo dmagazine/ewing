@@ -287,27 +287,17 @@ $hover-opacity: 0.5;
 }
 
 @mixin link-underline($color: $color__blue-dmag) {
-	background-image: linear-gradient($color__white, $color__white),linear-gradient($color__white, $color__white),linear-gradient($color, $color);
 	background-size: .05em 1px,.05em 1px,1px 1px;
 	background-repeat: no-repeat,no-repeat,repeat-x;
 	background-position: 0 95%,100% 95%,0 95%;
+
+	background: -webkit-gradient(linear,left top,left bottom,from($color__white),to($color__white)),-webkit-gradient(linear,left top,left bottom,from($color__white),to($color__white)),-webkit-gradient(linear,left top,left bottom,from($color),to($color));
+    background: linear-gradient($color__white,$color__white),linear-gradient($color__white,$color__white),linear-gradient($color,$color);
 }
 
 @mixin link-style($color: $color__blue-dmag, $color_hover: $color__blue-dmag, $color_background: $color__white) {
 	@include link-underline($color);
-	text-shadow: 
-		0.03em 0 $color_background, 
-		-0.03em 0 $color_background,
-		0 0.03em $color_background,
-		0 -0.03em $color_background,
-		0.06em 0 $color_background,
-		-0.06em 0 $color_background,
-		0.09em 0 $color_background,
-		-0.09em 0 $color_background,
-		0.12em 0 $color_background,
-		-0.12em 0 $color_background,
-		0.15em 0 $color_background,
-		-0.15em 0 $color_background;
+	text-shadow: .03em 0 $color_background,-.03em 0 $color_background,0 .03em $color_background,0 -.03em $color_background,.06em 0 $color_background,-.06em 0 $color_background,.09em 0 $color_background,-.09em 0 $color_background,.12em 0 $color_background,-.12em 0 $color_background,.15em 0 $color_background,-.15em 0 $color_background;
 	@include transition(color);
 
 	&:hover {
