@@ -286,32 +286,20 @@ $hover-opacity: 0.5;
 	@include transition(color);
 }
 
-@mixin link-underline {
-	background-image: linear-gradient($color__white, $color__white),linear-gradient($color__white, $color__white),linear-gradient($color__blue-dmag, $color__blue-dmag);
+@mixin link-underline($color: $color__blue-dmag) {
+	background-image: linear-gradient($color__white, $color__white),linear-gradient($color__white, $color__white),linear-gradient($color, $color);
 	background-size: .05em 1px,.05em 1px,1px 1px;
 	background-repeat: no-repeat,no-repeat,repeat-x;
 	background-position: 0 95%,100% 95%,0 95%;
 }
 
-@mixin link-style {
-	@include link-underline;
-	text-shadow: 
-		0.03em 0 $color__white, 
-		-0.03em 0 $color__white,
-		0 0.03em $color__white,
-		0 -0.03em $color__white,
-		0.06em 0 $color__white,
-		-0.06em 0 $color__white,
-		0.09em 0 $color__white,
-		-0.09em 0 $color__white,
-		0.12em 0 $color__white,
-		-0.12em 0 $color__white,
-		0.15em 0 $color__white,
-		-0.15em 0 $color__white;
+@mixin link-style($color: $color__blue-dmag, $color_hover: $color__blue-dmag, $color_background: $color__white) {
+	@include link-underline($color);
+	text-shadow: .03em 0 $color_background,-.03em 0 $color_background,0 .03em $color_background,0 -.03em $color_background,.06em 0 $color_background,-.06em 0 $color_background,.09em 0 $color_background,-.09em 0 $color_background,.12em 0 $color_background,-.12em 0 $color_background,.15em 0 $color_background,-.15em 0 $color_background;
 	@include transition(color);
 
 	&:hover {
-		color: $color__blue-dmag;
+		color: $color_hover;
 		@include transition(color);
 	}
 }

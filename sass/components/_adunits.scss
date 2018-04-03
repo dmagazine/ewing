@@ -84,7 +84,8 @@
 	}
 }
 
-.adunit--mobile_top {
+// dwedding mobile top ad is relatively positioned, so dont need any of this styling
+.adunit--mobile_top:not(.adunit--clean) {
 	background-color: $color__white;
 	text-align: center;
 	width: 100%;
@@ -96,3 +97,10 @@
 		padding: 0.5em 0;
 	}
 }
+
+// remove striped background
+// used on dweddings
+.adunit--clean {
+	background-image: none;
+}
+

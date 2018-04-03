@@ -45,9 +45,11 @@
 
 // tktk make this prettyily fade-in.
 .is-invisible {
-	@include opacity(0);
+	opacity: 0 !important;
+	@include transition(opacity);
+	pointer-events: none;
 }
 
 .is-gone {
-	display: none;
+	display: none !important;
 }

@@ -2,8 +2,29 @@
 $padding__medium: 25px;
 $padding__small: 15px;
 
+// Buttons
+$button-fixed-height: 40px;
+$button-fixed-height--small: 30px;
+
+$button-padding-v: 0.8rem;
+$button-padding-h: 1rem;
+$button-padding: $button-padding-v $button-padding-h;
+
+@mixin button-fixed-height {
+    height: $button-fixed-height;
+    line-height: $button-fixed-height;
+}
+
+
 /*
 Make elements full width of the screen
 when inside of .container (or other element w padded container mixin)
 */
 $full-width-margin: calc( (-100vw + 100%) / 2);
+
+
+// Glyphicons font path
+$icon-font-path:        "../fonts/";
+// $image-path: "../images/"; // tktk doels this need to change in prod?
+$image-path: "//www.dmagazine.com/wp-content/themes/dmagazine/dist/images/";
+

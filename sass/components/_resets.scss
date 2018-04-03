@@ -5,20 +5,16 @@ html {
 	box-sizing: inherit;
 }
 
-
 body, html {
 	overflow-x: hidden;
 }
 
 body {
 	margin: 0;
-	@include dmag-typography-defaults($chronicle-ss);
 }
 
-::selection {
-	background: $color__gray--dark;
-	@include no-link-style;
-	color: $color__white;
+h1, h2, h3, h4, h5 {
+	margin: 0;
 }
 
 a {
@@ -49,17 +45,13 @@ button {
 	background: none;
 }
 
-// Glyphicons font path
-$icon-font-path:        "../fonts/";
-// $image-path: "../images/"; // tktk doels this need to change in prod?
-$image-path: "//www.dmagazine.com/wp-content/themes/dmagazine/dist/images/";
-
-
-
-
 // undo resets for wp backend
 #tinymce {
 	a { 
 		text-decoration: underline;
 	}
+}
+
+a.no-link-style.no-link-style {
+	@include no-link-style;
 }

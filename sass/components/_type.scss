@@ -1,8 +1,10 @@
-// reset header and text padding
-h1, h2, h3, h4, h5 {
-    margin: 0;
+@include dmag-typography-defaults($chronicle-ss);
+
+::selection {
+    background: $color__gray--dark;
+    @include no-link-style;
+    color: $color__white;
 }
-// end resets
 
 .header {
     @include font-scale(secondaryHeading, 3, $caps: true);

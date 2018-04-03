@@ -1,6 +1,10 @@
 {
   "name": "ewing",
+<<<<<<< HEAD
   "version": "2.2.3",
+=======
+  "version": "2.2.10",
+>>>>>>> 39935eed0fd8d65ddd96cec06e749c000e1820f3
   "description": "A collection of universal components re-usable across D Magazine web products",
   "main": [
     "sass/main.scss",
