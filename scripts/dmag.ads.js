@@ -505,17 +505,6 @@
 							// limit is calculated from the top of ad element
 							// translation: (widget offset) - (ad height) - (padding)
 							limit: $limit,
-							// removes left and top position added by plugin while sticky, 
-							// once sidebar is back to absolute position
-							// removeOffsets: true,
-							// becasue ad is below another element in the sidebar (sidebar widget), 
-							// have to account for that element's height
-							// preAbsolute: function() {
-							// 	$this.css('marginTop', $this.siblings('.js-stickySibling').height() + 'px');
-							// },
-							// postAbsolute: function() {
-							// 	$this.css('marginTop', 0);
-							// }
 						}); //scrolltofixed
 					} //endif
 
