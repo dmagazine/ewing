@@ -154,6 +154,7 @@
 			self.$adCollection = $('.adunit:not(.adunit-loaded)');
 			this.dfp_loader();
 			this.create_ads();
+			this.native();
 			// this.display_ads();
 		},
 
@@ -260,6 +261,12 @@
 				.addSize([0, 1], [
 					[1, 1]
 				]).build();
+			},
+			mapping_native: function() {
+				return window.googletag.sizeMapping()
+				.addSize([0, 1], 
+					'fluid'
+				).build();
 			}
 		},
 		ad_slots: {
@@ -295,6 +302,7 @@
 				],
 				targeting_sizes: "mapping_vertical_top",
 			},
+			// in sidebar next to comments on story pages
 			MissEllie_vertical_bottom: {
 				dimensions: [
 					[300, 600],
@@ -308,6 +316,34 @@
 					[1, 1]
 				],
 				targeting_sizes: "mapping_interstitial",
+			},
+			// horizontal card in the river on archive pages
+			MissEllie_native: {
+				dimensions: [
+					['fluid']
+				],
+				targeting_sizes: "mapping_native"
+			},
+			// switch card in the featured section at the top of archives
+			MissEllie_native_card: {
+				dimensions: [
+					['fluid']
+				],
+				targeting_sizes: "mapping_native"
+			},
+			// story card in the story content
+			MissEllie_native_story: {
+				dimensions: [
+					['fluid']
+				],
+				targeting_sizes: "mapping_native"
+			},
+			// scroller item in the 'related content' section
+			MissEllie_native_related: {
+				dimensions: [
+					['fluid']
+				],
+				targeting_sizes: "mapping_native"
 			},
 		},
 		config: {
@@ -377,6 +413,11 @@
 					window.googletag.pubads().noFetch();
 
 				googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+					// console.log(event);
+					// console.log(event.slot.getSlotElementId());
+					// console.log(event.slot.getResponseInformation());
+
+
 					DMAG.dfpAds.rendered++;
 					var $adUnit = $('#' + event.slot.getSlotId().getDomId());
 					var display = event.isEmpty ? 'none' : 'block';
@@ -406,6 +447,7 @@
 			googletag.cmd.push(function() {
 
 			DMAG.dfpAds.$adCollection.each(function() {
+
 				var googletag = window.googletag;
 
 				// create ad for each adunit on page
@@ -445,14 +487,17 @@
 						googletag.display(ID);
 						googletag.pubads().refresh([googleAdUnit]);
 					});
+
 				});
+
+
 			});
 
 		},
-		/*
-		Inject ads between paragraphs on mobile and story pages w/o sidebar
-		*/
 		inject_ads: function() {
+			/*
+			Inject ads between paragraphs on mobile and story pages w/o sidebar
+			*/
 			$('.layout--full-width .story__content p:nth-child(10n)').each(function() {
 				if ( $(this).nextAll().length > 3 && $(this).text().length > 30 ) {
 				// if the last injected ad has 3 or fewer paragraphs after it, don't show
@@ -467,6 +512,41 @@
 					};
 				});
 			});
+			/*
+			Inject ads between paragraphs on desktop for non-sponsored stories w sidebar
+			*/
+			enquire.register(DMAG.breakpoint_large_medium, function() {
+				$('.layout--with-sidebar .story:not(.story--sponsored) .story__content p:nth-child(6n)').each(function() {
+					if ( $(this).nextAll().length > 3 && $(this).text().length > 30 ) {
+						$(this).after('<article class="alignleft card block js-block card--story js-adunit-native" data-adunit-match="/1039436/MissEllie_native_story"></article><div class="adunit adunit--native" data-adunit="MissEllie_native_story" data-mapping="mapping_native"></div>');
+					};
+				});
+			});
+		},
+
+		/*
+		http://insights.burda-studios.de/howto-run-fully-responsive-doubleclick-native-ads-without-iframes/
+		https://stackoverflow.com/questions/46144151/google-dfp-resize-safeframe-custom-creative-outer-iframe-container-from-inside
+		*/
+		native: function() {
+			var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+			var eventer = window[eventMethod];
+			var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+			eventer(messageEvent,function(e) {
+
+				var key = e.message ? "message" : "data";
+				var data = e[key];
+				var eventName = data.message || 'ignore';
+				var className = 'card--' + data.type; // card--sponsored, card--house
+				var classNames = className + ' ' + 'adunit-loaded';
+
+				if (eventName == 'adContentAvailable') {
+					$adunit = $('.js-adunit-native:not(.adunit-loaded)[data-adunit-match="' + data.adUnit + '"]').first();
+					$adunit.html( data.content ).addClass(classNames);
+				}
+			//run function//
+			}, false);
 		},
 
 		/*
