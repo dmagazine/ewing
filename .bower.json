@@ -1,0 +1,32 @@
+{
+  "name": "ewing",
+  "version": "2.2.11",
+  "description": "A collection of universal components re-usable across D Magazine web products",
+  "main": [
+    "sass/main.scss",
+    "scripts/dmag.globals.js",
+    "scripts/dmag.ads.js",
+    "scripts/dmag.dropdown.js",
+    "scripts/dmag.datatable.js",
+    "scripts/dmag.scrollArrow.js",
+    "scripts/dmag.card.js"
+  ],
+  "dependencies": {
+    "susy": "2.2.11",
+    "enquire": "^2.1.2",
+    "datatables": "^1.10.12",
+    "scrolltofixed": "1.0.8",
+    "jquery.scrollTo": "^2.1.2"
+  },
+  "ignore": [],
+  "homepage": "https://github.com/dmagazine/ewing",
+  "_release": "2.2.11",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.2.11",
+    "commit": "5c0fb7d8e7ba6c92d587d59a7291abd022fcb2e2"
+  },
+  "_source": "https://github.com/dmagazine/ewing.git",
+  "_target": "2.2.11",
+  "_originalSource": "ewing"
+}
