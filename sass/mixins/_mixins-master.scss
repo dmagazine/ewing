@@ -393,3 +393,8 @@ $hover-opacity: 0.5;
 	@return 55px * $height / 50px;
 }
 
+
+@mixin card-border {
+    border-bottom: 1px solid $color__gray--light;
+}
+

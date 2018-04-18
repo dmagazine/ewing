@@ -1,10 +1,8 @@
 .card--sponsored {
 	background: $color__sponsored;
-	.card__title {
-		@include font-scale(secondaryHeading, 4);
-	}
-
+	.card__title { @include font-scale(secondaryHeading, 4); }
 	&.card--vertical .card__content { padding-left: gutter(8); }
+
 	@include breakpoint(large-only) {
 		&.card--switch .card__content { padding-left: gutter(8); }
 	}
@@ -22,5 +20,19 @@
 
 .w-stories__item--sponsored,
 .ws-list__item--sponsored {
+	background: $color__sponsored;
+}
+
+// not ideal. need to refactor w-stories to use cards so can be 
+// compatable with native ad styling and controlled in cards.scss tktk
+.w-stories__item.card--sponsored,
+.w-stories__item.card--house {
+	.card__content { padding-top: 1em; }
+	.card__title { @extend .w-stories__title; }
+	.card__subhead { display: none; }
+}
+
+.w-stories__item.card--sponsored {
+	.card__content { padding: 1em; }
 	background: $color__sponsored;
 }

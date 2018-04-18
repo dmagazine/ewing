@@ -8,7 +8,7 @@
 	background-repeat: repeat;
 }
 
-.adunit {
+.adunit:not(.adunit--native) {
 	text-align: center;
 	@extend %clearfix;
 	clear: both;
@@ -19,12 +19,14 @@
 	&.display-none { display: none !important; }
 }
 
-.adunit--horizontal {
+
+.adunit--horizontal:not(.adunit--native) {
 
 	.story__content & {
 		margin-top: 1em;
 	}
 
+	// timeline template
 	.tl-blocks & {
 		margin-bottom: gutter(6);
 		background-color: $color__white;
@@ -84,6 +86,13 @@
 	}
 }
 
+// these are just placeholders for the 'real' ad, so hide once it serves its purpose
+.adunit--native.adunit-loaded {
+	display:none !important;
+}
+
+
+
 // dwedding mobile top ad is relatively positioned, so dont need any of this styling
 .adunit--mobile_top:not(.adunit--clean) {
 	background-color: $color__white;
@@ -99,7 +108,7 @@
 }
 
 // remove striped background
-// used on dweddings
+// this class is used for dweddings ads
 .adunit--clean {
 	background-image: none;
 }
