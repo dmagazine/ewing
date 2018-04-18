@@ -322,6 +322,21 @@ $borderRadius: 0.2rem;
     }
 }
 
+
+.button-group--flex {
+	text-align: center;
+}
+
+.button-group--flex .button {
+	max-width: 280px;
+	margin: 0 0.5em 0 0;
+	vertical-align: middle;
+}
+
+.button-group--flex .button--submit {
+	max-width: 160px;
+}
+
 @if mixin-exists(font-scale) {
 	.button--search {
 	    @include font-scale(secondaryHeading, 2, $no-line-height: true);
