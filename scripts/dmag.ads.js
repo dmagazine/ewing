@@ -189,6 +189,16 @@
 					[320, 50]
 				]).build();
 			},
+			mapping_horizontal_top_limited: function() {
+				return window.googletag.sizeMapping()
+				.addSize([980, 1], [
+					[728, 90]
+				]).addSize([740, 1], [
+					[728, 90]
+				]).addSize([0, 1], [
+					[320, 50]
+				]).build();
+			},
 			mapping_horizontal_slideshow: function() {
 				return window.googletag.sizeMapping()
 				.addSize([0, 1], [
