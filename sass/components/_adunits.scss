@@ -15,8 +15,11 @@
 	-webkit-touch-callout: none; // this prevents the 'save image' popup from appearing on ios devices
 
 	.feed__featured & { margin-top: gutter(6); }
+}
 
-	&.display-none { display: none !important; }
+.adunit.display-none,
+.js-adunit-native.display-none {
+	display: none !important;
 }
 
 

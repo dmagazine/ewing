@@ -526,11 +526,10 @@
 			Inject ads between paragraphs on desktop for non-sponsored stories w sidebar
 			*/
 			enquire.register(DMAG.breakpoint_large_medium, function() {
-				$('.layout--with-sidebar .story:not(.story--sponsored) .story__content p:nth-child(6n)').each(function() {
-					if ( $(this).nextAll().length > 3 && $(this).text().length > 30 ) {
-						$(this).after('<article class="alignleft card block js-block card--story js-adunit-native" data-adunit-match="/1039436/MissEllie_native_story"></article><div class="adunit adunit--native" data-adunit="MissEllie_native_story" data-mapping="mapping_native"></div>');
-					};
-				});
+				$adunit = $('.layout--with-sidebar .story:not(.story--sponsored) .story__content p:nth-child(6)');
+				if ($adunit.nextAll().length > 3 && $adunit.text().length > 30) {
+					$adunit.after('<article class="alignleft display-none card block js-block card--story js-adunit-native" data-adunit-match="/1039436/MissEllie_native_story"></article><div class="adunit adunit--native" data-adunit="MissEllie_native_story" data-mapping="mapping_native"></div>');
+				}
 			});
 		},
 
@@ -553,7 +552,11 @@
 
 				if (eventName == 'adContentAvailable') {
 					$adunit = $('.js-adunit-native:not(.adunit-loaded)[data-adunit-match="' + data.adUnit + '"]').first();
-					$adunit.html( data.content ).addClass(classNames);
+					$adunit.addClass(classNames);
+					if (data.content.length > 0) {
+						$adunit.html( data.content ).removeClass('display-none');
+					}
+
 				}
 			//run function//
 			}, false);
