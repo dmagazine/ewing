@@ -79,6 +79,11 @@ $size__icon-large: 64px;
     }
 }
 
+
+.icon--black {
+    @include icon-color($color__black, $color__white);
+}
+
 .icon--mini {
     @include icon--mini;
 }
