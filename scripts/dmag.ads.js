@@ -55,11 +55,9 @@
 				longestpath = '',
 				keyword = '',
 				filters = [],
-				dirtype = [],
 				allFiltersCount = 0,
 				isSearchLanding = '',
-				isSingleQuery = '',
-				locationKeywords = [];
+				isSingleQuery = '';
 
 
 			if (pathsMatches && paths !== '/') {
@@ -87,23 +85,9 @@
 
 			//Directory Targeting
 			if (typeof algoliasearchHelper !== 'undefined' && typeof DDIR !== 'undefined') {
-				var URLString = window.location.search.slice(1);
-				var URLParams = DDIR.getStateFromQueryString(URLString);
-
-				keyword = (typeof URLParams['query'] !== 'undefined') ? URLParams['query'] : '';
-
-				for (var key in URLParams['disjunctiveFacetsRefinements']) {
-					if (URLParams['disjunctiveFacetsRefinements'].hasOwnProperty(key)) {
-						if (key === 'section') {
-							sectionItems =  URLParams['disjunctiveFacetsRefinements']['section'];
-							dirtype = sectionItems;
-						} else {
-							filterItems = URLParams['disjunctiveFacetsRefinements'][key];
-							filters.push(filterItems);
-							allFiltersCount = allFiltersCount + filterItems.length;
-						}
-					}
-				}
+				keyword = DDIR.search.adKeys.keyword;
+				filters = DDIR.search.adKeys.filters;
+				allFiltersCount = filters.length;
 
 				// keyword and filters are the only elements counted in this key (not location)
 				// if there is only 1 filter and no keywords, return true
@@ -111,18 +95,12 @@
 				isSingleQuery = (allFiltersCount === 1 && keyword === '') || (keyword !== '' && allFiltersCount === 0) ? 'true' : 'false';
 				isSearchLanding = (allFiltersCount === 0 && keyword === '') ? 'true' : 'false';
 
-				filters = [].concat.apply([], filters);
-
-				locationKeywords = (window.dirSearchPage.locationKeywords.length > 0) ? window.dirSearchPage.locationKeywords : [];
-
 			}
 
 			return {
 				inURL: targetPaths,
 				keyword: keyword,
-				locationKeywords: locationKeywords,
 				filters: filters,
-				dirtype: dirtype,
 				isSingleQuery: isSingleQuery,
 				isSearchLanding: isSearchLanding
 			};
@@ -385,9 +363,7 @@
 					$.extend(true, DMAG.dfpAds.config.dfp_options.set_url_targeting, {
 						inURL: urlTargeting.inURL,
 						keyword: urlTargeting.keyword,
-						locationKeywords: urlTargeting.locationKeywords,
 						filters: urlTargeting.filters,
-						dirtype: urlTargeting.dirtype,
 						isSingleQuery: urlTargeting.isSingleQuery,
 						isSearchLanding: urlTargeting.isSearchLanding
 					});
