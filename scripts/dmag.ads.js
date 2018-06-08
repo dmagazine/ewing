@@ -244,12 +244,6 @@
 					[300, 250], 
 				]).build();
 			},
-			mapping_interstitial: function() {
-				return window.googletag.sizeMapping()
-				.addSize([0, 1], [
-					[1, 1]
-				]).build();
-			},
 			mapping_native: function() {
 				return window.googletag.sizeMapping()
 				.addSize([0, 1], 
@@ -306,12 +300,6 @@
 					[728, 90]
 				],
 				targeting_sizes: "mapping_vertical",
-			},
-			MissEllie_interstitial: {
-				dimensions: [
-					[1, 1]
-				],
-				targeting_sizes: "mapping_interstitial",
 			},
 			// horizontal card in the river on archive pages
 			MissEllie_native: {
