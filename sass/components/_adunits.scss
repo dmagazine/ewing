@@ -57,7 +57,7 @@
 	}
 }
 
-.adunit--directory { 
+.adunit--directory.adunit--directory { 
 	@include breakpoint(large-only) {
 		width: 100%;
 		margin-left: 0;
