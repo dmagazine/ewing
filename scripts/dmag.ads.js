@@ -277,7 +277,15 @@
 				.addSize([0, 1], 
 					'fluid'
 				).build();
-			}
+			},
+			mapping_native_desktop: function() {
+				return window.googletag.sizeMapping()
+				.addSize([0, 0], [])
+				.addSize([1024, 1], [
+					'fluid'
+				])
+				.build();
+			},
 		},
 		ad_slots: {
 			MissEllie_horizontal: {
@@ -346,7 +354,7 @@
 				dimensions: [
 					['fluid']
 				],
-				targeting_sizes: "mapping_native"
+				targeting_sizes: "mapping_native_desktop"
 			},
 			// scroller item in the 'related content' section
 			MissEllie_native_related: {
@@ -522,15 +530,7 @@
 					};
 				});
 			});
-			/*
-			Inject ads between paragraphs on desktop for non-sponsored stories w sidebar
-			*/
-			enquire.register(DMAG.breakpoint_large_medium, function() {
-				$adunit = $('.layout--with-sidebar .story:not(.story--sponsored):not(.story--hide-native-ad) .story__content p:nth-child(6)');
-				if ($adunit.nextAll().length > 3 && $adunit.text().length > 30) {
-					$adunit.after('<article class="alignleft display-none card block js-block card--story js-adunit-native" data-adunit-match="/1039436/MissEllie_native_story"></article><div class="adunit adunit--native" data-adunit="MissEllie_native_story" data-mapping="mapping_native"></div>');
-				}
-			});
+			
 		},
 
 		/*
