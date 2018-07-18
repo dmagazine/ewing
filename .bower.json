@@ -1,6 +1,6 @@
 {
   "name": "ewing",
-  "version": "2.2.11",
+  "version": "2.2.22",
   "description": "A collection of universal components re-usable across D Magazine web products",
   "main": [
     "sass/main.scss",
@@ -20,13 +20,13 @@
   },
   "ignore": [],
   "homepage": "https://github.com/dmagazine/ewing",
-  "_release": "2.2.11",
+  "_release": "2.2.22",
   "_resolution": {
     "type": "version",
-    "tag": "2.2.11",
-    "commit": "5c0fb7d8e7ba6c92d587d59a7291abd022fcb2e2"
+    "tag": "2.2.22",
+    "commit": "bb8a24b32282db7eb43ef9ece7182ee23605375c"
   },
   "_source": "https://github.com/dmagazine/ewing.git",
-  "_target": "2.2.11",
+  "_target": "2.2.22",
   "_originalSource": "ewing"
 }

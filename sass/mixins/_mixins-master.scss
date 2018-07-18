@@ -304,6 +304,16 @@ $hover-opacity: 0.5;
 	}
 }
 
+@mixin link-style--blue {
+	color: $color__blue-dmag;
+	@include transition(color);
+	&:hover {
+		color: $color__blue-dmag--dark;
+		@include transition(color);
+	}
+}
+
+
 @mixin link-style--dark {
 	@include link-underline;
 	text-shadow: 

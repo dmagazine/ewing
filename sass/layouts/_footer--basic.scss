@@ -7,15 +7,31 @@
 	a { text-decoration: underline; }
 	z-index: $z-nav;
 	position: relative;
+	@include breakpoint(small-only) {
+		text-align: center;
+	}
+}
+
+.footer--basic__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	@include breakpoint(small-only) {
+		justify-content: center;
+	}
+}
+
+.footer--basic__text {
+	flex-grow: 1;
 }
 
 .footer--basic__social {
-	float: right;
+	white-space: nowrap;
 }
 
 .footer--basic__social-link {
-	margin-left: 1em;
+	&:not(:first-child) { margin-left: 1em; }
 	@include is-hover;
+	&.footer--basic__social-link { text-decoration: none; }// for links
 }
-
-a.footer--basic__social-link { text-decoration: none; }
