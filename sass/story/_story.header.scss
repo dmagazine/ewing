@@ -8,9 +8,9 @@
     background-size: cover;
     background-position: center center;
 
-    @include breakpoint(large_medium) {
-        background-attachment: fixed;
-    }
+    // @include breakpoint(large_medium) {
+    //     background-attachment: fixed;
+    // }
 
     @include background-overlay-dark;
     position: relative;
