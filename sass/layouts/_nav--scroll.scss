@@ -47,6 +47,10 @@
 	a.is-active { color: $color__white; font-weight: bold; }
 }
 
+.nav--scroll__item--main {
+	@include font-scale(textSans, 3, $caps: true, $no-line-height: true);
+}
+
 .nav--scroll__dropdown {
 	@include dropdown--color('gray');
 	@extend .icon--gray;
