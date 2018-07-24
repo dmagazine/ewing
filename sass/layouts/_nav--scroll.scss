@@ -48,14 +48,6 @@
 	vertical-align: middle;
 }
 
-.story-nav__number {
-	@include font(accent);
-	padding-right: 0.5em;
-}
-
-.story-nav__item--main {
-	@include font-scale(accent, 3, $caps: true, $no-line-height: true);
-}
 
 
 
@@ -117,6 +109,14 @@
 	}
 }
 
+.story-nav__number {
+	@include font(accent);
+	padding-right: 0.5em;
+}
+
+.story-nav__item--main {
+	@include font-scale(accent, 3, $caps: true, $no-line-height: true);
+}
 
 
 
