@@ -1,7 +1,7 @@
 .story-nav {
 	background-color: $color__gray--darkest;
 	width: 100%;
-	padding: 0.8em 0;
+	padding: 0.8em;
 	.story-nav:not(.scroll-to-fixed-fixed) { display: none; }
 }
 
@@ -12,6 +12,7 @@
 	align-items: center;
 	flex-wrap: nowrap;
 }
+
 
 .story-nav__logo { 
 	display: none;
@@ -34,7 +35,6 @@
 	flex-grow: 1;
 	margin: 0;
 	display: flex;
-	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
 	float: left;
@@ -59,6 +59,7 @@
 .story-nav__jumplinks {
 	@include story-nav__items;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .story-nav__jumplink {
@@ -87,20 +88,23 @@
 .story-nav__chapters {
 	@include story-nav__items;
 	align-items: stretch;
+	flex-wrap: nowrap;
 }
 
 .story-nav__chapter {
 	@include story-nav__item;
 	color: $color__gray--light;
-	border-right: 1px solid $color__gray--light;
+	&:not(:last-child) { border-right: 1px solid $color__gray--light; }
 	text-align: left;
-	flex: 1 0 200px;
+	flex: 1 1 200px;
 }
 
 .story-nav__chapter__link {
 	display: block;
-	padding: 1em 1.5em;
+	padding: 0.7em 1em;
 	height: 100%;
+	display: flex;
+	flex-wrap: nowrap;
 	@include transition(background-color);
 	&.is-active,
 	&:hover {
@@ -112,6 +116,10 @@
 .story-nav__number {
 	@include font(accent);
 	padding-right: 0.5em;
+}
+
+.story-nav__text {
+	display: inline-block;
 }
 
 .story-nav__item--main {
