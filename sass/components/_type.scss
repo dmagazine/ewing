@@ -1,3 +1,4 @@
+$responsive: false
 @include dmag-typography-defaults($chronicle-ss);
 
 ::selection {
@@ -7,7 +8,7 @@
 }
 
 .header {
-    @include font-scale(secondaryHeading, 3, $caps: true);
+    @include font-scale(secondaryHeading, 3, $caps: true, $responsive: false);
 }
 
 .headline {
