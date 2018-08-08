@@ -20,13 +20,13 @@
   },
   "ignore": [],
   "homepage": "https://github.com/dmagazine/ewing",
-  "_release": "2.2.11",
+  "_release": "2.2.19",
   "_resolution": {
     "type": "version",
-    "tag": "2.2.11",
-    "commit": "5c0fb7d8e7ba6c92d587d59a7291abd022fcb2e2"
+    "tag": "2.2.19",
+    "commit": "774ec59004b44a4e8d634ad5f78f4223cb3971d1"
   },
   "_source": "https://github.com/dmagazine/ewing.git",
-  "_target": "2.2.11",
+  "_target": "2.2.19",
   "_originalSource": "ewing"
 }
