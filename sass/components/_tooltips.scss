@@ -1,0 +1,33 @@
+@mixin tooltip-style() {
+	font-size: 10px;
+	line-height: 1.2;
+	background-color: $color__black;
+	color: $color__white;
+	padding: 0.8em 1em;
+	border-radius: 3px;
+	top: 110%;
+	right: 0;
+	text-align: center;
+	text-transform: none;
+	position: absolute;
+	z-index: 1;
+	a { 
+		text-decoration: underline;
+		@include is-hover();
+	}
+}
+
+.tooltip__text {
+	visibility: hidden;
+
+	@include tooltip-style();
+	.dir-card__sponsored & { 
+		width: 200px;
+		margin-top: -15px;
+	}
+
+}
+
+.tooltip:hover .tooltip__text {
+	visibility: visible;
+}

@@ -43,25 +43,8 @@
 
 }
 
-
-.story__content--is-slideshow-closed {
+@mixin story-base-font-styles {
     @include font-scale(bodyCopy, 1);
-
-    h2 { @include font-scale(headline, 2); }
-    h3 { @include font-scale(secondaryHeading, 2); }
-    h4 { 
-        @include font-scale(accent, 4);
-        text-decoration: underline;
-    }
-    h5 { 
-        @include font-scale(textSans, 3, $caps: true);
-        color: $color__blue-dmag;
-    }
-    h6 { 
-        @include font-scale(textSans, 1, $caps: true);
-        color: $color__gray--dark;
-    }
-
     ul, ol, dl { margin-top: 1em; margin-bottom: 1.5em; padding-left: 1em; }
 
     li { margin-top: 1em; }
@@ -76,6 +59,26 @@
     // see the dmagazine plugin, class-wysywig-editor
     .sans-bold {
         @include font-scale(accent, 3, $caps: true);
+    }
+}
+
+
+.story__content--is-slideshow-closed {
+    @include story-base-font-styles;
+
+    h2 { @include font-scale(headline, 2); }
+    h3 { @include font-scale(secondaryHeading, 2); }
+    h4 { 
+        @include font-scale(accent, 4);
+        text-decoration: underline;
+    }
+    h5 { 
+        @include font-scale(textSans, 3, $caps: true);
+        color: $color__blue-dmag;
+    }
+    h6 { 
+        @include font-scale(textSans, 1, $caps: true);
+        color: $color__gray--dark;
     }
 }
 

@@ -1,20 +1,23 @@
-.nav--scroll {
+.story-nav {
 	background-color: $color__gray--darkest;
 	width: 100%;
-	padding: 0.8em 0;
-	.nav--scroll:not(.scroll-to-fixed-fixed) { display: none; }
+	padding: 0.8em;
+	.story-nav:not(.scroll-to-fixed-fixed) { display: none; }
 }
 
-.nav--scroll-inner { 
+.story-nav-inner { 
 	width: 100%;
 	font-size: 0;
 	display: flex;
 	align-items: center;
+	flex-wrap: nowrap;
 }
 
-.nav--scroll__logo { 
+
+.story-nav__logo { 
 	display: none;
 	width: 50px;
+	flex: 0 0 50px;
 	max-height: 50px; //have to give fixed height or chrome ads a bunch of extra space
 	.scroll-to-fixed-fixed & { display: inline-block; }
 	@include breakpoint(large_medium) {
@@ -22,32 +25,116 @@
 	}
 }
 
-.nav--scroll__logo-image { width: 100%; display: block; }
+.story-nav__logo-image { width: 100%; display: block; }
 
-.nav--scroll__items { 
-	width: calc(100% - 50px);
+
+/*------------------------------------*\
+    #ITEMS - ALL
+\*------------------------------------*/
+@mixin story-nav__items {
+	flex-grow: 1;
 	margin: 0;
 	display: flex;
-	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
 	float: left;
 }
 
-.nav--scroll__item {
+@mixin story-nav__item {
 	@include font-scale(textSans, 3, $no-line-height: true);
-	flex-grow: 1;
 	color: $color__gray--dark;
 	list-style-type: none;
 	padding-left: 0;
-	text-align: center;
 	vertical-align: middle;
-	white-space: nowrap;
-	padding: 0.3em 1.5em;
-	a.is-active { color: $color__white; font-weight: bold; }
 }
 
-.nav--scroll__dropdown {
+
+
+
+
+
+/*------------------------------------*\
+    #JUMPLINKS
+\*------------------------------------*/
+.story-nav__jumplinks {
+	@include story-nav__items;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.story-nav__jumplink {
+	@include story-nav__item;
+	color: $color__gray--dark;
+	text-align: center;
+	flex: 1;
+	white-space: nowrap;
+}
+
+.story-nav__jumplink__link {
+	display: block;
+	padding: 0.3em 1.5em;
+	&.is-active {
+		color: $color__white; font-weight: bold;
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #CHAPTERS
+\*------------------------------------*/
+.story-nav__chapters {
+	@include story-nav__items;
+	align-items: stretch;
+	flex-wrap: nowrap;
+}
+
+.story-nav__chapter {
+	@include story-nav__item;
+	color: $color__gray--light;
+	&:not(:last-child) { border-right: 1px solid $color__gray--light; }
+	text-align: left;
+	flex: 1 1 200px;
+}
+
+.story-nav__chapter__link {
+	display: block;
+	padding: 0.7em 1em;
+	height: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	@include transition(background-color);
+	&.is-active,
+	&:hover {
+		@include transition(background-color);
+		background-color: $color__gray--darker;
+	}
+}
+
+.story-nav__number {
+	@include font(accent);
+	padding-right: 0.5em;
+}
+
+.story-nav__text {
+	display: inline-block;
+}
+
+.story-nav__item--main {
+	@include font-scale(accent, 3, $caps: true, $no-line-height: true);
+}
+
+
+
+
+
+/*------------------------------------*\
+    #DROPDOWN
+\*------------------------------------*/
+
+.story-nav__dropdown {
 	@include dropdown--color('gray');
 	@extend .icon--gray;
 	@include font-scale(textSans, 3, $no-line-height: true);
