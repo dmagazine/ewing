@@ -503,22 +503,42 @@
 		*/
 		native: function() {
 			var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+			console.log('eventMethod:');
+			console.log(eventMethod);
 			var eventer = window[eventMethod];
+			console.log('eventer:');
+			console.log(eventer);
 			var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+			console.log('messageEvent:');
+			console.log(messageEvent);
 
 			eventer(messageEvent,function(e) {
+				console.log('e');
+				console.log(e);
 
 				var key = e.message ? "message" : "data";
+				console.log('key:');
+				console.log(key);
 				var data = e[key];
+				console.log('data:');
+				console.log(data);
+
 				var eventName = data.message || 'ignore';
+				console.log('eventName:');
+				console.log(eventName);
 				var className = 'card--' + data.type; // card--sponsored, card--house
 				var classNames = className + ' ' + 'adunit-loaded';
 
 				if (eventName == 'adContentAvailable') {
 					$adunit = $('.js-adunit-native:not(.adunit-loaded)[data-adunit-match="' + data.adUnit + '"]').first();
+					console.log('$adunit:');
+					console.log($adunit);
 					$adunit.addClass(classNames);
+					console.log('data.content.length:');
+					console.log(data.content.length);
 					if (data.content.length > 0) {
 						$adunit.html( data.content ).removeClass('display-none');
+						console.log('did this fire?');
 					}
 
 				}
