@@ -338,6 +338,21 @@ $hover-opacity: 0.5;
 	&:hover { color: inherit; }
 }
 
+@mixin link-style-simple-underline {
+	a { 
+		position: relative; // get rid of chrome movement on hover
+		backface-visibility: hidden;
+
+		text-decoration: underline;
+		@include transition(opacity);
+
+		&:hover {
+			opacity: 0.8;
+			@include transition(opacity);
+		}
+	}
+}
+
 
 
 
