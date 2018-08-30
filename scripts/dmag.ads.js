@@ -507,9 +507,9 @@
 			var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
 			eventer(messageEvent,function(e) {
-
 				var key = e.message ? "message" : "data";
 				var data = e[key];
+
 				var eventName = data.message || 'ignore';
 				var className = 'card--' + data.type; // card--sponsored, card--house
 				var classNames = className + ' ' + 'adunit-loaded';

@@ -111,3 +111,25 @@ $height__social-button: 40px;
 	}
 }
 
+
+// simple white buttons, used in basic nav
+.social-buttons--style5 {
+	color: $color__white;
+	@include font-scale(accent, 1, $caps: true, $no-line-height: true);
+	.social-buttons-inner {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	.social-button {
+		padding: 0 0.5em;
+		&:last-child { padding-right: 0; }
+		@include transition(opacity);
+		&:hover {
+			opacity: 0.8;
+			@include transition(opacity);
+		}
+	}
+	.icon {@include icon-color($color__white, $color__black); }
+}
+
