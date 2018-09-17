@@ -26,10 +26,10 @@
 		> li {
 			display: flex;
 			align-items: stretch;
-			flex: 0 0 32%;
-			// padding: 20px !important;
 			text-align: center;
 			margin-bottom: 1.7%;
+			@include breakpoint(large_medium) { flex: 0 0 32%; }
+			@include breakpoint(small-only) { flex: 0 0 49%; }
 		}
 		// the actual radio button
 		input[type=radio] { @include is-hidden; }
