@@ -1,20 +1,59 @@
-// Search form
-// .search-form {
-//   @extend .form-inline;
-// }
-// .search-form label {
-//   font-weight: normal;
-//   @extend .form-group;
-// }
-// .search-form .search-field {
-//   @extend .form-control;
-// }
-// .search-form .search-submit {
-//   @extend .btn;
-//   @extend .btn-default;
-// }
+.dmag-form-cards {
+	@include font(textSans);
+	padding-right: 0;
+	padding-left: 0;
 
+	.gfield_label {
+		width: 100%;
+		text-align: center;
+		font-size: 18px !important;
+	}
 
-// button {
-// 	border: none;
-// }
+	.gform_description {
+		@include center-block;
+		width: 100%;
+		max-width: 700px;
+		@include font-scale(textSans, 3);
+		text-align: center;
+	}
+
+	ul.gfield_radio.gfield_radio {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		// each 'card'
+		> li {
+			display: flex;
+			align-items: stretch;
+			flex: 0 0 32%;
+			// padding: 20px !important;
+			text-align: center;
+			margin-bottom: 1.7%;
+		}
+		// the actual radio button
+		input[type=radio] { @include is-hidden; }
+		input[type=radio] + label {
+			@include font-scale(textSans, 4.5);
+			border: 1px solid $color__gray--medium;
+			width: 100%;
+			max-width: 100%;
+			margin: 0;
+			padding: gutter(4);
+			cursor: pointer;
+			&:hover {
+				background-color: $color__gray--light;
+			}
+		}
+
+		input[type=radio]:checked + label {
+			background-color: $color__gray--medium;
+		}
+
+		img {
+			max-width: 100%;
+			@include center-block;
+			padding-bottom: 1em;
+		}
+	}
+}
