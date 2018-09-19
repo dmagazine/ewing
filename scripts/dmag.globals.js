@@ -72,6 +72,23 @@
 		return image;
 	};
 
+	DMAG.imageSizing = function(image, size) {
+		if (!image) { return; }
+
+		$is_subdomain = image.indexOf('//dmagazine.com') == -1 && image.indexOf('www.dmagazine.com') == -1;
+		$is_old = image.indexOf('/uploads/media/') != -1;
+
+		if ($is_old || $is_subdomain) {
+			return image;
+		} else {
+			// the slice cuts off the .png, .jpg, .gif etc at the end of the url
+			image_start = image.slice(0, -4);
+			image_end = image.slice(-4);
+			return image_start + '-330x220' + image_end;
+		}
+
+	};
+
 	DMAG.getURLParams = function() {
 		URLParams = window.location.search.slice(1);
 		URLParams = URLParams.split('&');

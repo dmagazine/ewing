@@ -151,10 +151,8 @@
     @include font-scale(accent, 5);
     max-width: 700px;
     display: inline-block;
-    a { 
-        text-decoration: underline;
-        @include is-hover(0.8);
-    }
+    @include link-style-simple-underline;
+
 }
 
 .hero__button {
