@@ -77,6 +77,12 @@ $width__submit: 100px;
 
 
 
+
+
+/*------------------------------------*\
+    #FORM CARDS -- use on radio buttons to create a card-link appearance
+    Instructions on how to use here: https://github.com/dmagazine/guides/blob/master/forms.md
+\*------------------------------------*/
 .dmag-form-cards {
 	@include font(textSans);
 	padding-right: 0;
