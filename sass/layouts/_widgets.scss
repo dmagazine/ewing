@@ -19,9 +19,7 @@
     margin-right: $full-width-margin;
 
     // styling for widgets within the feed, not at top of page
-    &:not(.widget--top) {
-        margin-top: gutter(6);
-    }
+    margin-top: gutter(6);
 }
 
 .widget--sidebar {
@@ -51,17 +49,8 @@
     margin-top: 0;
 }
 
-// the top widget needs reduced padding on the top and bottom
-// so that more content can fit above the fold
-// but, top padding needs to be enough to that its underneath the site kicker
-// 'making dallas even better'
 .widget--top {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    @include breakpoint(large-only) {
-        padding-top: 2.5em;
-        padding-bottom: 2em;
-    }
+    margin-top: 0;
 }
 
 .widget__header {
