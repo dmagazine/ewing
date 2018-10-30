@@ -128,6 +128,10 @@ $size__icon-large: 64px;
     @include icon-color__outline($color__red-dmag);
 }
 
+.icon--black-o {
+    @include icon-color__outline($color__black);
+}
+
 .icon--gray {
     @include icon-color($color__gray--dark, $color__white);
 }
