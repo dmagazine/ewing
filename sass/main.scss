@@ -30,6 +30,7 @@
 @import "components/images";
 @import "components/tooltips";
 
+
 @import "story/story.type";
 @import "story/story.header";
 @import "story/story.datatables";
@@ -41,3 +42,5 @@
 @import "layouts/nav--simple";
 @import "layouts/page";
 @import "layouts/widgets";
+@import "layouts/widgets.newsletter";
+@import "layouts/simple-card";

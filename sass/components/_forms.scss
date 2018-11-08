@@ -1,3 +1,88 @@
+/*------------------------------------*\
+    #HUBSPOT FORMS
+\*------------------------------------*/
+
+$width__submit: 100px;
+
+@mixin form-bar {
+    input[type="email"] {
+        @include font-scale(textSans, 4);
+        height: $button-fixed-height--small;
+        border: 1px solid $color__gray--medium;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        width: 100%;
+    }
+
+    input[type="submit"] { 
+        height: $button-fixed-height--small;
+        width: $width__submit;
+        padding: 0;
+        border: 1px solid $color__gray--medium;
+        border-left: 0;
+    }
+
+    .hs-form .form-columns-2 {
+        width: 100%;
+        max-width: calc(100% - #{$width__submit});
+    }
+
+    .hs-email label { @include is-hidden; }
+}
+
+@mixin hubspot-overrides {
+    // in order for these to work, the form has to be formmatted correctly in hubspot. 
+    // both the submit and email fileds have to be aligned next to each other, and neither can have 'label' text
+    .hs-form fieldset.form-columns-2 .hs-form-field {
+        width: 100%;
+    }
+
+    .hs-form fieldset.form-columns-2 .input { margin-right: 0; }
+
+    .hbspt-form { margin: 0 auto; }
+
+    .form-columns-2,
+    .form-columns-1,
+    .hs_submit {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+.hbspt-form {
+    @include form-bar();
+    @include hubspot-overrides();
+
+    input[type="submit"] { 
+        @extend .button--red;
+    }
+}
+
+// message visible if user tries to submit empty form or non-email formatted text
+.hs-error-msgs {
+    @include font-scale(textSans, 2);
+    color: $color__red-dmag;
+    @extend %list-unstyled;
+    margin-top: 1em;
+}
+
+// message visible after user has submitted email
+.submitted-message {
+    @include font-scale(textSans, 2);
+}
+
+// hide the astrisk next to required fields
+.hs-form-required { display: none; } 
+
+
+
+
+
+
+/*------------------------------------*\
+    #FORM CARDS -- use on radio buttons to create a card-link appearance
+    Instructions on how to use here: https://github.com/dmagazine/guides/blob/master/forms.md
+\*------------------------------------*/
 .dmag-form-cards {
 	@include font(textSans);
 	padding-right: 0;
