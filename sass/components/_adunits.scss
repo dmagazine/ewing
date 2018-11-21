@@ -95,21 +95,6 @@
 }
 
 
-
-// dwedding mobile top ad is relatively positioned, so dont need any of this styling
-.adunit--mobile_top:not(.adunit--clean) {
-	background-color: $color__white;
-	text-align: center;
-	width: 100%;
-	position: fixed;
-	bottom: 0;
-	border-top: 1px solid $color__black;
-	z-index: $z-ground-top;
-	@include breakpoint(medium_small) {
-		padding: 0.5em 0;
-	}
-}
-
 // remove striped background
 // this class is used for dweddings ads
 .adunit--clean {
