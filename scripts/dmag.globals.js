@@ -81,10 +81,11 @@
 		if ($is_old || $is_subdomain) {
 			return image;
 		} else {
-			// the slice cuts off the .png, .jpg, .gif etc at the end of the url
-			image_start = image.slice(0, -4);
-			image_end = image.slice(-4);
-			return image_start + '-330x220' + image_end;
+			var pos = image.lastIndexOf('.');
+			// the slice cuts off the .png, .jpg, .gif, .tiff, .jpeg etc at the end of the url
+			image_start = image.slice(0, pos);
+			image_end = image.slice(pos + 1);
+			return image_start + '-330x220.' + image_end;
 		}
 
 	};
