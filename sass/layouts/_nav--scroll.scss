@@ -89,14 +89,18 @@
 	@include story-nav__items;
 	align-items: stretch;
 	flex-wrap: nowrap;
+	width: 100%;
+	flex-basis: 100%;
+	overflow-x: auto;
 }
 
 .story-nav__chapter {
 	@include story-nav__item;
 	color: $color__gray--light;
-	&:not(:last-child) { border-right: 1px solid $color__gray--light; }
+	&:not(:last-child) { border-right: 1px solid $color__gray--dark; }
 	text-align: left;
 	flex: 1 1 200px;
+	&:first-child { min-width: 150px; }
 }
 
 .story-nav__chapter__link {

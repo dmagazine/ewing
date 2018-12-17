@@ -8,6 +8,20 @@
 	background-repeat: repeat;
 }
 
+@mixin striped-background-styles {
+	margin-left: $full-width-margin;
+	margin-right: $full-width-margin;
+
+	@include striped-background;
+
+	@include breakpoint(large-only) {
+		padding: 1.8em 0;
+	}
+	@include breakpoint(medium_small) {
+		padding: 1em 0;
+	}
+}
+
 .adunit:not(.adunit--native) {
 	text-align: center;
 	@extend %clearfix;
@@ -35,18 +49,12 @@
 		background-color: $color__white;
 	}
 
-	margin-left: $full-width-margin;
-	margin-right: $full-width-margin;
+	@include striped-background-styles;
 
-	@include striped-background;
+}
 
-	@include breakpoint(large-only) {
-		padding: 1.8em 0;
-	}
-	@include breakpoint(medium_small) {
-		padding: 1em 0;
-	}
-
+.adunit--vertical:not(.adunit--native) {
+	@include breakpoint(medium_small) { @include striped-background-styles; }
 }
 
 .adunit--slideshow {
@@ -94,21 +102,6 @@
 	display:none !important;
 }
 
-
-
-// dwedding mobile top ad is relatively positioned, so dont need any of this styling
-.adunit--mobile_top:not(.adunit--clean) {
-	background-color: $color__white;
-	text-align: center;
-	width: 100%;
-	position: fixed;
-	bottom: 0;
-	border-top: 1px solid $color__black;
-	z-index: $z-ground-top;
-	@include breakpoint(medium_small) {
-		padding: 0.5em 0;
-	}
-}
 
 // remove striped background
 // this class is used for dweddings ads
