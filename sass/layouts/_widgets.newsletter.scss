@@ -1,0 +1,86 @@
+/*------------------------------------*\
+    #FULL WIDTH
+    #SIDEBAR
+\*------------------------------------*/
+// uses embeds from hubspot, so some class names are hubspot-specific
+// see _forms.scss for form mixins and hubspot-spcific overrides
+
+.newsletter__social {
+    padding-top: 0.7em;
+    justify-content: center;
+}
+
+
+.newsletter__footer {
+    @include font-scale(textSans, 1);
+    @include link-style-simple-underline;
+    margin-bottom: 0;
+}
+
+
+
+
+/*------------------------------------*\
+    #FULL WIDTH
+\*------------------------------------*/
+// newsletter widget in the article footer.
+// part of w-combo
+.w-newsletter {
+    background: $color__gray--medium;
+    padding-left: gutter(6);
+    padding-right: gutter(6);
+    text-align: center;
+    .hbspt-form { max-width: 300px;}
+    @include form-bar();
+    input[type="submit"] { @include button--small; }
+    @include hubspot-overrides();
+}
+
+.w-newsletter__title {
+    @include font-scale(accent, 5.5);
+    margin: 0;
+    padding-top: 0.2em;
+}
+
+.w-newsletter__text { 
+    @include font-scale(textSans, 3);
+    display: inline-block;
+    max-width: 450px;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #SIDEBAR
+\*------------------------------------*/
+// newsletter widget on feed page sidebar
+.ws-newsletter {
+    background-color: $color__gray--light;
+    color: $color__black;
+    padding-left: gutter(4);
+    padding-right: gutter(4);
+    text-align: center;
+
+    input[type="submit"] {  @include button--small; }
+    @include form-bar();
+    @include hubspot-overrides();
+}
+
+.ws-newsletter__title {
+    display: block;
+    @include font-scale(kicker, 1, $caps: true);
+    padding-bottom: 0.5em;
+}
+
+.ws-newsletter__text {
+    @include font-scale(textSans, 4);
+    margin-bottom: 0.5em;
+}
+
+
+
+

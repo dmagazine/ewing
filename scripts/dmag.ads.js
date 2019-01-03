@@ -549,31 +549,32 @@
 		- plugin: scrolltofixed, https://github.com/bigspotteddog/ScrollToFixed
 		*/
 		sticky_ads: function() {
-			if ($('.js-stickyStop').length > 0) {
-				var $padding = 10;
-				var $marginTop = DMAG.$nav_height + $padding;
-				var $sidebarAd = $('.js-sticky:not(.scroll-to-fixed-fixed)');
+			enquire.register(DMAG.breakpoint_large_only, function() {
+				if ($('.js-stickyStop').length > 0) {
+					var $padding = 10;
+					var $marginTop = DMAG.$nav_height + $padding;
+					var $sidebarAd = $('.js-sticky:not(.scroll-to-fixed-fixed)');
 
-				$sidebarAd.each(function(){
-					$this = $(this);
-					var $ad_height = $this.height();
-					var $ad_parent = $this.parents('.js-stickyParent');
-					$limit = $ad_parent.next('.js-stickyStop').offset().top - $ad_height - $padding;
+					$sidebarAd.each(function(){
+						$this = $(this);
+						var $ad_height = $this.height();
+						var $ad_parent = $this.parents('.js-stickyParent');
+						$limit = $ad_parent.next('.js-stickyStop').offset().top - $ad_height - $padding;
 
-					if ( $ad_height < $ad_parent.height() ){
-						$this.scrollToFixed({
-							marginTop: $marginTop,
-							zIndex: 200,
-							// end sticky action when ad hits widget element
-							// limit is calculated from the top of ad element
-							// translation: (widget offset) - (ad height) - (padding)
-							limit: $limit,
-						}); //scrolltofixed
-					} //endif
-
-				}); //each
-			};
-		},
+						if ( $ad_height < $ad_parent.height() ){
+							$this.scrollToFixed({
+								marginTop: $marginTop,
+								zIndex: 200,
+								// end sticky action when ad hits widget element
+								// limit is calculated from the top of ad element
+								// translation: (widget offset) - (ad height) - (padding)
+								limit: $limit,
+							}); //scrolltofixed
+						} //endif
+					}); //each
+				}; // if stickyStop
+			}); // enquire
+		}, // sticky_ads
 	}; // DMAG.dfpAds
 
 })(jQuery);

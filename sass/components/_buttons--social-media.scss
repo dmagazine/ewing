@@ -1,3 +1,6 @@
+/*------------------------------------*\
+    #SOCIAL BUTTONS
+\*------------------------------------*/
 $height__social-button: 40px;
 
 .social-button .icon { @extend .icon--small; }
@@ -133,3 +136,23 @@ $height__social-button: 40px;
 	.icon {@include icon-color($color__white, $color__black); }
 }
 
+
+
+
+
+
+
+/*------------------------------------*\
+    #SOCIAL LINKS - less complicated than buttons, use a different macro
+\*------------------------------------*/
+.social-links {
+	.social-link {
+		padding: 0 0.4em;
+		@include icon-color($color__gray--dark);
+	}
+
+	.social-link--facebook:hover { @include icon-color($color__brand__facebook); }
+	.social-link--twitter:hover { @include icon-color($color__brand__twitter); }
+	.social-link--pinterest:hover { @include icon-color($color__brand__pinterest); }
+	.social-link--instagram:hover { @include icon-color($color__brand__instagram); }
+}

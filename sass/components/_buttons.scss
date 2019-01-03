@@ -117,6 +117,9 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
     @include button--outline($color__white, transparent, $color__black);
 }
 
+.button--outline--gray {
+    @include button--outline($color__gray--dark, transparent, $color__white);
+}
 
 .button--blue.button--blue {
     @include button($color__blue-dmag, $color__white);
