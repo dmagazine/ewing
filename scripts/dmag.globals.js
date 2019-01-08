@@ -8,7 +8,7 @@
 
 	/*
 	Breakpoints
-	THERE ARE ALSO SEPERATELY MAINTINAED JS AND PHP BREAKPOINTS, 
+	THERE ARE ALSO SEPERATELY MAINTINAED JS AND PHP BREAKPOINTS,
 	- mixins-master.scss
 	- class-constants.php
 	*/
@@ -75,7 +75,7 @@
 	DMAG.imageSizing = function(image, size) {
 		if (!image) { return; }
 
-		$is_subdomain = image.indexOf('//dmagazine.com') == -1 && image.indexOf('www.dmagazine.com') == -1;
+		$is_subdomain = (image.indexOf('//dmagazine.com') == -1 && image.indexOf('www.dmagazine.com') == -1) && image.indexOf('assets.dmagstatic.com') == -1;
 		$is_old = image.indexOf('/uploads/media/') != -1;
 
 		if ($is_old || $is_subdomain) {
