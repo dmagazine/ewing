@@ -157,6 +157,7 @@
 .hero__description {
     @include font-scale(accent, 5);
     max-width: 700px;
+    width: 100%;
     display: inline-block;
     @include link-style-simple-underline;
 
