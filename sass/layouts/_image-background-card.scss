@@ -1,0 +1,37 @@
+.image-background-cards {
+	margin-top: gutter(6);
+}
+
+.image-background-card {
+	@include breakpoint(large_medium) {
+		@include gallery(4 of 8);
+	}
+	@include breakpoint(small-only) {
+		width: 100%;
+		display: block;
+		clear: both;
+	}
+	@include aspect-ratio(3, 2);
+	margin-bottom: gutter(8);
+	@include transition(filter);
+	background-size: cover;
+	background-position: center center;
+
+	&.image-background-card--background-image > div {
+		@include background-overlay-dark;
+	}
+
+	&:hover {
+		filter: brightness(85%);
+		@include transition(filter);
+	}
+}
+
+.image-background-card__title {
+	padding: 0 gutter(8);
+	@include font-scale(accent, 5.5);
+	text-align: center;
+	width: 100%;
+	@include center-absolute;
+	color: $color__white;
+}

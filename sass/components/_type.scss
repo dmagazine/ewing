@@ -10,6 +10,10 @@
     @include font-scale(secondaryHeading, 3, $caps: true, $responsive: false);
 }
 
+.header-sans {
+    @include font-scale(accent, 7);
+}
+
 .headline {
     @include font-scale(headline, 2);
 }
