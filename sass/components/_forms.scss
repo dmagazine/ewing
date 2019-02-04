@@ -33,7 +33,8 @@ $width__submit: 100px;
 @mixin hubspot-overrides {
     // in order for these to work, the form has to be formmatted correctly in hubspot. 
     // both the submit and email fileds have to be aligned next to each other, and neither can have 'label' text
-    .hs-form fieldset.form-columns-2 .hs-form-field {
+    .hs-form fieldset.form-columns-2 .hs-form-field,
+    .hs-form fieldset.form-columns-3 .hs-form-field {
         width: 100%;
     }
 
@@ -41,6 +42,7 @@ $width__submit: 100px;
 
     .hbspt-form { margin: 0 auto; }
 
+    .form-columns-3,
     .form-columns-2,
     .form-columns-1,
     .hs_submit {
