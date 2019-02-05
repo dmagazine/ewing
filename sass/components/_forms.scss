@@ -22,7 +22,8 @@ $width__submit: 100px;
         border-left: 0;
     }
 
-    .hs-form .form-columns-2 {
+    .hs-form .form-columns-2,
+    .hs-form .form-columns-3 {
         width: 100%;
         max-width: calc(100% - #{$width__submit});
     }
@@ -38,7 +39,8 @@ $width__submit: 100px;
         width: 100%;
     }
 
-    .hs-form fieldset.form-columns-2 .input { margin-right: 0; }
+    .hs-form fieldset.form-columns-2 .input,
+    .hs-form fieldset.form-columns-3 .input { margin-right: 0; }
 
     .hbspt-form { margin: 0 auto; }
 
