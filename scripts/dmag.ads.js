@@ -177,6 +177,14 @@
 					[320, 50]
 				]).build();
 			},
+			mapping_horizontal_interactive: function() {
+				return window.googletag.sizeMapping()
+				.addSize([980, 1], [
+					[970, 250],
+				]).addSize([0, 1], [
+					[320, 50]
+				]).build();
+			},
 			mapping_horizontal_slideshow: function() {
 				return window.googletag.sizeMapping()
 				.addSize([0, 1], [
