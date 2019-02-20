@@ -1,6 +1,17 @@
 /*------------------------------------*\
     #SOCIAL BUTTONS
 \*------------------------------------*/
+@mixin colors-social-button($color) {
+	border-color: $color;
+	@include icon-color($color, $color);
+	color: $color;
+	&:hover {
+		color: $color__white;
+		@include icon-color($color__white, $color__white);
+		background-color: $color;
+	}
+}
+
 $height__social-button: 40px;
 
 .social-button .icon { @extend .icon--small; }
@@ -137,6 +148,39 @@ $height__social-button: 40px;
 }
 
 
+// react circular social buttons
+.social-buttons--circles {
+	.social-buttons__text {
+		@include font-scale(textSans, 1, $caps: true);
+	}
+	.social-buttons-inner {
+		display: flex;
+		align-items: center;
+	}
+	.social-button {
+		width: 35px;
+		height: 35px;
+		margin-left: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid $color__black;
+		border-radius: 50%;
+	}
+
+	.button--facebook {
+		@include colors-social-button($color__brand__facebook);
+	}
+	.button--twitter {
+		@include colors-social-button($color__brand__twitter);
+	}
+	.button--pinterest {
+		@include colors-social-button($color__brand__pinterest);
+	}
+	.button--sms {
+		@include colors-social-button($color__sms);
+	}
+}
 
 
 

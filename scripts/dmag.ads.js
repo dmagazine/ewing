@@ -177,6 +177,14 @@
 					[320, 50]
 				]).build();
 			},
+			mapping_horizontal_interactive: function() {
+				return window.googletag.sizeMapping()
+				.addSize([980, 1], [
+					[970, 250],
+				]).addSize([0, 1], [
+					[320, 50]
+				]).build();
+			},
 			mapping_horizontal_slideshow: function() {
 				return window.googletag.sizeMapping()
 				.addSize([0, 1], [
@@ -268,6 +276,14 @@
 				],
 				targeting_sizes: "mapping_horizontal",
 			},
+			DWeddings_horizontal: {
+				dimensions: [
+					[970, 250],
+					[728, 90], 
+					[300, 250]
+				],
+				targeting_sizes: "mapping_horizontal",
+			},
 			MissEllie_horizontal_top: {
 				dimensions: [
 					[970, 250],
@@ -278,6 +294,14 @@
 				targeting_sizes: "mapping_horizontal_top",
 			},
 			MissEllie_vertical: {
+				dimensions: [
+					[300, 600],
+					[300, 250],
+					[728, 90]
+				],
+				targeting_sizes: "mapping_vertical",
+			},
+			DWeddings_vertical: {
 				dimensions: [
 					[300, 600],
 					[300, 250],

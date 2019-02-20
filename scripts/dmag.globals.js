@@ -8,7 +8,7 @@
 
 	/*
 	Breakpoints
-	THERE ARE ALSO SEPERATELY MAINTINAED JS AND PHP BREAKPOINTS, 
+	THERE ARE ALSO SEPERATELY MAINTINAED JS AND PHP BREAKPOINTS,
 	- mixins-master.scss
 	- class-constants.php
 	*/
@@ -75,16 +75,17 @@
 	DMAG.imageSizing = function(image, size) {
 		if (!image) { return; }
 
-		$is_subdomain = image.indexOf('//dmagazine.com') == -1 && image.indexOf('www.dmagazine.com') == -1;
+		$is_subdomain = (image.indexOf('//dmagazine.com') == -1 && image.indexOf('www.dmagazine.com') == -1) && image.indexOf('assets.dmagstatic.com') == -1;
 		$is_old = image.indexOf('/uploads/media/') != -1;
 
 		if ($is_old || $is_subdomain) {
 			return image;
 		} else {
-			// the slice cuts off the .png, .jpg, .gif etc at the end of the url
-			image_start = image.slice(0, -4);
-			image_end = image.slice(-4);
-			return image_start + '-330x220' + image_end;
+			var pos = image.lastIndexOf('.');
+			// the slice cuts off the .png, .jpg, .gif, .tiff, .jpeg etc at the end of the url
+			image_start = image.slice(0, pos);
+			image_end = image.slice(pos + 1);
+			return image_start + '-330x220.' + image_end;
 		}
 
 	};

@@ -53,3 +53,12 @@
 .is-gone {
 	display: none !important;
 }
+
+.is-gone--large-only { @include breakpoint(large-only) { display: none !important; } }
+.is-gone--medium-only { @include breakpoint(medium-only) { display: none !important; } }
+.is-gone--small-only { @include breakpoint(small-only) { display: none !important; } }
+.is-gone--large_medium { @include breakpoint(large_medium) { display: none !important; } }
+.is-gone--medium_small { @include breakpoint(medium_small) { display: none !important; } }
+
+
+
