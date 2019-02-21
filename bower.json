@@ -12,6 +12,7 @@
     "scripts/dmag.card.js"
   ],
   "dependencies": {
+    "normalize-css": "normalize.css#^3.0.3",
     "susy": "2.2.11",
     "enquire": "^2.1.2",
     "datatables": "^1.10.12",
