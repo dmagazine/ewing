@@ -1,6 +1,6 @@
 {
   "name": "ewing",
-  "version": "2.2.60",
+  "version": "2.2.61",
   "description": "A collection of universal components re-usable across D Magazine web products",
   "main": [
     "sass/main.scss",
@@ -16,8 +16,7 @@
     "enquire": "^2.1.2",
     "datatables": "^1.10.12",
     "scrolltofixed": "1.0.8",
-    "jquery.scrollTo": "^2.1.2",
-    "normalize-css": "^8.0.1"
+    "jquery.scrollTo": "^2.1.2"
   },
   "ignore": []
 }
