@@ -1,5 +1,5 @@
-// @import "../bower_components/font-scale/scss/_typography.helpers.scss";
-// @import "../bower_components/font-scale/scss/_typography.mixins.scss";
+@import "../normalize-css/normalize";
+@import "../susy/sass/_susy";
 
 @import "variables-dmag/colors";
 @import "variables-dmag/structure";
@@ -10,6 +10,7 @@
 
 @import "mixins/breakpoints";
 @import "mixins/mixins-master";
+
 @import "mixins/grid";
 @import "mixins/hide";
 

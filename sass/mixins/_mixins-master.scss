@@ -423,3 +423,19 @@ $hover-opacity: 0.5;
     border-bottom: 1px solid $color__gray--light;
 }
 
+
+/* If this function is imported, you can import scss files using:
+   @if not-imported("your-file") { @import "your-file"; }
+   https://paul.wellnerbou.de/2015/05/18/avoid-multiple-imports-of-the-same-scss-file-with-sass/
+*/
+$imported-once-files: () !default;
+
+@function not-imported($name) {
+  $imported-once-files: $imported-once-files !global;
+  $module_index: index($imported-once-files, $name);
+  @if (($module_index == null) or ($module_index == false)) {
+    $imported-once-files: append($imported-once-files, $name);
+    @return true;
+  }
+  @return false;
+}
