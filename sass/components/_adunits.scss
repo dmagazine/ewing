@@ -49,6 +49,13 @@
 		background-color: $color__white;
 	}
 
+	// #DMAG-0236 [BW] 2020-04-28
+	// account for .site-wrapper margin at the end of the page
+	.site-wrapper &:last-child {
+		margin-top: gutter(6);
+		margin-bottom: -1 * gutter(6);
+	}
+
 	@include striped-background-styles;
 
 }
