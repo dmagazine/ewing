@@ -90,6 +90,9 @@
 .story__header--with-video {
     @include breakpoint(large_medium) {
         background-image: none !important;// important to override inline background image
+        figure {
+            display: none;
+        }
     }
 }
 
@@ -114,6 +117,13 @@
     }
 }
 
+
+.story__header-video-wrapper {
+    @include aspect-ratio(3, 2);
+    @include breakpoint(small-only) {
+        display: none;
+    }
+}
 
 .story__header__video {
     position: absolute;
