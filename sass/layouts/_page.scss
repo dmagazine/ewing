@@ -1,6 +1,9 @@
 .page-wrapper {
 	margin-bottom: gutter(3);
 	margin-top: gutter(3);
+	@include breakpoint(small-only) {
+		margin-top: 60px;
+	}
 }
 
 .page--centered { text-align: center; }
