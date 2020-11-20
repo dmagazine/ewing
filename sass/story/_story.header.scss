@@ -77,7 +77,7 @@
 
 .story__header--medium {
     @include breakpoint(large_medium) {
-        height: 80vh;
+        height: 120vh;
         width: 100%;
     }
     overflow: hidden;

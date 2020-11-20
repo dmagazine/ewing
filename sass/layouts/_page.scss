@@ -30,3 +30,14 @@
 .template-form__form {
 	padding: gutter(8) gutter(5);
 }
+
+.back-to-top-link {
+	position: fixed;
+	bottom: -140px;
+	right: 40px;
+	z-index: 5000;
+	transition-duration: 1s;
+	.is-scrolled & {
+		bottom: 40px;
+	}
+}

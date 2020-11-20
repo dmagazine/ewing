@@ -9,10 +9,10 @@
 					scrollTop: $('.js-scrollOffset').offset().top - DMAG.$spaceTop
 				}, 900);
 			});
-
-
 		}
 	};
+
+	DMAG.scrolledPastTop = false;
 
 	DMAG.scrollToc = {
 
@@ -51,6 +51,11 @@
 				}
 
 			});
+
+			if (scrollPos > windowHeight && !DMAG.scrolledPastTop) {
+				$('body').addClass('is-scrolled');
+				DMAG.scrolledPastTop = true;
+			}
 		}
 
 	};
