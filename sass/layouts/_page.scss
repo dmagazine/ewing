@@ -40,4 +40,11 @@
 	.is-scrolled & {
 		bottom: 40px;
 	}
+	.icon {
+		width: 40px;
+		height: 40px;
+		&:hover circle {
+			fill: #0076a3;
+		}
+	}
 }
