@@ -15,7 +15,7 @@
 	padding: gutter(6);
 }
 
-/** 
+/**
  * Background and indent of title box, broken out into a mixin so can be included with or without a breakpoint in the tile-box mixin
  * @param {number} $opacity
  * @param {bool} $indent - if true, box recedes up into the image
@@ -81,7 +81,7 @@
  * @param {number} $x
  * @param {number} $y
  *
- * @example 
+ * @example
  *  @include viewport-ratio(3, 2);
  *
  */
@@ -97,11 +97,11 @@
 
 /*
  * Content with fixed ratio
- * 
+ *
  * @param {number} $x
  * @param {number} $y
  *
- * @example 
+ * @example
  *  @include aspect-ratio(3, 2);
  *
  */
@@ -152,7 +152,7 @@
  *
  */
 @mixin absolute-background-image {
-	background-size: cover; 
+	background-size: cover;
 
 	@include breakpoint(large_medium) {
 		position: absolute;
@@ -189,7 +189,7 @@
 }
 
 @mixin scroller__cards($breakpoint: false) {
-	@if $breakpoint == true { 
+	@if $breakpoint == true {
 		@include breakpoint(medium_small) {
 			padding-left: gutter(4);
 			@include scroller__items();
@@ -215,7 +215,7 @@
 		}
 	}
 
-	@if $breakpoint == true { 
+	@if $breakpoint == true {
 		@include breakpoint(medium_small) { @include scroller__item(); }
 	} @else {
 		@include scroller__item();
@@ -269,8 +269,8 @@ $transition-time: 0.3s;
 $hover-opacity: 0.5;
 @mixin is-hover($opacity: $hover-opacity) {
 	@include transition(opacity);
-	&:hover { 
-		opacity: $opacity; 
+	&:hover {
+		opacity: $opacity;
 	}
 }
 
@@ -282,18 +282,18 @@ $hover-opacity: 0.5;
 }
 
 %is-hover--blue {
-	color: $color__blue-dmag;
+	color: $c-red;
 	@include transition(color);
 }
 
-@mixin link-underline($color: $color__blue-dmag) {
+@mixin link-underline($color: $c-red) {
 	background-image: linear-gradient($color__white, $color__white),linear-gradient($color__white, $color__white),linear-gradient($color, $color);
 	background-size: .05em 1px,.05em 1px,1px 1px;
 	background-repeat: no-repeat,no-repeat,repeat-x;
 	background-position: 0 95%,100% 95%,0 95%;
 }
 
-@mixin link-style($color: $color__blue-dmag, $color_hover: $color__blue-dmag, $color_background: $color__white) {
+@mixin link-style($color: $c-red, $color_hover: $c-red, $color_background: $color__white) {
 	@include link-underline($color);
 	text-shadow: .03em 0 $color_background,-.03em 0 $color_background,0 .03em $color_background,0 -.03em $color_background,.06em 0 $color_background,-.06em 0 $color_background,.09em 0 $color_background,-.09em 0 $color_background,.12em 0 $color_background,-.12em 0 $color_background,.15em 0 $color_background,-.15em 0 $color_background;
 	@include transition(color);
@@ -305,7 +305,7 @@ $hover-opacity: 0.5;
 }
 
 @mixin link-style--blue {
-	color: $color__blue-dmag;
+	color: $c-red;
 	@include transition(color);
 	&:hover {
 		color: $color__blue-dmag--dark;
@@ -316,7 +316,7 @@ $hover-opacity: 0.5;
 
 @mixin link-style--dark {
 	@include link-underline;
-	text-shadow: 
+	text-shadow:
 		3px 0 $color__gray--darker,
 		2px 0 $color__gray--darker,
 		1px 0 $color__gray--darker,
@@ -326,7 +326,7 @@ $hover-opacity: 0.5;
 	@include transition(color);
 
 	&:hover {
-		color: $color__blue-dmag;
+		color: $c-red;
 		@include transition(color);
 	}
 }
@@ -339,7 +339,7 @@ $hover-opacity: 0.5;
 }
 
 @mixin link-style-simple-underline {
-	a { 
+	a {
 		position: relative; // get rid of chrome movement on hover
 		backface-visibility: hidden;
 

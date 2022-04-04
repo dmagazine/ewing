@@ -20,8 +20,9 @@
 
 .category,
 .kicker {
-    @include font-scale(kicker, 1, $caps: true);
-    color: $color__red-dmag;
+    //@include font-scale(kicker, 1, $caps: true);
+    @include dmagFontStyling(sidebarInfo);
+    color: $c-red;
     margin-bottom: 0.3em;
     @extend %is-hover;
 }
@@ -29,8 +30,9 @@
 
 .byline,
 .kicker--secondary {
-    @include font-scale(kicker, 1, $caps: true);
-    color: $color__gray--dark;
+    //@include font-scale(kicker, 1, $caps: true);
+    @include dmagFontStyling(sidebarInfo);
+    color: $c-gray--dark;
     @extend %is-hover;
 }
 

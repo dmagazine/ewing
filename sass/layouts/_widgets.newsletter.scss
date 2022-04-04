@@ -12,7 +12,8 @@
 
 
 .newsletter__footer {
-    @include font-scale(textSans, 1);
+    //@include font-scale(textSans, 1);
+    @include dmagFontStyling(credit);
     @include link-style-simple-underline;
     margin-bottom: 0;
 }
@@ -37,13 +38,16 @@
 }
 
 .w-newsletter__title {
-    @include font-scale(accent, 5.5);
+    //@include font-scale(accent, 5.5);
+    @include dmagFontStyling(bubbleSectionTitle);
+    line-height: auto;
     margin: 0;
     padding-top: 0.2em;
 }
 
-.w-newsletter__text { 
-    @include font-scale(textSans, 3);
+.w-newsletter__text {
+    //@include font-scale(textSans, 3);
+    @include dmagFontStyling(paragraph);
     display: inline-block;
     max-width: 450px;
     margin-bottom: 0.5em;
@@ -72,12 +76,14 @@
 
 .ws-newsletter__title {
     display: block;
-    @include font-scale(kicker, 1, $caps: true);
+    //@include font-scale(kicker, 1, $caps: true);
+    @include dmagFontStyling(infoTitle);
     padding-bottom: 0.5em;
 }
 
 .ws-newsletter__text {
-    @include font-scale(textSans, 4);
+    //@include font-scale(textSans, 4);
+    @include dmagFontStyling(paragraph);
     margin-bottom: 0.5em;
 }
 

@@ -38,7 +38,7 @@ $color__nav--basic: $color__gray--darkest;
 	.nav--basic a:hover & {
 		@include icon-color($color__gray--dark, $color__nav--basic);
 	}
-} 
+}
 
 .nav--basic-pushdown {
 	@include breakpoint(large_medium) {

@@ -1,0 +1,313 @@
+/* ------------------------------------ *\
+    $VARIABLES
+\* ------------------------------------ */
+
+$_font-path: '/wp-content/themes/dmag-directories/bower_components/ewing/sass/fonts/';
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url($_font-path + 'founders-grotesk-web-regular.eot');
+  src: url($_font-path + 'founders-grotesk-web-regular.eot?#iefix') format('embedded-opentype'), url($_font-path + 'founders-grotesk-web-regular.woff2') format('woff2'), url($_font-path + 'founders-grotesk-web-regular.woff') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url($_font-path + 'founders-grotesk-web-medium.eot');
+  src: url($_font-path + 'founders-grotesk-web-medium.eot?#iefix') format('embedded-opentype'), url($_font-path + 'founders-grotesk-web-medium.woff2') format('woff2'), url($_font-path + 'founders-grotesk-web-medium.woff') format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url($_font-path + 'founders-grotesk-web-semibold.eot');
+  src: url($_font-path + 'founders-grotesk-web-semibold.eot?#iefix') format('embedded-opentype'), url($_font-path + 'founders-grotesk-web-semibold.woff2') format('woff2'), url($_font-path + 'founders-grotesk-web-semibold.woff') format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Financier Display';
+  src: url($_font-path + 'financier-display-web-regular.eot');
+  src: url($_font-path + 'financier-display-web-regular.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-display-web-regular.woff2') format('woff2'), url($_font-path + 'financier-display-web-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Financier Display';
+  src: url($_font-path + 'financier-display-web-medium.eot');
+  src: url($_font-path + 'financier-display-web-medium.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-display-web-medium.woff2') format('woff2'), url($_font-path + 'financier-display-web-medium.woff') format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Financier Display';
+  src: url($_font-path + 'financier-display-web-bold.eot');
+  src: url($_font-path + 'financier-display-web-bold.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-display-web-bold.woff2') format('woff2'), url($_font-path + 'financier-display-web-bold.woff') format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Financier Text';
+  src: url($_font-path + 'financier-text-web-regular.eot');
+  src: url($_font-path + 'financier-text-web-regular.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-text-web-regular.woff2') format('woff2'), url($_font-path + 'financier-text-web-regular.woff') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Financier Text';
+  src: url($_font-path + 'financier-text-web-regular-italic.eot');
+  src: url($_font-path + 'financier-text-web-regular-italic.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-text-web-regular-italic.woff2') format('woff2'), url($_font-path + 'financier-text-web-regular-italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Financier Text';
+  src: url($_font-path + 'financier-text-web-medium.eot');
+  src: url($_font-path + 'financier-text-web-medium.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-text-web-medium.woff2') format('woff2'), url($_font-path + 'financier-text-web-medium.woff') format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Financier Text';
+  src: url($_font-path + 'financier-text-web-medium-italic.eot');
+  src: url($_font-path + 'financier-text-web-medium-italic.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-text-web-medium-italic.woff2') format('woff2'), url($_font-path + 'financier-text-web-medium-italic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Financier Text';
+  src: url($_font-path + 'financier-text-web-bold.eot');
+  src: url($_font-path + 'financier-text-web-bold.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-text-web-bold.woff2') format('woff2'), url($_font-path + 'financier-text-web-bold.woff') format('woff');
+  font-weight: bold;
+}
+
+/**
+ * Icons.
+ */
+$icon-xxsmall: 10px;
+$icon-xsmall: 15px;
+$icon-small: 20px;
+$icon-medium: 30px;
+$icon-large: 40px;
+$icon-xlarge: 70px;
+
+/**
+ * Theme Colors
+ */
+$c-red: #ff291c;
+$c-red--dark: #820000;
+$c-red--light: #ff6868;
+
+$c-belmont-black--100: #f3f3f3;
+$c-belmont-black--300: #ababab;
+
+// Neutrals
+$c-white: #fff;
+$c-gray--light: #f0f0f0;
+$c-gray: #dedede;
+$c-gray--dark: #828282;
+$c-gray--darker: #5f5f5f;
+$c-gray--darkest: #313131;
+$c-black: #1a1a1a;
+
+$c-primary: $c-black;
+$c-secondary: $c-red;
+$c-tertiary: $c-white;
+
+/**
+ * Default Colors
+ */
+$c-error: #f00;
+$c-valid: #089e00;
+$c-warning: #fff664;
+$c-information: #000db5;
+$c-overlay: rgba($c-black, 0.8);
+
+/**
+ * Style Colors
+ */
+$c-body-color: $c-black;
+$c-link-color: $c-primary;
+$c-link-hover-color: darker($c-primary, 10%);
+$c-button-primary: $c-primary;
+$c-button-primary-hover: darker($c-primary, 10%);
+$c-button-secondary: $c-secondary;
+$c-button-secondary-hover: darker($c-secondary, 10%);
+$c-border: $c-gray;
+
+/**
+ * Typography
+ */
+$ff-font: "Financier Text", serif;
+$ff-font--serif: "Financier Display", serif;
+$ff-font--sans: "Founders Grotesk", sans-serif;
+$ff-font--monospace: Menlo, Monaco, "Courier New", "Courier", monospace;
+
+// Theme typefaces
+$ff-font--primary: $ff-font--sans;
+$ff-font--secondary: $ff-font--serif;
+
+/**
+ * Common Breakpoints
+ */
+$xsmall: 320px;
+$small: 480px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 1200px;
+$xxlarge: 1400px;
+$xxxlarge: 1600px;
+
+$breakpoints: (
+  "xsmall": $xsmall,
+  "small": $small,
+  "medium": $medium,
+  "large": $large,
+  "xlarge": $xlarge,
+  "xxlarge": $xxlarge,
+  "xxxlarge": $xxxlarge
+);
+
+/**
+ * Animation
+ */
+$transition-effect: cubic-bezier(0.86, 0, 0.07, 1);
+$transition-all: all 0.23s $transition-effect;
+
+/**
+ * Border Styles
+ */
+$border-radius-curve: 2px;
+$border-radius-curve--hard: 4px;
+$border--standard: 1px solid $c-border;
+$border--standard-light: 2px solid $c-gray--light;
+$box-shadow--standard: 0px 9px 12px rgba($c-black, 0.05);
+$box-shadow--thick: 0px 8px 24px rgba($c-black, 0.2);
+
+/**
+ * Default Spacing/Padding
+ * Maintain a spacing system divisible by 10
+ */
+$space: 25px;
+$space-quarter: $space / 4;
+$space-half: $space / 2;
+$space-and-half: $space * 1.5;
+$space-double: $space * 2;
+$space-double-half: $space * 2.5;
+$space-triple: $space * 3;
+$space-quad: $space * 4;
+
+/**
+ * Font Sizes
+ */
+
+:root {
+  --body-font-size: 20px;
+  --font-size-xxxs: 14px;
+  --font-size-xxs: 16px;
+  --font-size-xs: 18px;
+  --font-size-s: 22px;
+  --font-size-sm: 24px;
+  --font-size-m: 26px;
+  --font-size-ml: 26px;
+  --font-size-l: 30px;
+  --font-size-xl: 36px;
+  --font-size-xxl: 42px;
+  --font-size-xxxl: 67px;
+  --gutter: 40px;
+}
+
+// Medium Breakpoint
+@media screen and (min-width: $medium) {
+  :root {
+    --font-size-xxl: 52px;
+    --font-size-xxxl: 130px;
+    --gutter: 25px;
+  }
+}
+
+// Large Breakpoint
+@media screen and (min-width: $large) {
+  :root {
+    --body-font-size: 20px;
+    --font-size-xxxs: 14px;
+    --font-size-xxs: 16px;
+    --font-size-xs: 20px;
+    --font-size-s: 24px;
+    --font-size-sm: 32px;
+    --font-size-m: 36px;
+    --font-size-ml: 40px;
+    --font-size-l: 56px;
+    --font-size-xl: 62px;
+    --font-size-xxl: 72px;
+    --font-size-xxxl: 176px;
+    --max-width: 1200px;
+  }
+}
+
+// XXLarge Breakpoint
+@media screen and (min-width: $xxxlarge) {
+  :root {
+    --max-width: 1600px;
+  }
+}
+
+$body-font-size: var(--body-font-size, 20px);
+$font-size-xxxs: var(--font-size-xxxs, 14px);
+$font-size-xxs: var(--font-size-xxs, 16px);
+$font-size-xs: var(--font-size-xs, 20px);
+$font-size-s: var(--font-size-s, 24px);
+$font-size-sm: var(--font-size-sm, 32px);
+$font-size-m: var(--font-size-m, 36px);
+$font-size-ml: var(--font-size-ml, 40px);
+$font-size-l: var(--font-size-l, 46px);
+$font-size-xl: var(--font-size-xl, 62px);
+$font-size-xxl: var(--font-size-xxl, 72px);
+$font-size-xxxl: var(--font-size-xxxl, 176px);
+
+/**
+ * Max width.
+ */
+$max-width: var(--max-width, 1600px);
+$max-width-s: 600px;
+$max-width-m: 800px;
+$max-width-ml: 920px;
+$max-width-l: 1000px;
+$max-width-xl: 1200px;
+$max-width-xxl: 1400px;
+
+/**
+ * Grid.
+ */
+$grid-columns: 12;
+$grid-gap: $space;
+$gutter: var(--gutter, 25px);
+
+/**
+ * Letter spacing.
+ */
+$letter-spacing-1: 1px;
+$letter-spacing-2: 2px;
+$letter-spacing-3: 3px;
+
+/**
+ * Line height.
+ */
+$line-height: 1.5;
+$line-height-s: 1.3;
+
+/**
+ * Theme variables.
+ */
+$header-nav-height: 49px;
+$jump-nav-height: 43px;
+
+
+/**
+ * 100% positioning outside of parent
+ * @link  https://stackoverflow.com/questions/23367345/100vw-causing-horizontal-overflow-but-only-if-more-than-one
+ */
+:root {
+  --vw: 1vw;
+}

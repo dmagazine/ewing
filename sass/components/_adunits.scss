@@ -1,18 +1,12 @@
 @mixin striped-background {
-	background-image: url(#{$image-path}hash-dark.png);
-	background-repeat: repeat;
 }
 
 @mixin striped-background-light {
-	background-image: url(#{$image-path}hash-light.png);
-	background-repeat: repeat;
 }
 
 @mixin striped-background-styles {
 	margin-left: $full-width-margin;
 	margin-right: $full-width-margin;
-
-	@include striped-background;
 
 	@include breakpoint(large-only) {
 		padding: 1.8em 0;
@@ -48,31 +42,36 @@
 		margin-bottom: gutter(6);
 		background-color: $color__white;
 	}
-
-	// #DMAG-0236 [BW] 2020-04-28
-	// account for .site-wrapper margin at the end of the page
-	.site-wrapper &:last-child {
-		margin-top: gutter(6);
-		margin-bottom: -1 * gutter(6);
-	}
-
-	@include striped-background-styles;
-
 }
 
 .adunit--vertical:not(.adunit--native) {
-	@include breakpoint(medium_small) { @include striped-background-styles; }
+}
+
+.adunit:not(.adunit--native) {
+  padding: 25px 12px 40px;
+  :before {
+    content: 'Advertisement';
+    display: block;
+    padding: 10px 0 10px 0;
+    font-family: $ff-font--primary;
+    font-weight: 400;
+    font-size: 10px;
+    color: $c-gray--dark;
+    line-height: 1;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+  }
 }
 
 .adunit--slideshow {
 	&:not(.adunit--directory) {
-		@include striped-background-light;
 		padding: gutter(6);
 		display: inline-block;
 	}
 }
 
-.adunit--directory.adunit--directory { 
+.adunit--directory.adunit--directory {
 	@include breakpoint(large-only) {
 		width: 100%;
 		margin-left: 0;
@@ -85,7 +84,6 @@
 	}
 
 	&.adunit--vertical {
-		@include striped-background;
 		padding: 1em 0;
 	}
 }

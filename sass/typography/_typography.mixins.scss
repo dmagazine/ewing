@@ -1,6 +1,6 @@
 // Default type settings
 // =============================================================================
-// Based off of The Guardian's Guss Typography: 
+// Based off of The Guardian's Guss Typography:
 // https://github.com/guardian/guss-typography
 
 /**
@@ -13,10 +13,10 @@
  *
  * @group typography
  */
-@mixin dmag-typography-defaults($font-family: $chronicle-ss) {
+@mixin dmag-typography-defaults($font-family: $ff-font--primary) {
     @at-root {
         html {
-            font-family: $chronicle-ss;
+            font-family: $ff-font--primary;
             // line-height: 1.5;
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;
@@ -84,39 +84,39 @@
 
 @mixin font($name) {
     @if $name == nav {
-        font-family: $gotham-narrow-black;
+        font-family: $ff-font--primary;
         font-weight: 800; // black
 
     } @else if $name == header {
-        font-family: $chronicle-disp-cond;
+        font-family: $ff-font--secondary;
         font-weight: 400; //roman
 
     } @else if $name == headline {
-        font-family: $chronicle-disp-cond;
+        font-family: $ff-font--secondary;
         font-weight: 600; //semi-bold
 
     } @else if $name == bodyCopy {
-        font-family: $chronicle-ss;
+        font-family: $ff-font;
         font-weight: 400; //book
 
     } @else if $name == secondaryHeading {
-        font-family: $gotham-ss;
+        font-family: $ff-font--secondary;
         font-weight: 200; //x-light
 
     } @else if $name == textSans {
-        font-family: $gotham-ss;
+        font-family: $ff-font--primary;
         font-weight: 400; //book
 
     } @else if $name == accent {
-        font-family: $gotham-ss;
+        font-family: $ff-font--secondary;
         font-weight: 700; //bold
 
     } @else if $name == kicker {
-        font-family: $gotham-ss;
+        font-family: $ff-font--primary;
         font-weight: 800; //black
-    
+
     } @else if $name == extra {
-        font-family: $tungsten;
+        font-family: $ff-font--secondary;
         font-weight: 300; //light
 
     } @else if $name == dwedHeader {
@@ -127,7 +127,138 @@
         font-family: $miller;
         font-weight: 400;
 
-    } @else {}
+    } @else {
+        @include dmagFontStyling($name);
+    }
+}
+
+/**
+ * replaces font(name)
+ */
+@mixin dmagFontStyling($name, $responsive: true) {
+  @if $name == pageTitle { /* 1: Page Title */
+    font-family: $ff-font--secondary;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 1;
+    color: $c-black;
+
+  } @else if $name == fullBleedWidgetTitle { /* 2: Full Bleed Widget Title */
+    font-family: $ff-font--secondary;
+    font-weight: 400;
+    font-size: 62px;
+    line-height: 0.9;
+    color: $c-black;
+
+  } @else if $name == listingTitle { /* 3: Full Width Feed Title/Title on Listing */
+    font-family: $ff-font--secondary;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1;
+    color: $c-black;
+
+  } @else if $name == categoryTitle { /* 4: Directory Category Titles (in Tiles) */
+    font-family: $ff-font--primary;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.1;
+    color: $c-black;
+
+  } @else if $name == bestFeedTitle { /* 5: “Best In” Feed Title */
+    font-family: $ff-font--primary;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.1;
+    color: $c-black;
+
+  } @else if $name == reviewHeadline { /* 6: Restaurant Review Headline */
+    font-family: $ff-font--secondary;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.1;
+    color: $c-black;
+
+  } @else if $name == readMoreHeadline { /* 7: “Read More About” Headline on Listing/Directory Footer Headline */
+    font-family: $ff-font--secondary;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.1;
+    color: $c-black;
+
+  } @else if $name == listingHeading { /* 8: Listing Heading - Feed/Recently Added Listings */
+    font-family: $ff-font--secondary;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.1;
+    color: $c-black;
+
+  } @else if $name == bubbleSectionTitle { /* 9: Bubble Section Title */
+    font-family: $ff-font--primary;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.1;
+    color: $c-black;
+
+  } @else if $name == resultsFeedTitle { /* 10: Selected Category (Next to D Logo)/“Results For” Title in Feed */
+    font-family: $ff-font--secondary;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.1;
+    color: $c-black;
+
+  } @else if $name == bestFeedDescription { /* 11: “Best In” Feed Description/Address and Contact Info on Listing/Directory Footer Categories */
+    font-family: $ff-font--primary;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    color: $c-black;
+
+  } @else if $name == paragraph { /* 12: Paragraph Text */
+    font-family: $ff-font;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.25px;
+    color: $c-black;
+
+  } @else if $name == cta { /* 13: CTA/Listing Bio Preview in Feed/Dmagazine.com Link Back  */
+    font-family: $ff-font--primary;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    color: $c-black;
+
+  } @else if $name == sidebarInfo { /* 14: Filters in Feed/Sidebar Info on Listing */
+    font-family: $ff-font--primary;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.125;
+    color: $c-black;
+
+  } @else if $name == infoTitle { /* 15: Information Titles on Listing (Awards, Company, Etc.)  */
+    font-family: $ff-font--primary;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $c-gray--dark;
+
+  } @else if $name == credit { /* 16: Image Credit/Tags/Multiple Locations Address Information */
+    font-family: $ff-font--primary;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    color: $c-black;
+
+  } @else { /* --- Same as 'paragraph' --- */
+    font-family: $ff-font;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: -0.25px;
+    color: $c-black;
+  }
 }
 
 /**
@@ -139,14 +270,14 @@
  * @param {Boolean} $caps
  *
  * @example
- *  // Output all properties, lowercase 
+ *  // Output all properties, lowercase
  *  (font-size, line-height, family, weight)
  *  @include fs-header(3);
- *  
- *  // Output all properties, uppercase 
+ *
+ *  // Output all properties, uppercase
  *  (font-size, line-height, family, weight, letter-spacing, text-transform)
  *  @include fs-header(3, $caps: true);
- *  
+ *
  *  // Output font-size and line-height only
  *  @include fs-header(3, $size-only: true);
  *
@@ -166,7 +297,7 @@
     @if $no-font == false {
         @include font($name);
     }
-    
+
     // if letter spacing on font, apply.
     // otherwise set to 0. This will overwrite letter-spacing when applied to responsive sizes
     // caps function after this one so that it will override this one.

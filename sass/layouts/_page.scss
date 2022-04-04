@@ -1,9 +1,6 @@
 .page-wrapper {
 	margin-bottom: gutter(3);
 	margin-top: gutter(3);
-	@include breakpoint(small-only) {
-		margin-top: 60px;
-	}
 }
 
 .page--centered { text-align: center; }
@@ -11,12 +8,24 @@
 .page__content {
 	@extend .story__content--is-slideshow-closed;
 	// pages are not editorial content, so get rid of chronicle
-	h1 { @include font-scale(accent, 6, $responsive: false); }
-	h2 { @include font-scale(accent, 5); }
-	p { @include font-scale(textSans, 4); }
+	h1 {
+    //@include font-scale(accent, 6, $responsive: false);
+    @include dmagFontStyling(pageTitle);
+  }
+	h2 {
+    //@include font-scale(accent, 5);
+    @include dmagFontStyling(listingTitle);
+  }
+	p {
+    //@include font-scale(textSans, 4);
+    @include dmagFontStyling(paragraph);
+  }
 }
 
-.page__subhead, p.page__subhead.page__subhead { @include font-scale(accent, 4); }
+.page__subhead, p.page__subhead.page__subhead {
+  //@include font-scale(accent, 4);
+  @include dmagFontStyling(readMoreHeadline);
+}
 
 
 .template-form {
@@ -29,22 +38,4 @@
 
 .template-form__form {
 	padding: gutter(8) gutter(5);
-}
-
-.back-to-top-link {
-	position: fixed;
-	bottom: -140px;
-	right: 40px;
-	z-index: 5000;
-	transition-duration: 1s;
-	.is-scrolled & {
-		bottom: 40px;
-	}
-	.icon {
-		width: 40px;
-		height: 40px;
-		&:hover circle {
-			fill: #0076a3;
-		}
-	}
 }

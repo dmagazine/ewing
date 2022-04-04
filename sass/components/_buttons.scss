@@ -16,7 +16,7 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
     &:visited { color: $color1; }
 
     &:hover,
-    &:active, 
+    &:active,
     &:focus {
         background: $color1;
         color: $color3;
@@ -28,14 +28,14 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
     @include button--static($extend);
 
     border: none;
-    
+
     background: $color1;
     color: $color2;
 
     &:visited { color: $color2; }
 
-    &:hover, 
-    &:active, 
+    &:hover,
+    &:active,
     &:focus {
         background: darken($color1, 15%);
         color: $color2;
@@ -53,7 +53,7 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
     @if $extend == true {
         @if $button-selector == null { //does key exist for selector ($button-selector)
             $button-selector: unique-id(); //create unique id for key
-            $Placeholder-Selectors: map-merge($Placeholder-Selectors, 
+            $Placeholder-Selectors: map-merge($Placeholder-Selectors,
                 ('button': $button-selector)) !global;
             @at-root %#{$button-selector} { //create placeholder selector at directory root w unique id
                 @include button--static(false);
@@ -67,7 +67,8 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
         transition: all 0.1s;
         display: inline-block;
         @include button-font;
-        @include font-scale(kicker, 3, $no-font: true, $caps: true);
+        //@include font-scale(kicker, 3, $no-font: true, $caps: true);
+        @include dmagFontStyling(cta);
         @include transition(all);
 
         &:hover {
@@ -79,11 +80,13 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
 }
 
 @mixin button--small {
-    @include font-scale(kicker, 2, $no-font: true, $caps: true);
+    //@include font-scale(kicker, 2, $no-font: true, $caps: true);
+    @include dmagFontStyling(cta);
 }
 
 @mixin button--smaller {
-    @include font-scale(kicker, 1, $no-font: true, $caps: true);
+    //@include font-scale(kicker, 1, $no-font: true, $caps: true);
+    @include dmagFontStyling(cta);
 }
 
 @mixin button--full {
@@ -98,7 +101,7 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
 // chained to make them more specific and beat out other link styling
 
 .button--outline--white-blue.button--outline--white-blue {
-    @include button--outline($color__white, $color__blue-dmag);
+    @include button--outline($color__white, $c-red);
 }
 
 .button--outline--white-gray.button--outline--white-gray {
@@ -106,11 +109,11 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
 }
 
 .button--outline--red.button--outline--red {
-    @include button--outline($color__red-dmag, transparent, $color__white);
+    @include button--outline($c-red, transparent, $color__white);
 }
 
 .button--outline--blue.button--outline--blue {
-    @include button--outline($color__blue-dmag, transparent, $color__white);
+    @include button--outline($c-red, transparent, $color__white);
 }
 
 .button--outline--white.button--outline--white {
@@ -118,15 +121,15 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
 }
 
 .button--outline--gray {
-    @include button--outline($color__gray--dark, transparent, $color__white);
+    @include button--outline($color__gray--medium-dark, transparent, $color__white);
 }
 
 .button--blue.button--blue {
-    @include button($color__blue-dmag, $color__white);
+    @include button($c-red, $color__white);
 }
 
 .button--red.button--red {
-    @include button($color__red-dmag, $color__white);
+    @include button($c-red, $color__white);
 }
 
 .button--black.button--black {

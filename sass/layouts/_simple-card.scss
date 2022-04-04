@@ -22,7 +22,7 @@
 .simple-card__title {
 	@include transition(color);
 	.simple-card__link:hover & {
-		color: $color__blue-dmag;
+		color: $c-red--dark;
 		@include transition(color);
 	}
 }
