@@ -37,7 +37,7 @@
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
-   
+
 }
 
 .widget--basic {
@@ -140,14 +140,18 @@
 }
 
 .hero__title {
-    @include font-scale(accent, 7);
+    //@include font-scale(accent, 7);
+    @include dmagFontStyling(pageTitle);
+    color: $c-white;
     @include breakpoint(small-only) {
         display: block;
     }
 }
 
 .hero__subtitle {
-    @include font-scale(accent, 5, $caps: true);
+    //@include font-scale(accent, 5, $caps: true);
+    @include dmagFontStyling(bestFeedDescription);
+    color: $c-white;
     position: relative;
     display: inline-block;
     margin-top: 0.2em;
@@ -155,7 +159,9 @@
 }
 
 .hero__description {
-    @include font-scale(accent, 5);
+    //@include font-scale(accent, 5);
+    @include dmagFontStyling(bestFeedDescription);
+    color: $c-white;
     max-width: 700px;
     width: 100%;
     display: inline-block;
@@ -190,7 +196,7 @@
     padding-top: 1.5rem;
     .button--search { text-overflow: ellipsis; }
     @include breakpoint(small-only) {
-        .button--search { 
+        .button--search {
             margin-bottom: 1rem;
         }
     }
@@ -201,7 +207,7 @@
 
     // tktk icky inheritance
     .w-directory-search__header {
-        text-align: center; 
+        text-align: center;
 
         .dropdown,
         .widget__title {

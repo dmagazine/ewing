@@ -2,83 +2,81 @@
     $VARIABLES
 \* ------------------------------------ */
 
-$_font-path: '/wp-content/themes/dmag-directories/bower_components/ewing/sass/fonts/';
-
 @font-face {
   font-family: 'Founders Grotesk';
-  src: url($_font-path + 'founders-grotesk-web-regular.eot');
-  src: url($_font-path + 'founders-grotesk-web-regular.eot?#iefix') format('embedded-opentype'), url($_font-path + 'founders-grotesk-web-regular.woff2') format('woff2'), url($_font-path + 'founders-grotesk-web-regular.woff') format('woff');
+  src: url('./fonts/founders-grotesk-web-regular.eot');
+  src: url('./fonts/founders-grotesk-web-regular.eot?#iefix') format('embedded-opentype'), url('./fonts/founders-grotesk-web-regular.woff2') format('woff2'), url('./fonts/founders-grotesk-web-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Founders Grotesk';
-  src: url($_font-path + 'founders-grotesk-web-medium.eot');
-  src: url($_font-path + 'founders-grotesk-web-medium.eot?#iefix') format('embedded-opentype'), url($_font-path + 'founders-grotesk-web-medium.woff2') format('woff2'), url($_font-path + 'founders-grotesk-web-medium.woff') format('woff');
+  src: url('./fonts/founders-grotesk-web-medium.eot');
+  src: url('./fonts/founders-grotesk-web-medium.eot?#iefix') format('embedded-opentype'), url('./fonts/founders-grotesk-web-medium.woff2') format('woff2'), url('./fonts/founders-grotesk-web-medium.woff') format('woff');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Founders Grotesk';
-  src: url($_font-path + 'founders-grotesk-web-semibold.eot');
-  src: url($_font-path + 'founders-grotesk-web-semibold.eot?#iefix') format('embedded-opentype'), url($_font-path + 'founders-grotesk-web-semibold.woff2') format('woff2'), url($_font-path + 'founders-grotesk-web-semibold.woff') format('woff');
+  src: url('./fonts/founders-grotesk-web-semibold.eot');
+  src: url('./fonts/founders-grotesk-web-semibold.eot?#iefix') format('embedded-opentype'), url('./fonts/founders-grotesk-web-semibold.woff2') format('woff2'), url('./fonts/founders-grotesk-web-semibold.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Financier Display';
-  src: url($_font-path + 'financier-display-web-regular.eot');
-  src: url($_font-path + 'financier-display-web-regular.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-display-web-regular.woff2') format('woff2'), url($_font-path + 'financier-display-web-regular.woff') format('woff');
+  src: url('./fonts/financier-display-web-regular.eot');
+  src: url('./fonts/financier-display-web-regular.eot?#iefix') format('embedded-opentype'), url('./fonts/financier-display-web-regular.woff2') format('woff2'), url('./fonts/financier-display-web-regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Financier Display';
-  src: url($_font-path + 'financier-display-web-medium.eot');
-  src: url($_font-path + 'financier-display-web-medium.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-display-web-medium.woff2') format('woff2'), url($_font-path + 'financier-display-web-medium.woff') format('woff');
+  src: url('./fonts/financier-display-web-medium.eot');
+  src: url('./fonts/financier-display-web-medium.eot?#iefix') format('embedded-opentype'), url('./fonts/financier-display-web-medium.woff2') format('woff2'), url('./fonts/financier-display-web-medium.woff') format('woff');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Financier Display';
-  src: url($_font-path + 'financier-display-web-bold.eot');
-  src: url($_font-path + 'financier-display-web-bold.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-display-web-bold.woff2') format('woff2'), url($_font-path + 'financier-display-web-bold.woff') format('woff');
+  src: url('./fonts/financier-display-web-bold.eot');
+  src: url('./fonts/financier-display-web-bold.eot?#iefix') format('embedded-opentype'), url('./fonts/financier-display-web-bold.woff2') format('woff2'), url('./fonts/financier-display-web-bold.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Financier Text';
-  src: url($_font-path + 'financier-text-web-regular.eot');
-  src: url($_font-path + 'financier-text-web-regular.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-text-web-regular.woff2') format('woff2'), url($_font-path + 'financier-text-web-regular.woff') format('woff');
+  src: url('./fonts/financier-text-web-regular.eot');
+  src: url('./fonts/financier-text-web-regular.eot?#iefix') format('embedded-opentype'), url('./fonts/financier-text-web-regular.woff2') format('woff2'), url('./fonts/financier-text-web-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Financier Text';
-  src: url($_font-path + 'financier-text-web-regular-italic.eot');
-  src: url($_font-path + 'financier-text-web-regular-italic.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-text-web-regular-italic.woff2') format('woff2'), url($_font-path + 'financier-text-web-regular-italic.woff') format('woff');
+  src: url('./fonts/financier-text-web-regular-italic.eot');
+  src: url('./fonts/financier-text-web-regular-italic.eot?#iefix') format('embedded-opentype'), url('./fonts/financier-text-web-regular-italic.woff2') format('woff2'), url('./fonts/financier-text-web-regular-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Financier Text';
-  src: url($_font-path + 'financier-text-web-medium.eot');
-  src: url($_font-path + 'financier-text-web-medium.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-text-web-medium.woff2') format('woff2'), url($_font-path + 'financier-text-web-medium.woff') format('woff');
+  src: url('./fonts/financier-text-web-medium.eot');
+  src: url('./fonts/financier-text-web-medium.eot?#iefix') format('embedded-opentype'), url('./fonts/financier-text-web-medium.woff2') format('woff2'), url('./fonts/financier-text-web-medium.woff') format('woff');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Financier Text';
-  src: url($_font-path + 'financier-text-web-medium-italic.eot');
-  src: url($_font-path + 'financier-text-web-medium-italic.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-text-web-medium-italic.woff2') format('woff2'), url($_font-path + 'financier-text-web-medium-italic.woff') format('woff');
+  src: url('./fonts/financier-text-web-medium-italic.eot');
+  src: url('./fonts/financier-text-web-medium-italic.eot?#iefix') format('embedded-opentype'), url('./fonts/financier-text-web-medium-italic.woff2') format('woff2'), url('./fonts/financier-text-web-medium-italic.woff') format('woff');
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Financier Text';
-  src: url($_font-path + 'financier-text-web-bold.eot');
-  src: url($_font-path + 'financier-text-web-bold.eot?#iefix') format('embedded-opentype'), url($_font-path + 'financier-text-web-bold.woff2') format('woff2'), url($_font-path + 'financier-text-web-bold.woff') format('woff');
+  src: url('./fonts/financier-text-web-bold.eot');
+  src: url('./fonts/financier-text-web-bold.eot?#iefix') format('embedded-opentype'), url('./fonts/financier-text-web-bold.woff2') format('woff2'), url('./fonts/financier-text-web-bold.woff') format('woff');
   font-weight: bold;
 }
 
@@ -160,13 +158,13 @@ $xxlarge: 1400px;
 $xxxlarge: 1600px;
 
 $breakpoints: (
-  "xsmall": $xsmall,
-  "small": $small,
-  "medium": $medium,
-  "large": $large,
-  "xlarge": $xlarge,
-  "xxlarge": $xxlarge,
-  "xxxlarge": $xxxlarge
+        "xsmall": $xsmall,
+        "small": $small,
+        "medium": $medium,
+        "large": $large,
+        "xlarge": $xlarge,
+        "xxlarge": $xxlarge,
+        "xxxlarge": $xxxlarge
 );
 
 /**
