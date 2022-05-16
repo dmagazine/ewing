@@ -1,4 +1,15 @@
 /*------------------------------------*\
+    #FORMS
+\*------------------------------------*/
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="textarea"] {
+  color: $c-black;
+}
+
+/*------------------------------------*\
     #HUBSPOT FORMS
 \*------------------------------------*/
 
@@ -14,7 +25,7 @@ $width__submit: 100px;
         width: 100%;
     }
 
-    input[type="submit"] { 
+    input[type="submit"] {
         height: $button-fixed-height--small;
         width: $width__submit;
         padding: 0;
@@ -32,7 +43,7 @@ $width__submit: 100px;
 }
 
 @mixin hubspot-overrides {
-    // in order for these to work, the form has to be formmatted correctly in hubspot. 
+    // in order for these to work, the form has to be formmatted correctly in hubspot.
     // both the submit and email fileds have to be aligned next to each other, and neither can have 'label' text
     .hs-form fieldset.form-columns-2 .hs-form-field,
     .hs-form fieldset.form-columns-3 .hs-form-field {
@@ -57,7 +68,7 @@ $width__submit: 100px;
     @include form-bar();
     @include hubspot-overrides();
 
-    input[type="submit"] { 
+    input[type="submit"] {
         @extend .button--red;
     }
 }
@@ -76,7 +87,7 @@ $width__submit: 100px;
 }
 
 // hide the astrisk next to required fields
-.hs-form-required { display: none; } 
+.hs-form-required { display: none; }
 
 
 

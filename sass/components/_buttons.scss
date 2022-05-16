@@ -69,6 +69,8 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
         @include button-font;
         //@include font-scale(kicker, 3, $no-font: true, $caps: true);
         @include dmagFontStyling(cta);
+        font-size: 16px;
+        line-height: 1;
         @include transition(all);
 
         &:hover {
@@ -80,13 +82,17 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
 }
 
 @mixin button--small {
-    //@include font-scale(kicker, 2, $no-font: true, $caps: true);
-    @include dmagFontStyling(cta);
+  //@include font-scale(kicker, 2, $no-font: true, $caps: true);
+  @include dmagFontStyling(cta);
+  font-size: 16px;
+  line-height: 1;
 }
 
 @mixin button--smaller {
-    //@include font-scale(kicker, 1, $no-font: true, $caps: true);
-    @include dmagFontStyling(cta);
+  //@include font-scale(kicker, 1, $no-font: true, $caps: true);
+  @include dmagFontStyling(cta);
+  font-size: 16px;
+  line-height: 1;
 }
 
 @mixin button--full {

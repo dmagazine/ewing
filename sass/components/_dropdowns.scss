@@ -47,7 +47,7 @@ $borderRadius: 0.2rem;
 		$color_overall: $color__black;
 		$color_title: $color__black;
 		$color_title_border: $color__white;
-		$color_title_unselected: $color__gray--dark;
+		$color_title_unselected: $c-gray--dark;
 		$color_title_background--no-outline: $color__white;
 		$color_title_background_hover--outline: inherit;
 		$color_title_hover--outline: inherit;
@@ -145,6 +145,7 @@ $borderRadius: 0.2rem;
 			&:hover {
 				background: $color_item_background_selected;
 			}
+      font-size: 18px;
 		}
 		.dropdown__header {
 			border-color: $color_dropdown_header_border;
