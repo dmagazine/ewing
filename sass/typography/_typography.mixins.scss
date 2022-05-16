@@ -251,6 +251,13 @@
     line-height: 1;
     color: $c-black;
 
+  } @else if $name == footer { /* 17: Footer */
+    font-family: $ff-font--primary;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    color: $c-black;
+
   } @else { /* --- Same as 'paragraph' --- */
     font-family: $ff-font;
     font-weight: 400;
