@@ -146,6 +146,13 @@ $Placeholder-Selectors: (); //global variable to hold the names of dynamic selec
     @include button($color__white, $color__black);
 }
 
+.button--gray {
+  @include button($c-gray, $color__black);
+  &:hover {
+    background: $c-red;
+    color: $color__white;
+  }
+}
 
 .button--center {
     text-align: center;
