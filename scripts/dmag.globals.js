@@ -48,7 +48,7 @@
 			// the slice cuts off the .png, .jpg, .gif etc at the end of the url
 			thumbnail_start = image.slice(0, -4);
 			thumbnail_end = image.slice(-3);
-			
+
 			// some minimizing image plugin that was activated and then deactivated at some point on missellie messed with the image output, have to account for those.
 			// these images all end in -e#### so we have to strip that part out to get the original image before adding the crop dimensions to the url
 			// regex expression reads: 'find -e string' (-e), followed by any number ([0-9]), or repeating string of numbers (+), at the end of the string ($)
@@ -75,7 +75,7 @@
 	DMAG.imageSizing = function(image, size) {
 		if (!image) { return; }
 
-		$is_subdomain = (image.indexOf('//dmagazine.com') == -1 && image.indexOf('www.dmagazine.com') == -1) && image.indexOf('assets.dmagstatic.com') == -1;
+		$is_subdomain = (image.indexOf('//dmagazine.com') == -1 && image.indexOf('www.dmagazine.com') == -1) && image.indexOf('assets.dmagstatic.com') == -1  && image.indexOf('directory.dmagstatic.com') == -1;
 		$is_old = image.indexOf('/uploads/media/') != -1;
 
 		if ($is_old || $is_subdomain) {
