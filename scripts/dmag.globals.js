@@ -79,13 +79,16 @@
 		$is_old = image.indexOf('/uploads/media/') != -1;
 
 		if ($is_old || $is_subdomain) {
+			console.log("SUBDOMAIN OR OLD", image);
 			return image;
 		} else {
 			var pos = image.lastIndexOf('.');
 			// the slice cuts off the .png, .jpg, .gif, .tiff, .jpeg etc at the end of the url
 			image_start = image.slice(0, pos);
 			image_end = image.slice(pos + 1);
-			return image_start + '-330x220.' + image_end;
+			const newImage = image_start + '-330x220.' + image_end;
+			console.log("NEW IMAGE", newImage);
+			return newImage;
 		}
 
 	};
